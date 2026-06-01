@@ -27,39 +27,62 @@ If the output file already exists, read the oldest date in the file to determine
 
 Use the primary source for the target assistant. Fetch from the newest entries down to the cutoff date determined in Step 0.
 
-| Assistant | Primary Source | Format |
+| Assistant | Primary Source | Method |
 |-----------|---------------|--------|
-| **Claude Code** | `https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md` | Raw markdown (~350 KB) |
-| **Codex** | `https://github.com/openai/codex/releases` | GitHub Releases page |
-| **GitHub Copilot** | `https://docs.github.com/en/copilot/about-github-copilot/github-copilot-changelog` | Rendered web page |
-| **Cursor** | `https://cursor.com/changelog` | Rendered web page |
-| **Gemini CLI** | `https://www.geminicli.com/docs/changelogs` | Rendered web page |
-| **Windsurf** | `https://windsurf.com/changelog` | Rendered web page |
-| **OpenCode** | `https://github.com/anomalyco/opencode/releases` | GitHub Releases page |
+| **Claude Code** | `https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md` | WebFetch (raw markdown, ~350 KB) |
+| **Codex** | `https://api.github.com/repos/openai/codex/releases` | GitHub API via Bash |
+| **GitHub Copilot** | `https://docs.github.com/en/copilot/about-github-copilot/github-copilot-changelog` | WebFetch (rendered page) |
+| **Cursor** | `https://cursor.com/changelog` | WebFetch (rendered page) |
+| **Gemini CLI** | `https://www.geminicli.com/docs/changelogs` | WebFetch (rendered page) |
+| **Windsurf** | `https://windsurf.com/changelog` | WebFetch (rendered page) |
+| **OpenCode** | `https://api.github.com/repos/anomalyco/opencode/releases` | GitHub API via Bash |
 
-**Handling large changelogs (e.g. Claude Code ~350 KB):**
+**For GitHub-hosted tools (Codex, OpenCode) — use the GitHub Releases API:**
+
+The API returns structured JSON with version, date, and release notes in one call — far more reliable than scraping the rendered releases page. Run this Bash command (paginate with `&page=2` if the cutoff hasn't been reached):
+
+```bash
+curl -s "https://api.github.com/repos/<owner>/<repo>/releases?per_page=100" \
+  | python3 -c "
+import json, sys
+for r in json.load(sys.stdin):
+    if not r['prerelease']:
+        print(f\"## {r['tag_name']} ({r['published_at'][:10]})\n{r['body']}\n\")
+"
+```
+
+Stop processing once you pass the cutoff date from Step 0. Because `published_at` is included in the response, **skip the npm date lookup in Step 2 for these tools**.
+
+**For Claude Code — handle large changelogs:**
 The file may be too large to process in one pass. If the response is truncated, make additional fetches to cover the missing range. Process version blocks from newest to oldest and stop once you reach the cutoff version/date from Step 0. Do not skip sections — if a fetch is incomplete, explicitly fetch the missing range before proceeding.
 
 ## Step 2 — Map versions to dates
 
-For CLI tools distributed via npm, fetch the `time` object from the npm registry to convert version numbers to `Mon YYYY` strings:
+**GitHub API tools (Codex, OpenCode):** Dates are already in `published_at` from Step 1 — no additional lookup needed.
+
+**For Claude Code and Gemini CLI**, fetch the `time` object from the npm registry to convert version numbers to `Mon YYYY` strings:
 
 | Assistant | npm registry URL |
 |-----------|-----------------|
 | Claude Code | `https://registry.npmjs.org/@anthropic-ai/claude-code` |
-| Codex | `https://registry.npmjs.org/@openai/codex` |
 | Gemini CLI | `https://registry.npmjs.org/@google/gemini-cli` |
-| OpenCode | `https://registry.npmjs.org/opencode-ai` |
 
-**Precise lookup:** The npm registry response includes a `time` object mapping every version string to an ISO 8601 timestamp.
+Use this Bash command to extract stable versions with their dates:
 
-1. Fetch the registry URL above.
-2. Read `response.time["<version>"]` — e.g. `response.time["2.1.154"]` → `"2026-05-14T10:22:00.000Z"`
-3. Format as `Mon YYYY` — e.g. `May 2026`
+```bash
+curl -s "<registry-url>" | python3 -c "
+import json, sys
+t = json.load(sys.stdin).get('time', {})
+stable = [(v, ts) for v, ts in t.items()
+          if v not in ('created', 'modified') and '-' not in v]
+for v, ts in sorted(stable, key=lambda x: x[1], reverse=True)[:50]:
+    print(f'{v}: {ts}')
+"
+```
 
-If a version is absent from `time` (pre-release or patch), use the nearest lower version that is present.
+Format timestamps as `Mon YYYY` (e.g. `"2026-05-14T10:22:00.000Z"` → `May 2026`). If a version is absent, use the nearest lower version present.
 
-For web-only changelogs (Copilot, Cursor, Windsurf), dates are embedded in the page content — extract them directly from the rendered text.
+**Web-only changelogs (Copilot, Cursor, Windsurf):** Dates are embedded in the page content — extract them directly from the rendered text.
 
 ## Step 3 — Find official URLs
 
@@ -179,6 +202,22 @@ Update the date range in the title if the newest feature extends it. Always upda
 **Row ordering**: date descending within each table (newest at top). When two features share the same month, order by version number descending.
 
 **Merge strategy for updates**: preserve all existing rows. Insert new rows in the correct date position. Do not remove existing rows unless they are factually wrong. Do not rewrite existing descriptions unless they are inaccurate.
+
+**Other Improvements section**: After the five category tables, append a final section for notable items that were considered but didn't meet the bar for the main tables. Use this format exactly:
+
+```markdown
+## Other Improvements
+
+Notable changes that fell below the threshold for the main tables:
+
+- Title (`version`) - *reason it was omitted*
+- Title (`version`) - *reason it was omitted*
+```
+
+- One bullet per item, no description — only title, version, and omission reason
+- Order by version number descending (highest first)
+- Omission reason should be a short phrase, not a sentence explaining what the feature does
+- Typical reasons: *UI polish*, *config knob for an existing feature*, *improvement to existing behavior*, *convenience wrapper*, *distribution channel expansion*, *security infrastructure*, *purely internal implementation change*
 
 ## Step 7 — Validate before writing
 

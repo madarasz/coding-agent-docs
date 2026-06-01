@@ -1,13 +1,13 @@
 # Comparing Coding Agents
 
-Tracks the evolving capabilities of the **most popular** coding agents.
+Tracks the evolving capabilities of the **most popular** coding agents. Only significant workflow changes qualify: new capability classes, integration surfaces, extensibility primitives, and paradigm shifts.
 
 ## Capabilities
 
 | Coding Agent | Last Updated |
 |-----------|--------------|
 | [Claude Code](docs/claude-code-features.md) | 2026.06.01 |
-| Codex | TODO |
+| [Codex](docs/codex-features.md) | 2026.06.01 |
 | GitHub Copilot | TODO |
 | Cursor | TODO |
 | Gemini CLI | TODO |

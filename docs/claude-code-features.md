@@ -28,7 +28,6 @@ Significant user-facing features added to Claude Code since its public availabil
 | [Session Recap](https://code.claude.com/docs/en/session-recap) | Provides a context summary when returning to a session after being away; also manually invocable. | `/recap`; automatic on return | `2.1.122` | Apr 2026 |
 | `/resume` from PR URL | Paste a pull request URL into the `/resume` search box to find the session that created that PR. | `/resume <PR-URL>` | `2.1.108` | Apr 2026 |
 | [Auto-Memory](https://code.claude.com/docs/en/memory) | Claude automatically saves useful context to a persistent memory file and recalls it across sessions. | Automatic; `/memory` to manage | `2.1.32` | Feb 2026 |
-| Skill Hot-Reload | Skills created or modified in `~/.claude/skills/` or `.claude/skills/` become available immediately without restarting. | Automatic; `/reload-skills` | `2.1.0` | Jan 2026 |
 | [Named Sessions](https://code.claude.com/docs/en/cli-reference) | Sessions can be named and resumed by name from the CLI or picker. | `/rename <name>`; `claude --resume <name>` | `2.0.64` | Dec 2025 |
 | [`.claude/rules/` Directory](https://code.claude.com/docs/en/memory) | Per-project contextual rules loaded from Markdown files, with optional `paths:` frontmatter for file-scoped rules. | `.claude/rules/*.md` | `2.0.64` | Dec 2025 |
 | [CLAUDE.md File Imports](https://code.claude.com/docs/en/memory) | CLAUDE.md files can import additional context files with `@path/to/file.md` directives. | `@path/to/file.md` in CLAUDE.md | `0.2.107` | May 2025 |
@@ -117,3 +116,35 @@ Significant user-facing features added to Claude Code since its public availabil
 | [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) | TypeScript and Python SDKs for programmatic access to Claude Code features and sessions. | `@anthropic-ai/claude-code`; `pip install claude-code-sdk` | `1.0.23` | Jun 2025 |
 | Streaming Print Mode | `--print` mode with real-time JSON output enables scripting and CI integration. | `claude -p --output-format=stream-json` | `0.2.66` | Apr 2025 |
 | Import MCP Servers from Claude Desktop | Import MCP server configurations from Claude Desktop with a single command. | `claude mcp add-from-claude-desktop` | `0.2.36` | Mar 2025 |
+
+## Other Improvements
+
+Notable changes that fell below the threshold for the main tables:
+
+- `claude plugin init` Scaffolding (`2.1.157`) - *convenience tooling for plugin authors, not a new workflow capability*
+- `/reload-skills` Command (`2.1.152`) - *DX convenience for skill/plugin development*
+- Vim NORMAL Mode History Search with `/` (`2.1.152`) - *incremental improvement to existing vim mode*
+- `/usage` Per-Category Breakdown (`2.1.149`) - *improvement to existing /usage command*
+- GFM Task List Checkboxes in Markdown Output (`2.1.149`) - *rendering improvement to existing output*
+- Plugin Dependency Enforcement in `claude plugin disable` (`2.1.143`) - *improvement to existing plugin management*
+- `worktree.bgIsolation: "none"` Setting (`2.1.143`) - *config knob for existing worktree feature*
+- `claude agents --json` Scripting Output (`2.1.145`) - *scripting alias exposing existing agent list*
+- Status Line JSON: GitHub Repo and PR Info (`2.1.145`) - *improvement to existing status line feature*
+- "Summarize Up to Here" in Rewind Menu (`2.1.141`) - *enhancement to existing rewind feature*
+- `terminalSequence` Field in Hook JSON Output (`2.1.141`) - *improvement to existing hooks for desktop notifications*
+- `/tui` Display Mode Toggle Command (`2.1.110`) - *convenience command for an existing display setting*
+- `/team-onboarding` Command (`2.1.101`) - *team-specific DX tool, not a general coding workflow*
+- Interactive Vertex AI Setup Wizard (`2.1.98`) - *improvement to existing provider onboarding*
+- Interactive Bedrock Setup Wizard (`2.1.92`) - *improvement to existing provider onboarding*
+- `/powerup` Interactive Feature Lessons (`2.1.90`) - *onboarding tutorial feature*
+- `CwdChanged` and `FileChanged` Hook Events (`2.1.83`) - *improvement to hooks system for reactive env management*
+- Transcript Search in Transcript Mode (`2.1.83`) - *UI navigation improvement*
+- Agent `initialPrompt` Frontmatter (`2.1.83`) - *improvement to agent authoring, not a new capability class*
+- `--bare` Flag for Headless Sessions (`2.1.81`) - *optimization flag for scripted SDK usage*
+- `StopFailure` Hook Event (`2.1.78`) - *improvement to existing hooks system*
+- `${CLAUDE_PLUGIN_DATA}` Variable for Plugin Persistent State (`2.1.78`) - *improvement to existing plugin system*
+- Opus 4.6 1M Context Window by Default for Max/Team/Enterprise (`2.1.75`) - *capacity improvement, model-level change*
+- `/color` Command for Session Prompt Bar (`2.1.75`) - *UI customization*
+- `ExitWorktree` Tool (`2.1.72`) - *completion of the EnterWorktree/ExitWorktree pair, not a new paradigm*
+- CLAUDE.md HTML Comments Hidden from Claude (`2.1.72`) - *behavior change to existing CLAUDE.md feature*
+- Skill Hot-Reload (`2.1.0`) - *DX friction reduction, not a new capability*

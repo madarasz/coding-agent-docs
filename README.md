@@ -6,7 +6,7 @@ Tracks the evolving capabilities of the **most popular** coding agents.
 
 | Coding Agent | Last Updated |
 |-----------|--------------|
-| [Claude Code](docs/claude-code-features-v3.md) | 2026.06.01 |
+| [Claude Code](docs/claude-code-features.md) | 2026.06.01 |
 | Codex | TODO |
 | GitHub Copilot | TODO |
 | Cursor | TODO |

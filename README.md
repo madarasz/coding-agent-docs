@@ -8,7 +8,7 @@ Tracks the evolving capabilities of the **most popular** coding agents. Only sig
 |-----------|--------------|
 | [Claude Code](docs/claude-code-features.md) | 2026.06.01 |
 | [Codex](docs/codex-features.md) | 2026.06.01 |
-| GitHub Copilot | TODO |
+| [GitHub Copilot](docs/copilot-features.md) | 2026.06.01 |
 | Cursor | TODO |
 | Gemini CLI | TODO |
 | Windsurf | TODO |
@@ -17,7 +17,7 @@ Tracks the evolving capabilities of the **most popular** coding agents. Only sig
 ## Comparison
 
 TODO:
-- Instruction files, skills, agents, slash commands — where to put the files, how they are invoked, customization possibilities
+- Instruction files, skills, agents, hooks, slash commands — where to put the files, how they are invoked, customization possibilities
 
 ## Refreshing Information
 

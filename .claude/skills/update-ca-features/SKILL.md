@@ -88,21 +88,33 @@ Format timestamps as `Mon YYYY` (e.g. `"2026-05-14T10:22:00.000Z"` → `May 2026
 
 For each new feature, find the best available URL in this priority order:
 
-1. **Official announcement post** on the assistant's blog or news page
-2. **Dedicated docs page** for the feature
+1. **Dedicated docs page** for the feature (most useful — explains the feature with examples)
+2. **Official announcement post** on the assistant's blog or news page (use for features with no docs page yet)
 3. **No link** — leave the title as plain text if no relevant URL can be confirmed. Do not guess or invent URLs.
+
+**Never link to GitHub release pages** (e.g. `github.com/*/releases/tag/*`) — they contain raw changelogs, not explanatory content. If no better URL exists, leave the title as plain text.
 
 Per-assistant docs and blog roots:
 
 | Assistant | Docs root | Blog / news |
 |-----------|-----------|-------------|
 | Claude Code | `https://code.claude.com/docs/en/` | `https://www.anthropic.com/news/` |
-| Codex | `https://github.com/openai/codex` | `https://openai.com/blog/` |
-| GitHub Copilot | `https://docs.github.com/en/copilot/` | `https://github.blog/` |
+| Codex | `https://developers.openai.com/codex/` | `https://openai.com/blog/` |
+| GitHub Copilot | `https://docs.github.com/en/copilot/` | `https://github.blog/changelog/` |
 | Cursor | `https://docs.cursor.com/` | `https://cursor.com/blog/` |
 | Gemini CLI | `https://www.geminicli.com/docs/` | `https://blog.google/products/gemini/` |
 | Windsurf | `https://docs.windsurf.com/` | `https://windsurf.com/blog/` |
 | OpenCode | `https://opencode.ai/docs` | `https://github.com/anomalyco/opencode` |
+
+### Known URL patterns by assistant
+
+**Claude Code** — docs are at `https://code.claude.com/docs/en/<topic>`. Confirmed sections:
+`agent-view`, `worktrees`, `session-recap`, `cli-reference`, `memory`, `hooks`, `plugins`, `sandboxing`, `channels`, `keybindings`, `mcp`, `commands`, `skills`, `fast-mode`, `chrome`, `azure-ai-foundry`, `remote-control`, `agent-sdk/overview`
+
+**Codex** — docs are at `https://developers.openai.com/codex/<topic>`. Confirmed sections:
+`cli/features`, `cli/slash-commands`, `cli/reference`, `memories`, `memories/chronicle`, `config-basic`, `config-advanced`, `config-reference`, `prompting`, `subagents`, `concepts/subagents`, `concepts/sandboxing`, `concepts/sandboxing/auto-review`, `permissions`, `mcp`, `plugins`, `plugins/build`, `hooks`, `skills`, `rules`, `guides/agents-md`, `agent-approvals-security`, `models`, `sdk`, `noninteractive`, `remote-connections`, `app-server`, `windows`, `cloud`, `workflows`, `use-cases/<slug>` (55+ use-case articles at `https://developers.openai.com/codex/use-cases/`)
+
+**GitHub Copilot** — most feature announcements live at `https://github.blog/changelog/<date>-<slug>/`. Docs at `https://docs.github.com/en/copilot/<topic>`.
 
 ## Step 4 — Filter: what to keep vs. discard
 

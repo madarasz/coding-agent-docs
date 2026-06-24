@@ -12,8 +12,6 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 | [Thread Forking](https://developers.openai.com/codex/subagents) | Branches an active conversation into a new sub-agent thread while keeping the parent session intact | App-server API | `0.107.0` | Mar 2026 |
 | [Multi-Agent Workflows](https://developers.openai.com/codex/subagents) | Spawns and coordinates sub-agent conversations programmatically with messaging, control, and path-based inter-agent communication | `spawn_agent` tool | `0.79.0` | Jan 2026 |
 | Parallel Tool Calls | Executes multiple model-requested tool calls simultaneously in a single turn for faster multi-step operations | Automatic | `0.59.0` | Nov 2025 |
-| [Session Resume](https://developers.openai.com/codex/cli/features) | Resumes previous sessions from an interactive picker or jumps directly to the most recent session | `codex resume` / `--resume` / `--continue` | `0.30.0` | Sep 2025 |
-| Long-Running Shell Commands | Maintains persistent shell processes with interactive stdin and streaming stdout via dedicated `exec_command` and `write_stdin` tools | Automatic tool | `0.24.0` | Aug 2025 |
 
 ## Context & Memory
 
@@ -23,43 +21,42 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 | [Cross-Session Memory](https://developers.openai.com/codex/memories) | Stores persistent thread summaries as memory across sessions with TUI commands to view, update, and delete entries | `/m_update`, `/m_drop` | `0.97.0` | Feb 2026 |
 | [Project-Aware Config Layering](https://developers.openai.com/codex/config-basic) | Loads repo-local `.codex/config.toml` and merges it with user and system configs for per-project settings | `.codex/config.toml` | `0.78.0` | Jan 2026 |
 | [Automatic Context Compaction](https://developers.openai.com/codex/prompting) | Compacts the conversation context automatically when nearing token limits to keep long sessions alive | Automatic (configurable threshold) | `0.36.0` | Sep 2025 |
+| [Session Resume](https://developers.openai.com/codex/cli/features) | Resumes previous sessions from an interactive picker or jumps directly to the most recent session | `codex resume` / `--resume` / `--continue` | `0.30.0` | Sep 2025 |
+| [AGENTS.md Project Config](https://developers.openai.com/codex/guides/agents-md) | Reads `AGENTS.md` files from the project directory up to the git root for per-project agent instructions | `AGENTS.md` file | `0.24.0` | Aug 2025 |
 | [/compact Command](https://developers.openai.com/codex/cli/slash-commands) | Manually compacts the current conversation context to free up token budget mid-session | `/compact` | `0.11.0` | Aug 2025 |
 
-## Model Capabilities
+## Model & Input
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
 | [Voice Input Transcription](https://developers.openai.com/codex/cli/features) | Dictates prompts via microphone by holding spacebar; speech is transcribed and sent directly to the model | Hold spacebar in TUI | `0.105.0` | Feb 2026 |
 | JavaScript REPL | Provides a persistent JavaScript runtime with state surviving across turns and support for local module imports | `js_repl` in `config.toml` | `0.100.0` | Feb 2026 |
 | Steer Mode (Mid-Turn Interrupt) | Interrupts a running model turn with `Ctrl+C` to redirect or refine the current task before the model completes it | `Ctrl+C` during turn | `0.98.0` | Feb 2026 |
-| [/review Command](https://developers.openai.com/codex/cli/slash-commands) | Performs built-in code review against a specific commit, branch diff, or custom instructions without leaving the session | `/review` | `0.39.0` | Sep 2025 |
-| [Reasoning Effort Control](https://developers.openai.com/codex/cli/slash-commands) | Adjusts the model's reasoning effort level at runtime using a picker to trade off speed vs. depth mid-session | `/model` slash command | `0.23.0` | Aug 2025 |
 | [Local Image Viewing (`view_image`)](https://developers.openai.com/codex/cli/features) | Lets Codex agentically inspect local image files and incorporate their visual content into reasoning and responses | Automatic tool | `0.26.0` | Aug 2025 |
 | [Image Input (Paste & Drag-Drop)](https://developers.openai.com/codex/cli/features) | Attaches images to prompts by pasting from the clipboard or dragging image files onto the terminal | Paste / drag-drop | `0.24.0` | Aug 2025 |
+| Long-Running Shell Commands | Maintains persistent shell processes with interactive stdin and streaming stdout via dedicated `exec_command` and `write_stdin` tools | Automatic tool | `0.24.0` | Aug 2025 |
 | [Web Search](https://developers.openai.com/codex/cli/features) | Queries the web in real time during a session to access up-to-date information beyond the model's training data | `--search` flag | `0.24.0` | Aug 2025 |
+| [Reasoning Effort Control](https://developers.openai.com/codex/cli/slash-commands) | Adjusts the model's reasoning effort level at runtime using a picker to trade off speed vs. depth mid-session | `/model` slash command | `0.23.0` | Aug 2025 |
 | [Open-Weight Model Support](https://developers.openai.com/codex/models) | Enables use of open-weight OSS models from OpenAI (e.g., gpt-oss) as the active model in the CLI | `--oss` flag | `0.13.0` | Aug 2025 |
 
-## Extensibility & Control
+## Built-in Workflows
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
-| [Permission Profiles](https://developers.openai.com/codex/permissions) | Defines named permission configurations that persist across TUI sessions, MCP operations, and shell escalation flows | `--profile <name>` | `0.124.0` | Apr 2026 |
+| [/review Command](https://developers.openai.com/codex/cli/slash-commands) | Performs built-in code review against a specific commit, branch diff, or custom instructions without leaving the session | `/review` | `0.39.0` | Sep 2025 |
+
+## Extensibility
+
+| Title | Description | Invocation | Version | Date |
+|-------|-------------|------------|---------|------|
 | [MCP Apps (Resources & File Uploads)](https://developers.openai.com/codex/mcp) | Extends MCP servers to expose resources, accept file uploads, and return rich tool-call metadata to Codex | MCP server config | `0.119.0` | Apr 2026 |
-| [Plugin System](https://developers.openai.com/codex/plugins) | Installs and manages plugins for skills, MCP servers, and app connectors from marketplace or local sources with authentication and version controls | `/plugins` | `0.110.0` | Mar 2026 |
 | [Lifecycle Hooks Engine](https://developers.openai.com/codex/hooks) | Executes custom shell commands on `SessionStart`, `Stop`, and `userpromptsubmit` events for pre-execution prompt filtering and automation | `hooks` in `config.toml` | `0.114.0` | Mar 2026 |
-| Enterprise MDM Config | Deploys Codex configuration to macOS fleets via MDM TOML payload, merged with repo and global config layers | macOS MDM profile | `0.78.0` | Jan 2026 |
-| [`requirements.toml` Managed Settings](https://developers.openai.com/codex/agent-approvals-security) | Constrains permitted sandbox modes, network access, and security policies for managed or enterprise deployments | `/etc/codex/requirements.toml` | `0.76.0` | Dec 2025 |
-| [ExecPolicy Command Whitelisting](https://developers.openai.com/codex/cli/reference) | Whitelists command prefixes in the TUI approval flow so subsequent similar commands run without re-prompting | TUI approval UI | `0.66.0` | Dec 2025 |
+| [Plugin System](https://developers.openai.com/codex/plugins) | Installs and manages plugins for skills, MCP servers, and app connectors from marketplace or local sources with authentication and version controls | `/plugins` | `0.110.0` | Mar 2026 |
 | [Skills Support](https://developers.openai.com/codex/skills) | Injects reusable skill files from `~/.codex/prompts` or `.agents/skills` into sessions to guide agent behavior with named invocations | `$skill-name` / `/skills` | `0.65.0` | Dec 2025 |
-| [MCP Streamable HTTP & OAuth](https://developers.openai.com/codex/mcp) | Connects to MCP servers over streamable HTTP with optional OAuth login, bearer tokens, and per-server environment targeting | `codex mcp add <url>` | `0.46.0` | Oct 2025 |
 | [`!<cmd>` Direct Shell Execution](https://developers.openai.com/codex/cli/features) | Executes shell commands directly from the TUI prompt, bypassing the model's planning step | `!<command>` in TUI | `0.52.0` | Oct 2025 |
-| [`--add-dir` Writable Roots](https://developers.openai.com/codex/cli/features) | Specifies additional working directories writable by Codex subprocesses beyond the default project root | `--add-dir <path>` | `0.48.0` | Oct 2025 |
-| [/approvals Runtime Control](https://developers.openai.com/codex/agent-approvals-security) | Adjusts which command categories require explicit approval during a session without restarting | `/approvals` | `0.23.0` | Aug 2025 |
-| [AGENTS.md Project Config](https://developers.openai.com/codex/guides/agents-md) | Reads `AGENTS.md` files from the project directory up to the git root for per-project agent instructions | `AGENTS.md` file | `0.24.0` | Aug 2025 |
+| [MCP Streamable HTTP & OAuth](https://developers.openai.com/codex/mcp) | Connects to MCP servers over streamable HTTP with optional OAuth login, bearer tokens, and per-server environment targeting | `codex mcp add <url>` | `0.46.0` | Oct 2025 |
 | Custom Prompt Files | Loads reusable named prompts with positional and named arguments from `~/.codex/prompts` for repeatable workflows | `$prompt-name` / `/prompts` | `0.26.0` | Aug 2025 |
-| [`--ask-for-approval on-request`](https://developers.openai.com/codex/agent-approvals-security) | Adds a balanced approval mode where the model itself decides whether a given command needs user confirmation | `--ask-for-approval on-request` | `0.16.0` | Aug 2025 |
 | [MCP Client](https://developers.openai.com/codex/mcp) | Connects to external MCP servers to extend Codex with tools, resources, and capabilities from third-party services | `codex mcp` / `config.toml` | `0.9.0` | Jul 2025 |
-| [Sandbox Configuration](https://developers.openai.com/codex/concepts/sandboxing) | Controls filesystem and network access sandboxing for all subprocess execution within a session | `--sandbox <mode>` | `0.3.0` | Jul 2025 |
 
 ## Platforms & Environments
 
@@ -72,15 +69,28 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 | Realtime Voice Sessions | Enables full WebRTC audio sessions with the model including voice selection and transcript output | Realtime config | `0.119.0` | Apr 2026 |
 | [App-Server Filesystem RPCs](https://developers.openai.com/codex/app-server) | Exposes file read, write, copy, directory operations, and path watching via the v2 app-server API for IDE-style integrations | App-server v2 API | `0.115.0` | Mar 2026 |
 | [App-Server WebSocket Transport](https://developers.openai.com/codex/app-server) | Provides bidirectional WebSocket connectivity for the app-server protocol enabling persistent IDE and tooling integrations | App-server WebSocket endpoint | `0.100.0` | Feb 2026 |
-| [Linux Sandbox](https://developers.openai.com/codex/concepts/sandboxing) | Isolates subprocess filesystem access on Linux using bubblewrap/Landlock with configurable read-only mount paths | Automatic on Linux | `0.81.0` | Jan 2026 |
 | [Ctrl+G External Editor](https://developers.openai.com/codex/cli/features) | Opens the current TUI prompt in `$VISUAL`/`$EDITOR`, allows free-form editing, and syncs changes back on save | `Ctrl+G` | `0.78.0` | Jan 2026 |
 | macOS DMG Distribution | Packages Codex as a macOS `.dmg` app bundle for direct installation outside of npm or Homebrew | GitHub Releases (macOS DMG) | `0.76.0` | Dec 2025 |
-| [Windows Sandbox](https://developers.openai.com/codex/windows) | Restricts filesystem and network access for agent mode on native Windows, matching parity with macOS sandboxing | Automatic on Windows | `0.59.0` | Nov 2025 |
 | [`codex exec-server`](https://developers.openai.com/codex/app-server) | Exposes a headless HTTP/WebSocket execution API for running Codex tasks from external tooling and CI pipelines | `codex exec-server` | `0.59.0` | Nov 2025 |
 | [`codex cloud exec`](https://developers.openai.com/codex/cloud) | Runs tasks in cloud-hosted environments with remote branch support and diff/apply workflows | `codex cloud exec` | `0.44.0` | Oct 2025 |
 | [TypeScript SDK (`@openai/codex-sdk`)](https://developers.openai.com/codex/sdk) | Provides a programmatic TypeScript API for embedding Codex in applications with image support, working directory, and AbortSignal | `npm install @openai/codex-sdk` | `0.42.0` | Sep 2025 |
 | [`codex exec --output-schema`](https://developers.openai.com/codex/noninteractive) | Enforces a JSON Schema on `codex exec` output for structured pipeline automation and machine-readable results | `codex exec --output-schema <file>` | `0.41.0` | Sep 2025 |
 | Android / Termux Support | Runs Codex CLI natively on Android devices via the Termux terminal environment | `npm install @openai/codex` on Termux | `0.29.0` | Sep 2025 |
+
+## Security & Governance
+
+| Title | Description | Invocation | Version | Date |
+|-------|-------------|------------|---------|------|
+| [Permission Profiles](https://developers.openai.com/codex/permissions) | Defines named permission configurations that persist across TUI sessions, MCP operations, and shell escalation flows | `--profile <name>` | `0.124.0` | Apr 2026 |
+| [Linux Sandbox](https://developers.openai.com/codex/concepts/sandboxing) | Isolates subprocess filesystem access on Linux using bubblewrap/Landlock with configurable read-only mount paths | Automatic on Linux | `0.81.0` | Jan 2026 |
+| Enterprise MDM Config | Deploys Codex configuration to macOS fleets via MDM TOML payload, merged with repo and global config layers | macOS MDM profile | `0.78.0` | Jan 2026 |
+| [`requirements.toml` Managed Settings](https://developers.openai.com/codex/agent-approvals-security) | Constrains permitted sandbox modes, network access, and security policies for managed or enterprise deployments | `/etc/codex/requirements.toml` | `0.76.0` | Dec 2025 |
+| [ExecPolicy Command Whitelisting](https://developers.openai.com/codex/cli/reference) | Whitelists command prefixes in the TUI approval flow so subsequent similar commands run without re-prompting | TUI approval UI | `0.66.0` | Dec 2025 |
+| [Windows Sandbox](https://developers.openai.com/codex/windows) | Restricts filesystem and network access for agent mode on native Windows, matching parity with macOS sandboxing | Automatic on Windows | `0.59.0` | Nov 2025 |
+| [`--add-dir` Writable Roots](https://developers.openai.com/codex/cli/features) | Specifies additional working directories writable by Codex subprocesses beyond the default project root | `--add-dir <path>` | `0.48.0` | Oct 2025 |
+| [/approvals Runtime Control](https://developers.openai.com/codex/agent-approvals-security) | Adjusts which command categories require explicit approval during a session without restarting | `/approvals` | `0.23.0` | Aug 2025 |
+| [`--ask-for-approval on-request`](https://developers.openai.com/codex/agent-approvals-security) | Adds a balanced approval mode where the model itself decides whether a given command needs user confirmation | `--ask-for-approval on-request` | `0.16.0` | Aug 2025 |
+| [Sandbox Configuration](https://developers.openai.com/codex/concepts/sandboxing) | Controls filesystem and network access sandboxing for all subprocess execution within a session | `--sandbox <mode>` | `0.3.0` | Jul 2025 |
 
 ## Other Improvements
 

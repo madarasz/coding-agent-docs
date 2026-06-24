@@ -11,8 +11,21 @@ Tracks the evolving capabilities of the **most popular** coding agents. Only sig
 | [GitHub Copilot](docs/copilot-features.md) | 2026.06.01 |
 | Cursor | TODO |
 | Gemini CLI | TODO |
-| Windsurf | TODO |
 | OpenCode | TODO |
+
+## Categories
+
+Each feature doc uses these seven categories, in this order:
+
+| Category | What it covers |
+|----------|----------------|
+| **Agentic & Multi-Agent** | Background agents, parallel task execution, multi-agent coordination, worktree isolation, autonomous goals |
+| **Context & Memory** | Persistent memory, project instruction files, session resume/recap, named sessions, auto-compaction |
+| **Model & Input** | Multimodal input (image, PDF, voice), web search, thinking/reasoning modes, speed knobs, model selection |
+| **Built-in Workflows** | Code review, autofix, app modernization, plan mode, commit-message generation, next-edit suggestions |
+| **Extensibility** | Hooks, plugins, MCP, custom agents, skills, slash-command authoring, SDK primitives |
+| **Platforms & Environments** | Desktop/mobile apps, IDE integrations, cloud providers, OS support, remote control, CLI modes |
+| **Security & Governance** | Sandboxing, permission modes, enterprise/managed settings, BYOK, data residency, content exclusion |
 
 ## Comparison
 

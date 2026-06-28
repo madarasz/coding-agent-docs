@@ -145,7 +145,6 @@ Significant user-facing features added to Claude Code since its public availabil
 
 Notable changes that fell below the threshold for the main tables:
 
-- Claude Fable 5 / Mythos 5 model release (`2.1.170`) - *Model releases (Fable 5, Mythos 5) — tracked separately*
 - `claude mcp login/logout <name>` CLI commands (`2.1.186`) - *convenience wrapper*
 - `respondToBashCommands: false` Setting (`2.1.186`) - *config knob*
 - `attribution.sessionUrl` Setting (`2.1.183`) - *config knob*
@@ -161,17 +160,18 @@ Notable changes that fell below the threshold for the main tables:
 - VSCode: Usage attribution breakdown in `/usage` (`2.1.174`) - *incremental improvement*
 - Marketplace plugin search bar in `/plugin` (`2.1.172`) - *UI polish*
 - Bedrock reads AWS region from `~/.aws` config files (`2.1.172`) - *incremental improvement*
+- Claude Fable 5 / Mythos 5 model release (`2.1.170`) - *Model releases (Fable 5, Mythos 5) — tracked separately*
+- `disableBundledSkills` Setting (`2.1.169`) - *config knob*
+- glob pattern support in deny rule tool-name position (`2.1.166`) - *incremental improvement*
 - `/plugin list` Command (`2.1.163`) - *convenience wrapper*
 - Skills `\$` escape syntax for literal `$` before digits (`2.1.163`) - *incremental improvement*
+- Renamed Windsurf to Devin Desktop in IDE menus (`2.1.162`) - *incremental improvement*
 - Remote Control footer pill indicator (`2.1.162`) - *UI polish*
 - `claude agents --json` `waitingFor` field (`2.1.162`) - *format/scripting flag*
 - `/effort` persists-as-default confirmation (`2.1.162`) - *UI polish*
 - `OTEL_RESOURCE_ATTRIBUTES` labels on metric datapoints (`2.1.161`) - *incremental improvement*
 - `claude agents` rows show done/total progress before detail (`2.1.161`) - *UI polish*
 - Edit after grep no longer requires separate Read (`2.1.160`) - *incremental improvement*
-- Renamed Windsurf to Devin Desktop in IDE menus (`2.1.162`) - *incremental improvement*
-- `disableBundledSkills` Setting (`2.1.169`) - *config knob*
-- glob pattern support in deny rule tool-name position (`2.1.166`) - *incremental improvement*
 - `claude plugin init` Scaffolding (`2.1.157`) - *convenience tooling for plugin authors, not a new workflow capability*
 - `/reload-skills` Command (`2.1.152`) - *DX convenience for skill/plugin development*
 - Vim NORMAL Mode History Search with `/` (`2.1.152`) - *incremental improvement to existing vim mode*

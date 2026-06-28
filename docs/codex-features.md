@@ -1,4 +1,4 @@
-# OpenAI Codex Features (Apr 2025 – May 2026)
+# OpenAI Codex Features (Apr 2025 – Jun 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
 **Last updated:** Jun 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
@@ -7,6 +7,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| Multi-Agent Delegation Mode Controls | Lets app-server clients configure multi-agent delegation as disabled, explicit-request-only, or proactive at the thread and turn level | App-server API / `agents` config | `0.142.0` | Jun 2026 |
 | [Goals Workflow](https://developers.openai.com/codex/use-cases/follow-goals) | Tracks persistent goals with dedicated storage and progress across turns; supports create, pause, resume, and clear; enabled by default from v0.133.0 | `/goal` | `0.128.0` | Apr 2026 |
 | [/side Conversations](https://developers.openai.com/codex/cli/slash-commands) | Opens a quick-question side conversation without interrupting or losing context from the active session thread | `/side` | `0.122.0` | Apr 2026 |
 | [Thread Forking](https://developers.openai.com/codex/subagents) | Branches an active conversation into a new sub-agent thread while keeping the parent session intact | App-server API | `0.107.0` | Mar 2026 |
@@ -17,6 +18,9 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Session Delete](https://developers.openai.com/codex/cli/slash-commands) | Permanently removes the current session transcript and all descendant sub-agent threads with confirmation safeguards | `codex delete` / `/delete` / `thread/delete` | `0.140.0` | Jun 2026 |
+| [Unified @ Mentions Menu](https://developers.openai.com/codex/cli/features) | Opens a single fuzzy-search picker for files, directories, plugins, and skills when `@` is typed in the composer | `@` in TUI composer | `0.140.0` | Jun 2026 |
+| [Session Archive](https://developers.openai.com/codex/cli/slash-commands) | Archives the current session to protect it from resume or fork until explicitly restored; reversible via unarchive | `/archive` / `codex archive` / `codex unarchive` | `0.136.0` | Jun 2026 |
 | [Conversation History Search](https://developers.openai.com/codex/cli/features) | Searches all local sessions with case-insensitive content matching and result previews | Session resume picker | `0.134.0` | May 2026 |
 | [Cross-Session Memory](https://developers.openai.com/codex/memories) | Stores persistent thread summaries as memory across sessions with TUI commands to view, update, and delete entries | `/m_update`, `/m_drop` | `0.97.0` | Feb 2026 |
 | [Project-Aware Config Layering](https://developers.openai.com/codex/config-basic) | Loads repo-local `.codex/config.toml` and merges it with user and system configs for per-project settings | `.codex/config.toml` | `0.78.0` | Jan 2026 |
@@ -29,6 +33,8 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Indexed Web-Search Mode](https://developers.openai.com/codex/cli/features) | Adds a web-search mode that permits live searches while restricting direct page access to server-approved URLs only | `web_search = "indexed"` in config | `0.142.0` | Jun 2026 |
+| Scheduled Time Reminders | Lets Codex receive scheduled UTC time reminders and query the current time directly, including via client-provided app-server clocks | App-server clock config | `0.142.0` | Jun 2026 |
 | [Voice Input Transcription](https://developers.openai.com/codex/cli/features) | Dictates prompts via microphone by holding spacebar; speech is transcribed and sent directly to the model | Hold spacebar in TUI | `0.105.0` | Feb 2026 |
 | JavaScript REPL | Provides a persistent JavaScript runtime with state surviving across turns and support for local module imports | `js_repl` in `config.toml` | `0.100.0` | Feb 2026 |
 | Steer Mode (Mid-Turn Interrupt) | Interrupts a running model turn with `Ctrl+C` to redirect or refine the current task before the model completes it | `Ctrl+C` during turn | `0.98.0` | Feb 2026 |
@@ -43,12 +49,16 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [/usage Token Activity Views](https://developers.openai.com/codex/cli/slash-commands) | Shows daily, weekly, and cumulative account token activity and allows redeeming earned usage-limit reset credits | `/usage` | `0.140.0` | Jun 2026 |
+| [/import External Agent Import](https://developers.openai.com/codex/cli/slash-commands) | Selectively imports setup, project configuration, and recent chats from Claude Code into the current Codex environment | `/import` | `0.140.0` | Jun 2026 |
 | [/review Command](https://developers.openai.com/codex/cli/slash-commands) | Performs built-in code review against a specific commit, branch diff, or custom instructions without leaving the session | `/review` | `0.39.0` | Sep 2025 |
 
 ## Extensibility
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| Plugin Catalog Sections & Turn Recommendations | Organizes remote plugins into OpenAI Curated, Workspace, and Shared sections; eligible turns can recommend and install relevant plugins automatically | `/plugins` | `0.142.0` | Jun 2026 |
+| Executor Plugin MCP Activation | Activates stdio MCP servers from selected executor plugins on a per-thread basis; plugin discovery adds a created-by-me marketplace and auth-specific curated catalogs | Plugin config / `/plugins` | `0.141.0` | Jun 2026 |
 | [MCP Apps (Resources & File Uploads)](https://developers.openai.com/codex/mcp) | Extends MCP servers to expose resources, accept file uploads, and return rich tool-call metadata to Codex | MCP server config | `0.119.0` | Apr 2026 |
 | [Lifecycle Hooks Engine](https://developers.openai.com/codex/hooks) | Executes custom shell commands on `SessionStart`, `Stop`, and `userpromptsubmit` events for pre-execution prompt filtering and automation | `hooks` in `config.toml` | `0.114.0` | Mar 2026 |
 | [Plugin System](https://developers.openai.com/codex/plugins) | Installs and manages plugins for skills, MCP servers, and app connectors from marketplace or local sources with authentication and version controls | `/plugins` | `0.110.0` | Mar 2026 |
@@ -62,6 +72,9 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [/app Desktop Handoff](https://developers.openai.com/codex/cli/slash-commands) | Hands off the current CLI thread into Codex Desktop on macOS and native Windows, opening directly into the Desktop app | `/app` | `0.138.0` | Jun 2026 |
+| Remote-Control Pairing Management | Lets remote-control clients start pairing and list or revoke controller grants through app-server v2 RPCs | App-server v2 API | `0.137.0` | Jun 2026 |
+| [/status Remote Connection Details](https://developers.openai.com/codex/remote-connections) | Shows remote connection details and server version when the TUI is connected over a remote transport | `/status` | `0.135.0` | May 2026 |
 | [`codex doctor`](https://developers.openai.com/codex/cli/reference) | Runs comprehensive diagnostics covering runtime, auth, terminal, Git, network, and configuration for support troubleshooting | `codex doctor` | `0.131.0` | May 2026 |
 | [Python SDK (`openai-codex`)](https://developers.openai.com/codex/sdk) | Official Python package with first-class authentication (API key, ChatGPT, device-code), concurrent turn routing, and sandbox presets | `pip install openai-codex` | `0.131.0` | May 2026 |
 | [`codex remote-control`](https://developers.openai.com/codex/remote-connections) | Exposes a running Codex session to external interfaces and devices, adding a remote interaction surface via the local app-server | `codex remote-control` | `0.130.0` | May 2026 |
@@ -81,6 +94,11 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| Rollout Token Budgets | Configures token budgets that track usage across agent threads, provide remaining-budget reminders, and abort turns when exhausted | `token_budget` in config | `0.142.0` | Jun 2026 |
+| Noise Relay Encrypted Remote Execution | Uses authenticated, end-to-end encrypted Noise relay channels for all remote executor connections | Automatic for remote executors | `0.141.0` | Jun 2026 |
+| Managed Bedrock Auth & Encrypted Credential Storage | Adds managed Amazon Bedrock API-key authentication and encrypted local storage for CLI and MCP OAuth credentials | `bedrock` auth config | `0.140.0` | Jun 2026 |
+| Enterprise Credit Limits & Cloud-Managed Config Bundles | Lets enterprise and EDU admins view monthly credit limits and apply cloud-managed configuration bundles to managed workspaces | Admin console / `requirements.toml` | `0.137.0` | Jun 2026 |
+| [Windows Admin Sandbox Setup](https://developers.openai.com/codex/windows) | Provides `codex sandbox setup --elevated` for admin-provisioned Windows sandbox with dedicated low-privilege users, filesystem boundaries, and firewall rules | `codex sandbox setup --elevated` | `0.136.0` | Jun 2026 |
 | [Permission Profiles](https://developers.openai.com/codex/permissions) | Defines named permission configurations that persist across TUI sessions, MCP operations, and shell escalation flows | `--profile <name>` | `0.124.0` | Apr 2026 |
 | [Linux Sandbox](https://developers.openai.com/codex/concepts/sandboxing) | Isolates subprocess filesystem access on Linux using bubblewrap/Landlock with configurable read-only mount paths | Automatic on Linux | `0.81.0` | Jan 2026 |
 | Enterprise MDM Config | Deploys Codex configuration to macOS fleets via MDM TOML payload, merged with repo and global config layers | macOS MDM profile | `0.78.0` | Jan 2026 |
@@ -96,6 +114,31 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 Notable changes that fell below the threshold for the main tables:
 
+- `/usage` credit redemption UI (`0.142.0`) - *incremental improvement*
+- TUI input prompt auto-resolution timer (`0.141.0`) - *UI polish*
+- Realtime speech append and startup context controls (`0.141.0`) - *incremental improvement*
+- Cross-platform remote execution native cwd/shell preservation (`0.141.0`) - *incremental improvement*
+- App-server child thread listing and agent import correlation (`0.141.0`) - *incremental improvement*
+- Plugin automation `--json` flags for add/remove/marketplace commands (`0.138.0`) - *format/scripting flag*
+- `/app` reasoning effort TUI fallback shortcuts (`0.138.0`) - *incremental improvement*
+- Local image attachments expose file paths to model (`0.138.0`) - *incremental improvement*
+- App-server account token usage read and v2 personal access tokens (`0.138.0`) - *incremental improvement*
+- `codex doctor` editor/pager environment details (`0.139.0`) - *incremental improvement*
+- Plugin marketplace `--json` with source field (`0.139.0`) - *format/scripting flag*
+- Code mode standalone web search from JS tool calls (`0.139.0`) - *incremental improvement*
+- `/goal` oversized text and image attachment preservation (`0.140.0`) - *incremental improvement*
+- App-server MCP stdio mode (`codex app-server --stdio`) (`0.136.0`) - *convenience wrapper*
+- Remote execution `CODEX_API_KEY` registration for approved hosts (`0.136.0`) - *security infrastructure*
+- Standalone image generation extension (`0.136.0`) - *preview, feature-gated*
+- F13-F24 keybindings and paste in TUI menus (`0.137.0`) - *power-user UX*
+- Enterprise parallel web search in code mode (`0.137.0`) - *incremental improvement*
+- Multi-agent v2 runtime thread controls and spawn defaults (`0.137.0`) - *incremental improvement*
+- `codex plugin list --json` (`0.137.0`) - *format/scripting flag*
+- `codex doctor` richer environment and thread diagnostics (`0.135.0`) - *incremental improvement*
+- `/permissions` named profile display (`0.135.0`) - *incremental improvement*
+- Vim mode text-object editing and interrupt binding (`0.135.0`) - *power-user UX*
+- Python SDK `Sandbox` presets (`0.135.0`) - *convenience wrapper*
+- `CODEX_NON_INTERACTIVE=1` install mode (`0.135.0`) - *config knob*
 - Vim mode in TUI composer (`0.129.0`) - *power-user UX preference, not a new capability*
 - `codex update` command (`0.128.0`) - *convenience wrapper for updating via the package manager*
 - winget publishing (`0.113.0`) - *distribution channel expansion with no feature change*

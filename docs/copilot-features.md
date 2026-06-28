@@ -1,4 +1,4 @@
-# GitHub Copilot Features (Aug 2024 – May 2026)
+# GitHub Copilot Features (Aug 2024 – Jun 2026)
 
 Significant user-facing features added to GitHub Copilot since its public availability.
 **Last updated:** Jun 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
@@ -7,7 +7,12 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
-| [GitHub Agentic Workflows](https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview) (technical preview) | New framework enabling Copilot to execute multi-step automated development workflows autonomously | Technical preview enrollment | N/A | Feb 2026 |
+| [Agent finder for GitHub Copilot](https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available) | Automatically discovers and ranks the most relevant AI tools and skills for a given task from available catalogs, loading them on demand | Copilot Chat / agent sessions | N/A | Jun 2026 |
+| [Prompt scheduling in Copilot CLI](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input) | `/every` and `/after` slash commands schedule prompts to run repeatedly or after a delay within the current CLI session | `/every <interval> <prompt>` / `/after <delay> <prompt>` | N/A | Jun 2026 |
+| [Schedule and automate tasks with Copilot cloud agent](https://github.blog/changelog/2026-06-02-schedule-and-automate-tasks-with-copilot-cloud-agent) | Cloud agent can run automatically on a schedule or in response to repository events, automating tasks like issue triage, test fixes, and release note generation | Agent automation settings on github.com | N/A | Jun 2026 |
+| [/chronicle session insights](https://github.blog/changelog/2026-06-02-gain-insights-across-your-agent-sessions-with-chronicle) | Synthesizes agent session history into standup summaries, personalized tips, and custom instructions across GitHub, VS Code, JetBrains, and other surfaces | `/chronicle` in Copilot CLI | N/A | Jun 2026 |
+| [Copilot Chat agent session queries](https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions) | Copilot Chat can search and query past cloud agent sessions and logs, enabling contextual follow-up questions and seamless session handoffs | Copilot Chat on github.com | N/A | Jun 2026 |
+| [GitHub Agentic Workflows](https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview) (public preview Jun 2026) | Framework enabling Copilot to execute reasoning-based automated tasks like issue triage and CI failure analysis inside GitHub Actions using natural-language Markdown definitions; first shipped as technical preview Feb 2026, public preview Jun 2026 | Agentic workflow YAML / Markdown definitions | N/A | Feb 2026 |
 | [Agents tab in repository](https://github.blog/changelog/2026-01-26-introducing-the-agents-tab-in-your-repository) | New dedicated repository section for managing and monitoring all Copilot coding agent activity | Repository navigation bar | N/A | Jan 2026 |
 | [Isolated Subagents for JetBrains, Eclipse, and Xcode](https://github.blog/changelog/2025-11-18-isolated-subagents-for-jetbrains-eclipse-and-xcode-now-in-public-preview) (public preview) | Compartmentalized sub-agent operations run in isolated contexts enabling safer parallel execution | IDE agent settings | N/A | Nov 2025 |
 | [Mission control for coding agent](https://github.blog/changelog/2025-10-28-a-mission-control-to-assign-steer-and-track-copilot-coding-agent-tasks) | Unified dashboard on GitHub for assigning, steering, and tracking all active coding agent tasks | github.com/agents | N/A | Oct 2025 |
@@ -20,7 +25,7 @@ Significant user-facing features added to GitHub Copilot since its public availa
 |-------|-------------|------------|---------|------|
 | [Semantic issue search in Copilot Chat](https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat) | Copilot Chat searches GitHub issues using natural language and surfaces contextually relevant results | Copilot Chat on github.com | N/A | May 2026 |
 | [Agentic memory](https://github.blog/changelog/2026-01-15-agentic-memory-for-github-copilot-is-in-public-preview) (public preview) | Coding agent retains context and information persistently across separate sessions | Automatic when memory is enabled | N/A | Jan 2026 |
-| [Copilot Memory](https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro) | Copilot learns and persists user preferences and working context across chat sessions; on by default for Pro+ (Mar 2026), with deletion/scope controls and Copilot CLI support (May 2026) | Settings → Copilot → Memory | N/A | Dec 2025 |
+| [Copilot Memory](https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro) | Copilot learns and persists user preferences and working context across chat sessions; on by default for Pro+ (Mar 2026), extended to Business and Enterprise (Jun 2026), with deletion/scope controls and Copilot CLI support | Settings → Copilot → Memory | N/A | Dec 2025 |
 | [AGENTS.md support](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions) | Coding agent reads per-repo `AGENTS.md` to apply custom behavior directives and tool configurations | `AGENTS.md` file in repository root | N/A | Aug 2025 |
 | [copilot-instructions.md](https://github.blog/changelog/2025-08-06-copilot-code-review-copilot-instruction-md-support-is-now-generally-available) (GA) | Per-repository instruction file that shapes all Copilot responses and behavior for that codebase | `.github/copilot-instructions.md` | N/A | Aug 2025 |
 | [Copilot Spaces](https://github.blog/changelog/2025-09-24-copilot-spaces-is-now-generally-available) (GA Sep 2025) | Persistent collaborative workspaces that bundle repositories, files, and conversation context for ongoing projects; extended to issues and PRs (Jun 2025), GA Sep 2025 | github.com/spaces | N/A | May 2025 |
@@ -33,6 +38,8 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Larger context windows and configurable reasoning levels](https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot) | One-million-token context window and adjustable reasoning depth let developers balance analytical depth against speed for complex tasks | Model/reasoning settings in VS Code, Copilot CLI, Copilot app | N/A | Jun 2026 |
+| [Voice input in Copilot CLI](https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input) | Hands-free voice dictation lets users hold the space bar to record prompts with local processing, adding a new input modality to Copilot CLI | Hold space bar in Copilot CLI | N/A | Jun 2026 |
 | [Copilot CLI BYOK and local model support](https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models) | Copilot CLI accepts a user-supplied API key and routes requests to locally hosted models | `copilot --byok` / local model config | N/A | Apr 2026 |
 | [Image support in agent sessions](https://github.blog/changelog/2026-03-05-add-images-to-agent-sessions) | Coding agent accepts screenshots and diagram images as context within task instructions | Image attachment in agent session | N/A | Mar 2026 |
 | [Auto model selection](https://github.blog/changelog/2025-12-10-auto-model-selection-is-generally-available-in-github-copilot-in-visual-studio-code) (GA in VS Code) | Copilot automatically selects the optimal AI model for each task without requiring user configuration | Automatic in VS Code (enabled by default) | N/A | Dec 2025 |
@@ -46,6 +53,9 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Dedicated security review command in Copilot CLI](https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli) | Analyzes local code changes for high-confidence security vulnerabilities across 11 categories before committing, without requiring separate code scanning tools | `/security-review` in Copilot CLI | N/A | Jun 2026 |
+| [Plan agent in Visual Studio](https://github.blog/changelog/2026-06-04-github-copilot-in-visual-studio-may-update) | Copilot collaborates on an implementation plan in Visual Studio before writing any code, allowing users to review and refine the approach upfront | Visual Studio → Copilot → Plan agent | N/A | Jun 2026 |
+| [Copilot code review for Azure Repos](https://github.blog/changelog/2026-06-02-github-copilot-code-review-for-azure-repos-is-now-in-technical-preview) (technical preview) | AI-powered pull request review with inline code comments now available within Azure DevOps workflows | Azure Repos PR → Request Copilot review | N/A | Jun 2026 |
 | [One-click fixes for failing Actions with Copilot cloud agent](https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent) | Cloud agent diagnoses and proposes code fixes for failing GitHub Actions workflow runs | Actions UI / Copilot cloud agent | N/A | May 2026 |
 | [Plan mode in JetBrains, Eclipse, and Xcode](https://github.blog/changelog/2025-11-18-plan-mode-in-github-copilot-now-in-public-preview-in-jetbrains-eclipse-and-xcode) (public preview) | Copilot presents and awaits approval of its implementation plan before writing any code | IDE agent panel / plan mode toggle | N/A | Nov 2025 |
 | [Copilot app modernization for Java and .NET](https://github.blog/changelog/2025-09-23-github-copilot-app-modernization-is-now-generally-available-for-java-and-net) (GA) | Copilot analyzes and autonomously modernizes legacy Java and .NET codebases through agentic refactoring workflows | Copilot modernization panel | N/A | Sep 2025 |
@@ -59,6 +69,7 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Agent Apps](https://github.blog/changelog/2026-06-02-extend-github-with-agent-apps) | Third-party AI agents from partners can be installed as standard GitHub Apps and assigned to issues, mentioned in PRs, or invoked through the Agents UI | github.com Agents UI / issue assignment | N/A | Jun 2026 |
 | [Agent Skills](https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills) | Package and reuse custom agent capabilities as shareable skill modules attachable to any Copilot agent | Agent skill configuration / settings UI | N/A | Dec 2025 |
 | [Custom agents for GitHub Copilot](https://github.blog/changelog/2025-10-28-custom-agents-for-github-copilot) | Define specialized Copilot agent variants with custom tools, instructions, and behavior profiles | Agent configuration UI on github.com | N/A | Oct 2025 |
 | [GitHub MCP Registry](https://github.blog/changelog/2025-09-16-github-mcp-registry-the-fastest-way-to-discover-ai-tools) | Centralized discovery directory for MCP servers enabling one-click installation of community-built tools | github.com/mcp | N/A | Sep 2025 |
@@ -72,12 +83,14 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
-| [Remote control for Copilot CLI sessions](https://github.blog/changelog/2026-05-18-remote-control-for-copilot-cli-sessions-now-generally-available-on-mobile-web-and-vs-code) (GA) | Control active Copilot CLI sessions from GitHub Mobile, github.com, and VS Code instead of the originating terminal | GitHub Mobile / github.com / VS Code | N/A | May 2026 |
-| [GitHub Copilot app](https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview) (technical preview) | Standalone Copilot desktop application independent of any IDE or browser for AI-assisted development | Technical preview download | N/A | May 2026 |
+| [Copilot CLI in JetBrains IDEs](https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides) | Copilot CLI integrated into JetBrains IDEs with an agent picker, `/remote`, `/chronicle`, and Cloud Coding Agent access from a unified sessions view | JetBrains Copilot plugin → CLI tab | N/A | Jun 2026 |
+| [VS Code Agents window](https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases) | Multi-project agent-first workflow hub in VS Code with remote session support and cross-repo task management | VS Code → Copilot → Agents | N/A | Jun 2026 |
+| [GitHub Copilot app](https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available) (GA Jun 2026) | Standalone Copilot desktop application for agent-driven development with parallel sessions, scheduled automations, MCP server support, and collaborative canvases; technical preview May 2026, GA Jun 2026 | Technical preview download → GA | N/A | May 2026 |
 | [GitHub Copilot for Eclipse open source](https://github.blog/changelog/2026-05-21-github-copilot-for-eclipse-is-open-source) | Eclipse IDE Copilot plugin released as open-source software enabling community contributions and forks | Eclipse Marketplace / GitHub repo | N/A | May 2026 |
 | [Start Copilot cloud agent via REST API](https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api) | Programmatic task initiation for cloud agent via the GitHub REST API | `POST /repos/{owner}/{repo}/copilot/tasks` | N/A | May 2026 |
+| [Remote control for Copilot CLI sessions](https://github.blog/changelog/2026-05-18-remote-control-for-copilot-cli-sessions-now-generally-available-on-mobile-web-and-vs-code) (GA) | Control active Copilot CLI sessions from GitHub Mobile, github.com, and VS Code instead of the originating terminal | GitHub Mobile / github.com / VS Code | N/A | May 2026 |
 | [View and manage agent sessions from issues and projects](https://github.blog/changelog/2026-04-23-view-and-manage-agent-sessions-from-issues-and-projects) | Agent session activity is surfaced and controllable directly within GitHub issues and project boards | Issues/Projects sidebar | N/A | Apr 2026 |
-| [Copilot SDK](https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview) (public preview) | Developer SDK for building integrations and tools that extend and automate Copilot capabilities | `npm install @github/copilot-sdk` | N/A | Apr 2026 |
+| [Copilot SDK](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available) (GA Jun 2026) | Developer SDK for building integrations and tools that extend and automate Copilot capabilities; six languages including Rust and Java, stable API surface; public preview Apr 2026, GA Jun 2026 | `npm install @github/copilot-sdk` | N/A | Apr 2026 |
 | [Copilot coding agent for Jira](https://github.blog/changelog/2026-03-05-github-copilot-coding-agent-for-jira-is-now-in-public-preview) (public preview) | Coding agent receives and implements Jira work items and delivers completed code changes to GitHub | Jira GitHub integration | N/A | Mar 2026 |
 | [Copilot in Zed editor](https://github.blog/changelog/2026-02-19-github-copilot-support-in-zed-generally-available) (GA) | Copilot code completion and chat in the Zed open-source editor reaches general availability | Zed settings → Extensions → Copilot | N/A | Feb 2026 |
 | [GitHub Mobile Live Notifications](https://github.blog/changelog/2026-02-26-github-mobile-track-coding-agent-progress-in-real-time-with-live-notifications) | Real-time push notifications for coding agent task progress and completion on iOS and Android | GitHub Mobile app | N/A | Feb 2026 |
@@ -103,6 +116,10 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [GitHub Copilot app BYOK](https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok) | Copilot app users can supply their own API keys to route agent sessions through OpenAI, Azure OpenAI, Anthropic, Ollama, or LM Studio instead of GitHub's hosted models | Copilot app → Model settings → BYOK | N/A | Jun 2026 |
+| [Cloud and local sandboxes for GitHub Copilot](https://github.blog/changelog/2026-06-02-cloud-and-local-sandboxes-for-github-copilot-now-in-public-preview) (public preview) | Copilot can run inside secure, isolated sandboxes both locally and in cloud-hosted infrastructure with controlled filesystem, network, and system access | Copilot sandbox settings | N/A | Jun 2026 |
+| [Security validation for third-party coding agents](https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents) | CodeQL scanning, dependency advisory checks, and secret detection are automatically applied to code generated by third-party AI coding agents (Claude, OpenAI Codex, etc.) | Automatic in repositories with code scanning enabled | N/A | Jun 2026 |
+| [Enterprise bypass permission controls](https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls) | Enterprise admins can enforce `disableBypassPermissionsMode` to require explicit user approval for all Copilot CLI and VS Code commands, preventing automatic permission skipping | Enterprise managed settings | N/A | Jun 2026 |
 | [Enterprise-managed plugins in Copilot CLI](https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview) (public preview) | Enterprise admins deploy curated plugin packages to Copilot CLI for all organization members | CLI plugin management config | N/A | May 2026 |
 | [Target Copilot models to organizations with model rules](https://github.blog/changelog/2026-05-26-target-copilot-models-to-organizations-with-model-rules) | Admins create rules directing specific AI models to designated teams or organizations | Org Settings → Copilot → Model rules | N/A | May 2026 |
 | [Data residency (US + EU) and FedRAMP-authorized models](https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available) | Enterprise deployments pin data residency to US or EU regions and access FedRAMP-authorized model variants | Enterprise Settings → Compliance | N/A | Apr 2026 |
@@ -118,14 +135,33 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 Notable changes that fell below the threshold for the main tables:
 
-- Model releases (GPT-5.x, GPT-4.1, Claude Opus/Sonnet 4.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1, Raptor mini) (`N/A`) - *individual model releases; tracked separately*
+- Model releases (GPT-5.x, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1, Raptor mini, MAI-Code-1-Flash) (`N/A`) - *individual model releases; tracked separately*
+- Copilot CLI: New terminal interface GA (`N/A`) - *UI polish / incremental improvement*
+- Auto mode in Copilot Chat for all users (`N/A`) - *incremental improvement* (GA rollout of existing auto model selection)
+- Agentic workflows no longer need a personal access token (`N/A`) - *incremental improvement*
+- Copilot Memory for Business and Enterprise (`N/A`) - *platform expansion* of existing memory feature
+- Agent tasks REST API for Copilot Pro/Pro+/Max (`N/A`) - *platform expansion* of existing enterprise-only cloud agent REST API
+- Enterprise-managed plugins in VS Code (`N/A`) - *platform expansion* of May 2026 Copilot CLI feature
+- Copilot CLI BYOK enterprise models (`N/A`) - *platform expansion* of existing BYOK capability
+- Fix with Copilot for failing Actions in Pro/Pro+/Max (`N/A`) - *platform expansion* of existing cloud agent fix feature
+- Copilot code review: AGENTS.md support and UI improvements (`N/A`) - *config knob / incremental improvement*
+- Copilot code review: New configurations and controls (`N/A`) - *config knob*
+- Shape Copilot code review around your team (`N/A`) - *config knob*
+- Copilot Chat brings richer context to pull requests (`N/A`) - *incremental improvement*
+- Copilot-authored PRs now included in author searches (`N/A`) - *incremental improvement*
+- Generated release notes credit Copilot pull requests (`N/A`) - *incremental improvement*
+- New features and Claude as agent provider in JetBrains IDEs (`N/A`) - *incremental improvement*
+- Changes to model selection for Free and Student plans (`N/A`) - *config knob*
+- Evaluation models in auto for individual plans (`N/A`) - *incremental improvement*
+- GitHub Copilot in Eclipse: BYOK, skills, and chat updates (`N/A`) - *platform expansion*
+- AI credits consumed per user in Copilot usage metrics API (`N/A`) - *incremental improvement*
 - Copilot usage metrics GA (`N/A`) - *metrics/analytics feature; no new coding workflow*
 - Team-level Copilot usage metrics via API (`N/A`) - *metrics API addition*
 - Copilot code review in JetBrains and Visual Studio (`N/A`) - *platform expansion of existing code review feature*
 - Auto model selection GA in JetBrains IDEs (`N/A`) - *platform expansion of existing auto-selection feature*
 - Copilot-generated commit messages on github.com GA (`N/A`) - *convenience wrapper for existing desktop/VS Code capability*
-- Copilot coding agent PR grouping (`N/A`) - *improvement to existing agent PR behavior*
+- Copilot coding agent PR grouping (`N/A`) - *incremental improvement to existing agent PR behavior*
 - Configure internet access for coding agent (`N/A`) - *config knob for existing agent web-browsing feature*
 - GitHub Copilot Pro+ tier announcement (`N/A`) - *pricing tier change, not a new capability class*
 - Copilot code review path-scoped custom instructions (`N/A`) - *config knob for existing code review feature*
-- JetBrains Copilot support for Free plan GA (`N/A`) - *access tier expansion, not a capability class*
+- JetBrains Copilot support for Free plan GA (`N/A`) - *platform expansion; access tier expansion, not a capability class*

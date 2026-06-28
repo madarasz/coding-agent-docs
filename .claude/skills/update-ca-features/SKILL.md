@@ -53,6 +53,9 @@ for r in json.load(sys.stdin):
 
 Stop processing once you pass the cutoff date from Step 0. Because `published_at` is included in the response, **skip the npm date lookup in Step 2 for these tools**.
 
+**For Cursor — paginate the changelog:**
+`cursor.com/changelog` (and `?page=N`) serves only the 5 newest entries. Older entries live at `cursor.com/changelog/page/N` (WordPress-style; `?page=N` does NOT work). Each page holds ~5 entries; pages run back to ~page 48 (Mar 2023). For a fresh full build, iterate `/changelog/page/N` until the cutoff. Cursor has no npm package or releases API — version→date mapping is read directly from each page (e.g. "Version 3.7 | Jun 17, 2026"); versions use `major.minor` with no patch tracking.
+
 **For Claude Code — handle large changelogs:**
 The file may be too large to process in one pass. If the response is truncated, make additional fetches to cover the missing range. Process version blocks from newest to oldest and stop once you reach the cutoff version/date from Step 0. Do not skip sections — if a fetch is incomplete, explicitly fetch the missing range before proceeding.
 
@@ -101,7 +104,7 @@ Per-assistant docs and blog roots:
 | Claude Code | `https://code.claude.com/docs/en/` | `https://www.anthropic.com/news/` |
 | Codex | `https://developers.openai.com/codex/` | `https://openai.com/blog/` |
 | GitHub Copilot | `https://docs.github.com/en/copilot/` | `https://github.blog/changelog/` |
-| Cursor | `https://docs.cursor.com/` | `https://cursor.com/blog/` |
+| Cursor | `https://cursor.com/docs/` (note: `docs.cursor.com` 308-redirects here) | `https://cursor.com/blog/` |
 | Gemini CLI | `https://www.geminicli.com/docs/` | `https://blog.google/products/gemini/` |
 | Windsurf | `https://docs.windsurf.com/` | `https://windsurf.com/blog/` |
 | OpenCode | `https://opencode.ai/docs` | `https://github.com/anomalyco/opencode` |
@@ -115,6 +118,9 @@ Per-assistant docs and blog roots:
 `cli/features`, `cli/slash-commands`, `cli/reference`, `memories`, `memories/chronicle`, `config-basic`, `config-advanced`, `config-reference`, `prompting`, `subagents`, `concepts/subagents`, `concepts/sandboxing`, `concepts/sandboxing/auto-review`, `permissions`, `mcp`, `plugins`, `plugins/build`, `hooks`, `skills`, `rules`, `guides/agents-md`, `agent-approvals-security`, `models`, `sdk`, `noninteractive`, `remote-connections`, `app-server`, `windows`, `cloud`, `workflows`, `use-cases/<slug>` (55+ use-case articles at `https://developers.openai.com/codex/use-cases/`)
 
 **GitHub Copilot** — most feature announcements live at `https://github.blog/changelog/<date>-<slug>/`. Docs at `https://docs.github.com/en/copilot/<topic>`.
+
+**Cursor** — docs are at `https://cursor.com/docs/<slug>` (NOT `docs.cursor.com`). Confirmed sections:
+`background-agent`, `bugbot`, `mcp`, `automations`, `plugins`, `enterprise`, `context/rules`, `tab/overview`, `agent/hooks`, `agent/subagents`, `agent/plan-mode`. Blog at `https://cursor.com/blog/<slug>`; prefer the docs page when one exists. Cursor categorization notes: Composer→Agent is one renamed surface (collapse preview→GA); Tab/autocomplete is baseline — its tweaks are Other Improvements unless a new capability class; Background/Cloud Agents have several genuinely-new milestones (preview→GA→long-running→self-hosted→cloud subagents) that stay as separate rows; Bugbot launch/autofix/security-review are distinct rows.
 
 ## Step 4 — Triage: table row, Other Improvements, or drop
 

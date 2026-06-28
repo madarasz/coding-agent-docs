@@ -6,12 +6,12 @@ Tracks the evolving capabilities of the **most popular** coding agents. Only sig
 
 | Coding Agent | Last Updated |
 |-----------|--------------|
-| [Claude Code](docs/claude-code-features.md) | 2026.06.01 |
-| [Codex](docs/codex-features.md) | 2026.06.01 |
-| [GitHub Copilot](docs/copilot-features.md) | 2026.06.01 |
-| Cursor | TODO |
-| Gemini CLI | TODO |
-| OpenCode | TODO |
+| [Claude Code](docs/claude-code-features.md) | 2026.06.25 |
+| [Codex](docs/codex-features.md) | 2026.06.25 |
+| [GitHub Copilot](docs/copilot-features.md) | 2026.06.25 |
+| [Cursor](docs/cursor-features.md) | 2026.06.25 |
+| [Gemini CLI](docs/gemini-cli-features.md) | 2026.06.25 |
+| [OpenCode](docs/opencode-features.md) | 2026.06.25 |
 
 ## Categories
 

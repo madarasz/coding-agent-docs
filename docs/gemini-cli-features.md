@@ -1,7 +1,7 @@
-# Gemini CLI Features (Jun 2025 – Jun 2026)
+# Gemini CLI Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to Gemini CLI since its public availability.
-**Last updated:** Jun 2026 · Source: [geminicli.com/docs/changelogs](https://www.geminicli.com/docs/changelogs)
+**Last updated:** Jul 2026 · Source: [geminicli.com/docs/changelogs](https://www.geminicli.com/docs/changelogs)
 
 ## Agentic & Multi-Agent
 
@@ -64,6 +64,7 @@ Significant user-facing features added to Gemini CLI since its public availabili
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| GDC Air-gapped Service Identity Support | Adds authentication support for Google Distributed Cloud (GDC) air-gapped environments via service identity, enabling Gemini CLI to run in isolated sovereign-cloud deployments. | `GOOGLE_VERTEX_BASE_URL` config | `0.49.0` | Jun 2026 |
 | Unified Auto Mode | Merges all specialized automation sub-modes into a single Auto mode for a consistent approval-mode experience. | `--approval-mode=auto` | `0.44.0` | May 2026 |
 | Sublime Text and Emacs Client IDE Support | Adds native IDE integration support for Sublime Text and Emacs Client via the ACP protocol. | ACP config | `0.44.0` | May 2026 |
 | [Headless / Non-interactive Mode](https://www.geminicli.com/docs/cli/headless/) | Runs Gemini CLI programmatically from scripts or CI with structured text or JSON output and no interactive UI. | `gemini "prompt"` / `--output-format json` | `0.5.0` | Sep 2025 |

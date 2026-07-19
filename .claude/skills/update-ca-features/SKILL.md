@@ -223,10 +223,10 @@ Create or update `docs/<assistant>-features.md` in place. Follow this format exa
 # <Display Name> Features (<first month year> – <last month year>)
 
 Significant user-facing features added to <Display Name> since its public availability.
-**Last updated:** <current month year> · Source: [<source label>](<primary source URL>)
+**Last updated:** <current month day, year> · Source: [<source label>](<primary source URL>)
 ```
 
-Update the date range in the title if the newest feature extends it. Always update "Last updated" to the current month and year.
+Update the date range in the title if the newest feature extends it. Always update "Last updated" to the current date in `Mon DD, YYYY` format (e.g. `Jul 19, 2026`) — include the day.
 
 **Section headers:** Use the seven category names exactly as written above (`## Agentic & Multi-Agent`, `## Context & Memory`, etc.), in the Step 5 order — **Security & Governance always last**.
 
@@ -262,6 +262,10 @@ Notable changes that fell below the threshold for the main tables:
 - The omission reason **must** be one phrase drawn from the Step 4 · B reason vocabulary — do not invent new phrasings
 - **Collapse all individual model releases into a single bullet** (`Model releases (…) — tracked separately`); never list them one per line
 - Outcome C items (bug fixes, perf, refactors, typos) do **not** appear here
+
+### Update the README index
+
+After writing `docs/<assistant>-features.md`, update the "Last Updated" column for that assistant's row in the root `README.md`. The README uses `YYYY.MM.DD` format (e.g. `2026.07.19`) — set it to the current date. Update only the row for the assistant you just processed; leave the other rows unchanged.
 
 ## Step 7 — Validate before writing
 

@@ -1,7 +1,7 @@
-# OpenAI Codex Features (Apr 2025 – Jun 2026)
+# OpenAI Codex Features (Apr 2025 – Jul 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
-**Last updated:** Jun 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
+**Last updated:** Jul 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
 
 ## Agentic & Multi-Agent
 
@@ -57,6 +57,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [MCP Tool Search](https://developers.openai.com/codex/mcp) | Lets the model search across available MCP tools instead of loading the full tool list into context, improving compatibility with large toolsets and older models/providers; enabled by default from `0.143.0` | Automatic (MCP config) | `0.142.2` | Jun 2026 |
 | Plugin Catalog Sections & Turn Recommendations | Organizes remote plugins into OpenAI Curated, Workspace, and Shared sections; eligible turns can recommend and install relevant plugins automatically | `/plugins` | `0.142.0` | Jun 2026 |
 | Executor Plugin MCP Activation | Activates stdio MCP servers from selected executor plugins on a per-thread basis; plugin discovery adds a created-by-me marketplace and auth-specific curated catalogs | Plugin config / `/plugins` | `0.141.0` | Jun 2026 |
 | [MCP Apps (Resources & File Uploads)](https://developers.openai.com/codex/mcp) | Extends MCP servers to expose resources, accept file uploads, and return rich tool-call metadata to Codex | MCP server config | `0.119.0` | Apr 2026 |
@@ -72,6 +73,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| System Proxy Support (PAC/WPAD) | Routes Codex authentication and Responses API traffic through macOS and Windows system proxies using PAC/WPAD auto-configuration, static proxy settings, and bypass rules; began as Windows-only opt-in auth support before covering both platforms and all traffic in `0.143.0` | `respect_system_proxy` config | `0.142.1` | Jun 2026 |
 | [/app Desktop Handoff](https://developers.openai.com/codex/cli/slash-commands) | Hands off the current CLI thread into Codex Desktop on macOS and native Windows, opening directly into the Desktop app | `/app` | `0.138.0` | Jun 2026 |
 | Remote-Control Pairing Management | Lets remote-control clients start pairing and list or revoke controller grants through app-server v2 RPCs | App-server v2 API | `0.137.0` | Jun 2026 |
 | [/status Remote Connection Details](https://developers.openai.com/codex/remote-connections) | Shows remote connection details and server version when the TUI is connected over a remote transport | `/status` | `0.135.0` | May 2026 |
@@ -94,6 +96,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [`writes` App-Approval Mode](https://developers.openai.com/codex/permissions) | Adds an app-approval mode that lets declared read-only actions proceed automatically while still requiring explicit approval for write actions | App-approval config (`writes` mode) | `0.144.0` | Jul 2026 |
 | Rollout Token Budgets | Configures token budgets that track usage across agent threads, provide remaining-budget reminders, and abort turns when exhausted | `token_budget` in config | `0.142.0` | Jun 2026 |
 | Noise Relay Encrypted Remote Execution | Uses authenticated, end-to-end encrypted Noise relay channels for all remote executor connections | Automatic for remote executors | `0.141.0` | Jun 2026 |
 | Managed Bedrock Auth & Encrypted Credential Storage | Adds managed Amazon Bedrock API-key authentication and encrypted local storage for CLI and MCP OAuth credentials | `bedrock` auth config | `0.140.0` | Jun 2026 |
@@ -114,6 +117,20 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 Notable changes that fell below the threshold for the main tables:
 
+- Improved dangerous-command detection and clearer rejection reasons (`0.144.5`) - *incremental improvement*
+- Usage-limit reset credit type/expiration selection (`0.144.0`) - *incremental improvement*
+- Interactive MCP tool authentication without experimental opt-in (`0.144.0`) - *preview→GA, nothing new*
+- App-server runtime authentication provisioning and login redirects (`0.144.0`) - *incremental improvement*
+- pnpm global install detection (`0.144.0`) - *convenience wrapper*
+- Ultra reasoning concurrency usage warning (`0.144.0`) - *UI polish*
+- Remote plugin catalog default-on with npm marketplace sources and version indicators (`0.143.0`) - *distribution channel*
+- `codex remote-control pair` manual pairing codes (`0.143.0`) - *convenience wrapper*
+- Amazon Bedrock GPT-5.6 Sol/Terra/Luna models with max reasoning effort (`0.143.0`) - *incremental improvement*
+- App-server environment inspection, descendant thread listing, and turn-level history forking (`0.143.0`) - *incremental improvement*
+- Plugin dark-mode logo support (`0.142.2`) - *UI polish*
+- Safety-buffering UI with server-provided visibility metadata (`0.142.2`) - *UI polish*
+- PowerShell executable AST region approval requirement (`0.142.2`) - *incremental improvement*
+- Remote plugin catalog featured-plugin rankings (`0.142.2`) - *incremental improvement*
 - `/usage` credit redemption UI (`0.142.0`) - *incremental improvement*
 - TUI input prompt auto-resolution timer (`0.141.0`) - *UI polish*
 - Realtime speech append and startup context controls (`0.141.0`) - *incremental improvement*

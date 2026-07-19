@@ -1,7 +1,7 @@
-# OpenCode Features (Jun 2025 – Jun 2026)
+# OpenCode Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Jun 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Jul 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -67,6 +67,7 @@ Significant user-facing features added to OpenCode since its public availability
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Code mode MCP adapter](https://opencode.ai/docs/mcp/) | Agents can run confined orchestration scripts that call multiple connected MCP tools programmatically through a hidden `execute` tool, instead of invoking tools one at a time. | Config toggle (enables `execute` tool) | `v1.17.14` | Jul 2026 |
 | [V2 plugin API](https://opencode.ai/docs/plugins/) | New Effect- and Promise-based plugin API with namespaced hook APIs and TUI plugin support. | `@opencode-ai/plugin` | `v1.17.10` | Jun 2026 |
 | [MCP server support](https://opencode.ai/docs/mcp/) | Full MCP server integration with OAuth auth flows, timeout management, `cwd` support, and catalog pagination. | `mcp` config section | `v0.3.76` | Jul 2025 |
 | [Custom slash commands](https://opencode.ai/docs/commands/) | User-defined slash commands with `$ARGUMENTS` substitution, `@file` references, and mode-specific execution. | `/commandname` | `v0.0.49` | May 2025 |
@@ -100,6 +101,7 @@ Significant user-facing features added to OpenCode since its public availability
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Yolo mode](https://opencode.ai/docs/permissions/) | A permission mode that auto-approves all tool prompts while still honoring explicit deny rules, for users who fully trust agent actions. | TUI command palette (`Enable auto-approve permissions`) | `v1.17.12` | Jun 2026 |
 | [Granular permission system](https://opencode.ai/docs/permissions/) | Per-tool permission rules with allow/deny/ask, wildcard pattern matching, and agent-level permission scopes. | `permission` config key | `v1.1.1` | Jan 2026 |
 | [Plan Mode security boundary](https://opencode.ai/docs/agents/) | Plan mode agent enforces a read-only boundary so subagents cannot override parent-agent deny rules. | `--agent plan` config | `v1.14.46` | May 2026 |
 | [macOS MDM managed preferences](https://opencode.ai/docs/enterprise/) | macOS managed preferences allow MDM-enforced configuration policies for enterprise deployments. | MDM plist / `enterprise` config | `v1.3.14` | Apr 2026 |
@@ -111,6 +113,19 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Home page command palette session search (`v1.18.3`) - *convenience wrapper*
+- Configurable subagent nesting depth via `subagent_depth` (`v1.18.2`) - *config knob*
+- Desktop v2 UI redesign completed, with legacy-layout toggle during transition (`v1.18.0`) - *preview→GA, nothing new*
+- OpenAI pro reasoning mode support (`v1.17.19`) - *incremental improvement*
+- xAI response storage disabled by default (`v1.17.19`) - *security infrastructure*
+- OAuth support for Luna Responses Lite (`v1.17.19`) - *platform expansion*
+- Per-prompt model selection in composer (`v1.17.19`) - *incremental improvement*
+- Composer add menu for files/commands/context/shell mode (`v1.17.16`) - *convenience wrapper*
+- Streamlined WSL server setup with distro checks and install flow (`v1.17.13`) - *platform expansion*
+- SDK live event streaming and paged session history endpoints (`v1.17.12`) - *incremental improvement*
+- Session cost/token totals shown in context panel (`v1.17.12`) - *incremental improvement*
+- Session snapshot revert controls extended to roll back file changes (`v1.17.11`) - *incremental improvement*
+- Chrome-style desktop tab-cycle shortcuts and draggable tabs (`v1.17.11`) - *power-user UX*
 - `--mini` CLI mode (`v1.17.10`) - *config knob*
 - MCP server instructions in context (`v1.17.10`) - *incremental improvement*
 - Diff viewer hunk navigation (`v1.16.2`) - *incremental improvement*

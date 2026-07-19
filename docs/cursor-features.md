@@ -1,7 +1,7 @@
-# Cursor Features (Mar 2023 – Jun 2026)
+# Cursor Features (Mar 2023 – Jul 2026)
 
 Significant user-facing features added to Cursor since its public availability.
-**Last updated:** Jun 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
+**Last updated:** Jul 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
 
 ## Agentic & Multi-Agent
 
@@ -20,6 +20,7 @@ Significant user-facing features added to Cursor since its public availability.
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Side Chats & Conversation Search](https://cursor.com/changelog/side-chat) | Branches durable "side chat" threads off the main agent conversation for tangents and research without losing context, and locally indexes past agent transcripts so they can be searched by content. | `/side`, `/btw`, or + button in chat panel; Cmd+K to search transcripts | `3.11` | Jul 2026 |
 | [Context Usage Breakdown](https://cursor.com/docs/context/rules) | Displays per-agent context usage statistics broken down by rules, skills, MCPs, and subagents to help diagnose and optimize setup. | Automatic; visible in agent chat | `3.3` | May 2026 |
 | [Agent Planning / To-do Lists](https://cursor.com/docs/agent/plan-mode) | Agents create structured task checklists with dependencies before starting complex work; queued follow-up messages execute sequentially without waiting. | Automatic | `1.2` | Jul 2025 |
 | [Memories (GA)](https://cursor.com/docs/context/rules) | Stores project-specific facts across conversations so agents recall prior decisions and preferences without re-stating them; reached GA with PR indexing support. | Automatic; Memories panel | `1.2` | Jul 2025 |
@@ -71,6 +72,7 @@ Significant user-facing features added to Cursor since its public availability.
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Cursor Mobile App for iOS](https://cursor.com/blog/ios-mobile-app) | Native iOS app (public beta) for launching, monitoring, and remotely directing desktop and cloud agents from a phone, with voice input, model selection, and PR review/merge on the go. | Cursor app on the App Store | `3.9` | Jun 2026 |
 | [Cursor in Jira](https://cursor.com/docs/background-agent) | Assigns Jira work items to Cursor or accepts `@Cursor` mentions in comments to trigger cloud agents that fix bugs, add features, and post PR links back in the issue. | Jira comment `@Cursor`; assign to Cursor | N/A | May 2026 |
 | [Cursor in Microsoft Teams](https://cursor.com/docs/background-agent) | Allows users to mention `@Cursor` in Teams channels to delegate coding tasks to cloud agents, which select repos, read thread context, and create PRs. | Teams channel `@Cursor` | N/A | May 2026 |
 | [Cursor CLI](https://cursor.com/docs/background-agent) | Standalone command-line agent with Plan, Ask, and Debug modes, cloud handoff, word-level diffs, MCP authentication, and session lifecycle hooks. | `cursor` CLI | N/A | Jan 2026 |
@@ -98,6 +100,10 @@ Significant user-facing features added to Cursor since its public availability.
 
 Notable changes that fell below the threshold for the main tables:
 
+- Improvements to Cursor in Slack (multi-repo environments, plan sharing, cross-channel messaging) (`Jul 2026`) — *incremental improvement* — enhances the existing Slack integration surface
+- New agent-conversation hooks (`beforeSubmitPrompt`, `afterAgentResponse`, `afterAgentThought`, `stop`, `subagentStart`) (`3.11`) — *incremental improvement* — extends the existing Hooks primitive to conversation-level events
+- MCPs and Organization Groups in Team Marketplaces (`3.10`) — *config knob* — admin distribution/access-control layer over the existing Marketplace
+- Bugbot speed/cost/accuracy improvements and `/review-bugbot`, `/review-security` subcommands (`Jun 2026`) — *incremental improvement* — performance and workflow refinements to the existing Bugbot/Security Review flow
 - Customize Cursor page (`3.9`) — *UI polish* — unified settings page; individual primitives already tracked separately
 - Canvas Design Mode multi-select & voice input (`3.7`) — *incremental improvement* — enhancement to existing Canvas and voice features
 - Shared Canvases & `/loop` skill (`3.5`) — *convenience wrapper* — Canvas sharing and loop execution are wrappers on existing agent and canvas capabilities
@@ -107,7 +113,7 @@ Notable changes that fell below the threshold for the main tables:
 - Full-screen Tabs and Compact Chats / Tiled Layout (`3.4`, `3.1`) — *UI polish* — layout variants for existing Agents Window
 - Composer 2.5 model (`May 2026`) — *incremental improvement* — new version of existing Cursor-trained model
 - Composer 2 model (`Mar 2026`) — *incremental improvement* — new version of existing Cursor-trained model
-- Model releases (GPT-4.1, o3, o4-mini, Grok 3, Gemini 2.5, Claude 3.7, DeepSeek R1, etc.) — tracked separately
+- Model releases (GPT-4.1, o3, o4-mini, Grok 3, Gemini 2.5, Claude 3.7, DeepSeek R1, Grok 4.5, etc.) — tracked separately
 - Auto-review Run Mode (`3.6`) — *config knob* — tunes agent approval prompt frequency
 - Build in Parallel (`3.3`) — *convenience wrapper* — wrapper over existing async subagent parallel execution
 - Context Usage Breakdown in editor (`3.3`) — *UI polish* — surfacing of existing token data in a new view

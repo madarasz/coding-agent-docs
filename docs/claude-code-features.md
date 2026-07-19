@@ -1,12 +1,13 @@
-# Claude Code Features (Mar 2025 – Jun 2026)
+# Claude Code Features (Mar 2025 – Jul 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Jun 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Jul 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [`/fork` Background Session Copy](https://code.claude.com/docs/en/commands) | Copies the current conversation into a new independent background session that runs as its own row in agent view while you keep working; `/subtask` remains for delegating a side task to a subagent that reports back into the conversation. | `/fork [prompt]` | `2.1.212` | Jul 2026 |
 | Nested Sub-Agent Spawning | Sub-agents can now spawn their own sub-agents up to 5 levels deep, enabling hierarchical multi-agent workflows. | Automatic (sub-agent uses Agent tool) | `2.1.172` | Jun 2026 |
 | Parallel Tool Call Independence | A failed Bash command in a parallel tool call batch no longer cancels the other calls in the same batch; each tool returns its own result independently. | Automatic | `2.1.161` | Jun 2026 |
 | [Dynamic Workflows](https://code.claude.com/docs/en/agent-view) | Orchestrate tens-to-hundreds of parallel background agents automatically for large, complex tasks. | Ask Claude "create a workflow"; `/workflows` | `2.1.154` | May 2026 |
@@ -18,7 +19,7 @@ Significant user-facing features added to Claude Code since its public availabil
 | Agent Teams | Multiple Claude Code sessions collaborate as a team, sending messages to each other via tmux panes (experimental). | `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` | `2.1.32` | Feb 2026 |
 | [Git Worktree Isolation](https://code.claude.com/docs/en/worktrees) | Start a session in an isolated git worktree so parallel sessions can modify files without conflicts. | `claude --worktree` / `-w` | `2.1.49` | Feb 2026 |
 | Task Management with Dependencies | Task management system with dependency tracking across multi-step work via `TaskCreate`, `TaskUpdate`, `TaskList`, and `TaskGet` tools. | `TaskCreate` / `TaskUpdate` tools | `2.1.16` | Jan 2026 |
-| Async Agents with Messaging | Background agents and bash commands run asynchronously and wake the main agent when done. | `Task` tool; `Ctrl+B` | `2.0.64` | Dec 2025 |
+| Async Agents with Messaging (GA Jul 2026) | Background agents and bash commands run asynchronously and wake the main agent when done; subagents now run in the background by default rather than as a gradual rollout. | `Task` tool; `Ctrl+B` | `2.0.64` | Dec 2025 |
 | [Background Agents](https://code.claude.com/docs/en/agent-view) | Sessions run in the background without a terminal attached, continuing after the terminal is closed. | `claude --bg`; `/bg` | `2.0.60` | Dec 2025 |
 | Background Bash Commands | Run any bash command in the background so Claude can keep working while the command executes. | `Ctrl+B` while a command runs | `1.0.71` | Aug 2025 |
 | Task/Todo List | Claude creates and tracks a visible structured task list for multi-step work within a session. | Automatic | `0.2.93` | May 2025 |
@@ -54,6 +55,8 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [`/doctor` Full Setup Checkup](https://code.claude.com/docs/en/commands) | Diagnoses install, settings, and provider setup issues and can apply fixes directly, not just report them. | `/doctor`; alias `/checkup` | `2.1.205` | Jul 2026 |
+| [Auto-Commit, Push, and Draft PR for Background Agents](https://code.claude.com/docs/en/agent-view) | A background session that isolates its changes in a worktree now commits, pushes its branch, and opens a draft pull request when it finishes code work, instead of stopping to ask. | Automatic (background sessions with worktree isolation) | `2.1.198` | Jul 2026 |
 | `!` Bash Command Auto-Reply | Running a `!` bash command now automatically prompts Claude to respond to the command's output, turning any shell command into an interactive Claude turn. | `!<command>` in prompt; disable with `"respondToBashCommands": false` | `2.1.186` | Jun 2026 |
 | `/code-review` | Structured code review with optional automatic fix application. | `/code-review` or `/code-review --fix` | `2.1.147` | May 2026 |
 | [/ultrareview](https://code.claude.com/docs/en/commands) | Runs comprehensive code review in the cloud using parallel multi-agent analysis. | `/ultrareview`; `claude ultrareview` | `2.1.111` | Apr 2026 |
@@ -105,8 +108,10 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Screen Reader Mode](https://code.claude.com/docs/en/cli-reference) | Opt-in plain-text rendering for screen reader users, replacing decorative borders and animations with flat, accessible output. | `claude --ax-screen-reader`; `axScreenReader` setting | `2.1.208` | Jul 2026 |
+| [Claude Platform on AWS (Gateway)](https://code.claude.com/docs/en/claude-apps-gateway) | Route Claude Code through Claude Platform on AWS as a gateway upstream provider, alongside Bedrock, Vertex, and Foundry. | `provider: anthropicAws` in gateway config | `2.1.198` | Jul 2026 |
 | `fallbackModel` Setting | Configure up to three fallback models tried in order when the primary model is overloaded or unavailable, applying to both interactive and `-p` sessions. | `fallbackModel` in settings; `--fallback-model` flag | `2.1.166` | Jun 2026 |
-| Auto Mode on Bedrock/Vertex/Foundry | Auto mode is available on Amazon Bedrock, Vertex AI, and Azure Foundry for Opus 4.7/4.8. | `CLAUDE_CODE_ENABLE_AUTO_MODE=1` | `2.1.158` | May 2026 |
+| Auto Mode on Bedrock/Vertex/Foundry (GA Jul 2026) | Auto mode is available on Amazon Bedrock, Vertex AI, and Azure Foundry for Opus 4.7/4.8, and no longer requires an opt-in on those platforms. | Automatic; disable via `disableAutoMode` in settings | `2.1.158` | May 2026 |
 | Native Binary | Claude Code ships as a native compiled binary instead of Node.js, improving performance and startup time. | Automatic in new installs | `2.1.113` | Apr 2026 |
 | Push Notifications (Mobile) | Claude sends push notifications to your phone when tasks complete or need attention, via Remote Control. | Enable in `/config` | `2.1.110` | Apr 2026 |
 | Amazon Bedrock Mantle | Use Claude Code against Claude models hosted via Amazon Bedrock powered by Mantle. | `CLAUDE_CODE_USE_MANTLE=1` | `2.1.94` | Apr 2026 |
@@ -114,7 +119,7 @@ Significant user-facing features added to Claude Code since its public availabil
 | [Remote Control](https://code.claude.com/docs/en/remote-control) | Bridge a local CLI session to claude.ai/code to continue from a browser or mobile device. | `claude remote-control`; `/remote-control` | `2.1.51` | Feb 2026 |
 | [claude.ai MCP Connectors](https://code.claude.com/docs/en/mcp) | Use cloud service connectors (Slack, Gmail, etc.) from claude.ai directly in Claude Code sessions. | Automatic when logged into claude.ai | `2.1.46` | Feb 2026 |
 | LSP Tool | Code intelligence features including go-to-definition, find references, and hover documentation. | LSP server configured in settings | `2.0.74` | Dec 2025 |
-| [Claude in Chrome](https://code.claude.com/docs/en/chrome) | Control a connected Chrome browser directly from Claude Code via the Claude Chrome extension. | Chrome extension at claude.ai/chrome; `/chrome` | `2.0.72` | Dec 2025 |
+| [Claude in Chrome (GA Jul 2026)](https://code.claude.com/docs/en/chrome) | Control a connected Chrome browser directly from Claude Code via the Claude Chrome extension. | Chrome extension at claude.ai/chrome; `/chrome` | `2.0.72` | Dec 2025 |
 | [Desktop App](https://claude.com/download) | Native desktop application for macOS and Windows with integrated session management. | [claude.com/download](https://claude.com/download) | `2.0.51` | Nov 2025 |
 | [Microsoft Azure AI Foundry](https://code.claude.com/docs/en/azure-ai-foundry) | Use Claude Code with Claude models hosted on Microsoft Azure AI Foundry. | Azure env vars; setup wizard | `2.0.45` | Nov 2025 |
 | [VS Code Extension](https://code.claude.com/docs/en/) | Full VS Code extension with session tabs, plan previews, IDE diff integration, and sidebar. | VS Code marketplace | `2.0.0` | Sep 2025 |
@@ -128,6 +133,8 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [EndConversation Tool](https://www.anthropic.com/research/end-subset-conversations) | Claude can end a session as a last resort with a highly abusive or jailbreak-attempting user, mirroring the safeguard already used on claude.ai. | Automatic (`EndConversation` tool) | `2.1.214` | Jul 2026 |
+| [Org Default Models](https://code.claude.com/docs/en/model-config) | Admins set an organization- or role-wide default model from the console; it resolves for members who haven't picked one themselves and shows as "Org default" in the model picker. | Set in claude.ai admin console; shown in `/model` | `2.1.196` | Jun 2026 |
 | [Sandbox Credential Protection](https://code.claude.com/docs/en/sandboxing) | The `sandbox.credentials` setting blocks sandboxed commands from reading specified credential files and unsets secret environment variables before each sandboxed command runs. | `sandbox.credentials.files`/`envVars` in settings | `2.1.187` | Jun 2026 |
 | Org-Configured Model Restrictions | Admins can restrict which models are available via managed settings; the model picker, `--model`, `/model`, and `ANTHROPIC_MODEL` all enforce the allowlist with a clear "restricted by your organization" message. | `availableModels` in managed settings | `2.1.187` | Jun 2026 |
 | `Tool(param:value)` Permission Rule Syntax | Deny and ask rules can match a tool call by any top-level input parameter value, e.g. `Agent(model:opus)` to block Opus subagents or `Bash(run_in_background:true)`. | `Tool(param:value)` in deny/ask rules | `2.1.178` | Jun 2026 |
@@ -145,6 +152,56 @@ Significant user-facing features added to Claude Code since its public availabil
 
 Notable changes that fell below the threshold for the main tables:
 
+- Manual-only invocation for `/verify` and `/code-review` skills (`2.1.215`) - *incremental improvement*
+- Permission prompts for `docker` daemon-redirect flags (`2.1.214`) - *incremental improvement*
+- Reasoning effort in `subagentStatusLine` payload (`2.1.214`) - *config knob*
+- ISO `modified` timestamp in memory file frontmatter (`2.1.214`) - *config knob*
+- OpenTelemetry `message.uuid`/`client_request_id`/`tool_source` attributes (`2.1.214`) - *format/scripting flag*
+- `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` Setting (`2.1.214`) - *config knob*
+- Periodic progress heartbeat for long-running tool calls (`2.1.214`) - *incremental improvement*
+- `claude auto-mode reset` Command (`2.1.212`) - *convenience wrapper*
+- Session-wide WebSearch call limit (`2.1.212`) - *config knob*
+- Per-session subagent spawn cap (`2.1.212`) - *config knob*
+- MCP tool calls over 2 minutes auto-background (`2.1.212`) - *incremental improvement*
+- `/resume` picker in agent view resumes past sessions as background sessions (`2.1.212`) - *incremental improvement*
+- `--forward-subagent-text` Flag (`2.1.211`) - *format/scripting flag*
+- Live elapsed-time counter on tool summary line (`2.1.210`) - *UI polish*
+- Startup warning for `Write`/`NotebookEdit`/`Glob` path-based permission rules (`2.1.210`) - *incremental improvement*
+- `vimInsertModeRemaps` Setting (`2.1.208`) - *power-user UX*
+- `CLAUDE_CODE_PROCESS_WRAPPER` corporate launcher wrapper (`2.1.208`) - *config knob*
+- Mouse-click support for multi-select menus in fullscreen mode (`2.1.208`) - *UI polish*
+- Bedrock/Vertex/Claude Platform on AWS default to Opus 4.8 (`2.1.207`) - *incremental improvement*
+- `/cd` Directory Path Suggestions (`2.1.206`) - *incremental improvement*
+- `/doctor` CLAUDE.md trimming check (`2.1.206`) - *incremental improvement to existing /doctor*
+- `/commit-push-pr` auto-allows push to configured push remote (`2.1.206`) - *incremental improvement*
+- Gateway `/login` support for Anthropic-operated public gateway endpoints (`2.1.206`) - *platform expansion*
+- Auto mode rule blocking session transcript tampering (`2.1.205`) - *incremental improvement to existing Auto Mode*
+- Agent view PR linking for edit/merge/comment/push actions (`2.1.205`) - *incremental improvement*
+- Login-expiry warning (`2.1.203`) - *UI polish*
+- Manual permission mode footer badge (`2.1.203`) - *UI polish*
+- MCP `roots/list` working directories with `list_changed` notifications (`2.1.203`) - *incremental improvement to existing MCP support*
+- "Dynamic workflow size" setting in `/config` (`2.1.202`) - *config knob*
+- `workflow.run_id`/`workflow.name` OpenTelemetry attributes (`2.1.202`) - *format/scripting flag*
+- `/code-review <level> <pr#>` effort-level parameter (`2.1.202`) - *config knob*
+- `AskUserQuestion` no longer auto-continues by default; idle timeout via `/config` (`2.1.200`) - *config knob*
+- Default permission mode renamed to "Manual" (`2.1.200`) - *incremental improvement*
+- Stacked slash-skill invocations load up to 5 leading skills (`2.1.199`) - *incremental improvement*
+- Automatic retry with backoff for transient rate-limit errors (`2.1.199`) - *incremental improvement*
+- `CLAUDE_CODE_RETRY_WATCHDOG` raised default retry count (`2.1.199`) - *config knob*
+- Background agent notifications (`agent_needs_input`/`agent_completed`) (`2.1.198`) - *incremental improvement to existing Notification hook*
+- `/dataviz` bundled skill for chart/dashboard design (`2.1.198`) - *convenience wrapper*
+- Explore agent inherits session model instead of haiku (`2.1.198`) - *incremental improvement*
+- Subagents and compaction inherit session's extended thinking config (`2.1.198`) - *incremental improvement*
+- Claude Sonnet 5 model release (`2.1.197`) - *Model releases (Claude Sonnet 5) — tracked separately*
+- Readable default session names at start (`2.1.196`) - *incremental improvement*
+- Clickable file attachments in chat (`2.1.196`) - *convenience wrapper*
+- `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` Setting (`2.1.195`) - *config knob*
+- `autoMode.classifyAllShell` Setting (`2.1.193`) - *config knob*
+- Auto-mode denial reasons in transcript, toast, and `/permissions` (`2.1.193`) - *incremental improvement*
+- `claude_code.assistant_response` OpenTelemetry log event (`2.1.193`) - *format/scripting flag*
+- Live file path autocomplete in bash mode (`2.1.193`) - *incremental improvement*
+- Automatic memory-pressure reaping for idle background shell commands (`2.1.193`) - *incremental improvement*
+- `/rewind` support for resuming from before `/clear` (`2.1.191`) - *incremental improvement*
 - `claude mcp login/logout <name>` CLI commands (`2.1.186`) - *convenience wrapper*
 - `respondToBashCommands: false` Setting (`2.1.186`) - *config knob*
 - `attribution.sessionUrl` Setting (`2.1.183`) - *config knob*

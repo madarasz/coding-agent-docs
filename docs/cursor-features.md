@@ -1,18 +1,19 @@
 # Cursor Features (Mar 2023 – Jul 2026)
 
 Significant user-facing features added to Cursor since its public availability.
-**Last updated:** Jul 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
+**Last updated:** Jul 26, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
 | [Cloud Subagents (`/in-cloud`)](https://cursor.com/docs/background-agent) | Spins up isolated cloud VM subagents from within an agent session to run tasks in parallel without blocking local work. | `/in-cloud` in agent chat | `3.7` | Jun 2026 |
-| [Cursor Automations](https://cursor.com/docs/automations) | Always-on cloud agents triggered by schedules, Slack messages/reactions, GitHub/GitLab events, Linear, PagerDuty, and webhooks; agents learn from past runs via memory tools. | Dashboard → Automations; `/automate` skill | `3.8` | Mar 2026 |
+| [Development Environments for Cloud Agents](https://cursor.com/docs/cloud-agent/setup) | Defines a versioned, Dockerfile-based build (with build secrets and layer caching) that Cursor uses as the base image for every cloud agent run against a repo, replacing ad hoc environment setup. | Commit `Dockerfile`; Dashboard → Environments | `3.4` | May 2026 |
+| [Multitask, Worktrees, and Multi-root Workspaces](https://cursor.com/docs/background-agent) | `/multitask` deploys async subagents for parallel execution; worktrees allow isolated background tasks across branches; multi-root workspaces let one agent session target multiple folders. | `/multitask`; worktree UI | `3.2` | Apr 2026 |
+| [Cursor Automations](https://cursor.com/docs/automations) | Always-on cloud agents triggered by schedules, Slack messages/reactions, GitHub/GitLab events, Linear, PagerDuty, and webhooks; agents learn from past runs via memory tools. | Dashboard → Automations; `/automate` skill | N/A | Mar 2026 |
 | [Self-hosted Cloud Agents](https://cursor.com/docs/background-agent) | Runs code and tool execution entirely within a customer's own network using isolated VMs, so no data leaves the organization's infrastructure. | Dashboard setting | N/A | Mar 2026 |
 | [Long-running Agents](https://cursor.com/docs/background-agent) | Agents autonomously complete complex tasks over extended periods with upfront planning; available in research preview for Ultra, Teams, and Enterprise plans. | cursor.com/agents | N/A | Feb 2026 |
 | [Bugbot Autofix](https://cursor.com/docs/bugbot) | Cloud agents running in isolated VMs generate and test fixes for Bugbot-identified PR bugs and push fix branches; over 35% of fixes are merged. | PR comment `@cursor`; auto-push option | N/A | Feb 2026 |
-| [Multitask, Worktrees, and Multi-root Workspaces](https://cursor.com/docs/background-agent) | `/multitask` deploys async subagents for parallel execution; worktrees allow isolated background tasks across branches; multi-root workspaces let one agent session target multiple folders. | `/multitask`; worktree UI | `3.2` | Apr 2026 |
 | [Multi-Agents (Parallel Agent Execution)](https://cursor.com/docs/background-agent) | Runs up to eight agents simultaneously in git worktrees locally or in the cloud, with an Agents Window for side-by-side management. | Agents Window (Cmd+Shift+A) | `2.0` | Oct 2025 |
 | [Background Agents (Cloud Agents)](https://cursor.com/docs/background-agent) | Remote agents execute tasks in secure cloud environments in parallel with local work, producing PRs without occupying the local machine. | Cloud icon; Cmd/Ctrl+E | `0.50` | May 2025 |
 
@@ -34,10 +35,11 @@ Significant user-facing features added to Cursor since its public availability.
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
-| [Voice Mode](https://cursor.com/docs/tab/overview) | Speech-to-text control of the agent via microphone with batch STT for higher quality; voice input remains available during agent runs for async change queuing. | Microphone icon | `2.0` | Oct 2025 |
+| [Cursor Router](https://cursor.com/docs/cursor-router) | An intelligent model router, trained on real usage, classifies each agent request and routes it to the best-suited underlying model along a configurable cost/intelligence trade-off. | Auto mode → Intelligence/Balance/Cost | N/A | Jul 2026 |
 | [Image Generation](https://cursor.com/docs/context/rules) | Creates images directly within agent chat sessions using supported image-generation models. | Natural language prompt in agent | `2.4` | Jan 2026 |
-| [PDF Parsing](https://cursor.com/docs/context/rules) | Parses PDF files attached via `@Link` or web search so agents can read document content. | `@Link` with PDF URL; drag-and-drop | `1.0` | Jun 2025 |
+| [Voice Mode](https://cursor.com/docs/tab/overview) | Speech-to-text control of the agent via microphone with batch STT for higher quality; voice input remains available during agent runs for async change queuing. | Microphone icon | `2.0` | Oct 2025 |
 | [Multi-model Selection per Agent](https://cursor.com/docs/context/rules) | Users pick different AI models per individual agent session, independent of the global default. | Model picker in agent chat | `1.4` | Aug 2025 |
+| [PDF Parsing](https://cursor.com/docs/context/rules) | Parses PDF files attached via `@Link` or web search so agents can read document content. | `@Link` with PDF URL; drag-and-drop | `1.0` | Jun 2025 |
 | [Max Mode (token-based pricing)](https://cursor.com/docs/context/rules) | Unlocks top-tier models (GPT-4, Claude, Gemini) at token-based pricing for tasks requiring maximum intelligence, separate from request-based pricing. | Model picker → Max toggle | `0.50` | May 2025 |
 | [Image (Vision) Support in Chat](https://cursor.com/docs/context/rules) | Drag-and-drop images into the chat or Command-K bar for visual context in agent and edit requests. | Drag image into chat / Cmd+K bar | `0.17` | Nov 2023 |
 
@@ -100,9 +102,13 @@ Significant user-facing features added to Cursor since its public availability.
 
 Notable changes that fell below the threshold for the main tables:
 
+- Unified Remote Machines menu (combines local, team-pool, and remote workspace pickers with a multi-repo/multi-root toggle) (`Jul 2026`) — *UI polish* — consolidates existing environment-selection surfaces
+- Admin usage analytics filterable by user and product surface (clients, Cloud Agents, Automations, Bugbot, Security Review) (`May 2026`) — *config knob* — extends existing Enterprise spend/usage controls
+- Explore subagent model configuration (choose a specific model, inherit the parent's, disable Explore subagents, or set generic model aliases like `opus`) (`May 2026`) — *config knob* — tunes the existing Subagents primitive
 - Improvements to Cursor in Slack (multi-repo environments, plan sharing, cross-channel messaging) (`Jul 2026`) — *incremental improvement* — enhances the existing Slack integration surface
 - New agent-conversation hooks (`beforeSubmitPrompt`, `afterAgentResponse`, `afterAgentThought`, `stop`, `subagentStart`) (`3.11`) — *incremental improvement* — extends the existing Hooks primitive to conversation-level events
 - MCPs and Organization Groups in Team Marketplaces (`3.10`) — *config knob* — admin distribution/access-control layer over the existing Marketplace
+- Cursor SDK custom tools (`local.customTools`), permissions-driven auto-review classifier, and nested subagents (`Jun 2026`) — *incremental improvement* — extends the existing SDK primitive
 - Bugbot speed/cost/accuracy improvements and `/review-bugbot`, `/review-security` subcommands (`Jun 2026`) — *incremental improvement* — performance and workflow refinements to the existing Bugbot/Security Review flow
 - Customize Cursor page (`3.9`) — *UI polish* — unified settings page; individual primitives already tracked separately
 - Canvas Design Mode multi-select & voice input (`3.7`) — *incremental improvement* — enhancement to existing Canvas and voice features
@@ -111,6 +117,7 @@ Notable changes that fell below the threshold for the main tables:
 - Bugbot Effort Levels (`May 2026`) — *config knob* — tunes existing Bugbot review depth
 - Bugbot Learned Rules & MCP Support (`Apr 2026`) — *incremental improvement* — improves existing Bugbot via feedback signals and additional context
 - Full-screen Tabs and Compact Chats / Tiled Layout (`3.4`, `3.1`) — *UI polish* — layout variants for existing Agents Window
+- Agent output verbosity levels: Compact, Balanced, Detailed (`3.4`) — *config knob* — tunes existing Agents Window output display
 - Composer 2.5 model (`May 2026`) — *incremental improvement* — new version of existing Cursor-trained model
 - Composer 2 model (`Mar 2026`) — *incremental improvement* — new version of existing Cursor-trained model
 - Model releases (GPT-4.1, o3, o4-mini, Grok 3, Gemini 2.5, Claude 3.7, DeepSeek R1, Grok 4.5, etc.) — tracked separately

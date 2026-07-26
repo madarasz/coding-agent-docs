@@ -1,7 +1,7 @@
 # Claude Code Features (Mar 2025 – Jul 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Jul 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Jul 26, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 
@@ -152,6 +152,42 @@ Significant user-facing features added to Claude Code since its public availabil
 
 Notable changes that fell below the threshold for the main tables:
 
+- Claude Opus 5 model release (`2.1.219`) - *Model releases (Claude Opus 5) — tracked separately*
+- `sandbox.network.strictAllowlist` Setting (`2.1.219`) - *config knob*
+- `DirectoryAdded` Hook Event (`2.1.219`) - *incremental improvement*
+- `mcp_server_errors` in Headless Stream-JSON Init Event (`2.1.219`) - *format/scripting flag*
+- `workflowSizeGuideline` Settings Key (`2.1.219`) - *config knob*
+- Nested Subagent Forwarding in Stream-JSON Output (`2.1.219`) - *format/scripting flag*
+- HTTP Status and Error Text in `claude mcp list`/`/mcp` (`2.1.219`) - *incremental improvement*
+- Dynamic Workflows Default to Medium Size Guideline (`2.1.219`) - *config knob*
+- Running-Workflow Status Line Shows Default Workflow Size (`2.1.219`) - *incremental improvement*
+- Fast Mode Drops Opus 4.7, Applies to Opus 5 and 4.8 (`2.1.219`) - *incremental improvement*
+- Nested Subagent Default Spawn Depth Raised to 3 (`2.1.219`) - *config knob*
+- `/code-review` Runs as a Background Subagent by Default (`2.1.218`) - *incremental improvement*
+- Screen-Reader Announcements for Deleted Text (`2.1.218`) - *incremental improvement*
+- `/ultrareview` Error Feedback for Invalid Arguments (`2.1.218`) - *incremental improvement*
+- Auto Mode Classifier Adjudicates dangerous-rm/background-&/Windows-Path Commands (`2.1.218`) - *incremental improvement*
+- Trust Dialogs Name the Repository Root (`2.1.218`) - *UI polish*
+- `/deep-research` Starts Only When Invoked Manually (`2.1.218`) - *incremental improvement*
+- Plan Mode with Auto Delegates Non-Provably-Read-Only Bash Commands to the Auto Mode Classifier (`2.1.218`) - *incremental improvement*
+- Fast Mode Change Announcement on Model Switch (`2.1.218`) - *UI polish*
+- Server-Managed Settings: Benign Toggles Skip Approval Prompt (`2.1.218`) - *incremental improvement*
+- Agent Names Reject `:` Character, Reserved for Plugin Namespacing (`2.1.218`) - *config knob*
+- `context: fork` Skills Run in Background by Default (`2.1.218`) - *incremental improvement*
+- Boolean Frontmatter Accepts yes/no/on/off/1/0 (`2.1.218`) - *format/scripting flag*
+- Emoji Shortcode Autocomplete (`2.1.217`) - *convenience wrapper*
+- Transcript Write Failure Warnings (`2.1.217`) - *incremental improvement*
+- Clickable Footer PR Badge Hyperlinks (`2.1.217`) - *UI polish*
+- Login-Expiry Warning Now 3 Days Before Expiry (`2.1.217`) - *config knob*
+- Concurrent Subagent Cap, Default 20 (`2.1.217`) - *config knob*
+- Subagents No Longer Spawn Nested Subagents by Default (`2.1.217`) - *config knob*
+- `sandbox.filesystem.disabled` Setting (`2.1.216`) - *config knob*
+- `/fork` Confirmation Shows Session Name and Attach ID (`2.1.216`) - *UI polish*
+- `/ultrareview` Diff-Too-Large Error Detail (`2.1.216`) - *incremental improvement*
+- `/code-review ultra` Empty-Diff Error Names Base Ref (`2.1.216`) - *incremental improvement*
+- Spend Limit Adjustment Prompt Shows Server's Rejection Reason (`2.1.216`) - *incremental improvement*
+- `/context` Warns When Conversation Exceeds Context Window (`2.1.216`) - *incremental improvement*
+- Background Sessions Park `/mcp`/`/install-github-app` Needs-Input Requests in Agent View (`2.1.216`) - *incremental improvement*
 - Manual-only invocation for `/verify` and `/code-review` skills (`2.1.215`) - *incremental improvement*
 - Permission prompts for `docker` daemon-redirect flags (`2.1.214`) - *incremental improvement*
 - Reasoning effort in `subagentStatusLine` payload (`2.1.214`) - *config knob*

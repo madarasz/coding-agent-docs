@@ -1,4 +1,4 @@
-# Gemini CLI Features (Jun 2025 – Jun 2026)
+# Gemini CLI Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to Gemini CLI since its public availability.
 **Last updated:** Jul 26, 2026 · Source: [geminicli.com/docs/changelogs](https://www.geminicli.com/docs/changelogs)
@@ -97,6 +97,7 @@ Significant user-facing features added to Gemini CLI since its public availabili
 
 Notable changes that fell below the threshold for the main tables:
 
+- Clearer error message when an account has no Code Assist tier (`0.52.0`) - *incremental improvement*
 - Tool Registry Discovery (`0.50.0`) - *incremental improvement*
 - Gemini 3.5 Flash backend for Auto Mode (`0.47.0`) - *model releases (Gemini 3.5 Flash, Gemini 3.1 Pro, Gemini 3 Flash, Gemini 3, Gemma 4) — tracked separately*
 - A2A Usage Metadata exposure (`0.45.0`) - *incremental improvement*

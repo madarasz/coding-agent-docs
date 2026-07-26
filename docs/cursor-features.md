@@ -38,8 +38,8 @@ Significant user-facing features added to Cursor since its public availability.
 | [Cursor Router](https://cursor.com/docs/cursor-router) | An intelligent model router, trained on real usage, classifies each agent request and routes it to the best-suited underlying model along a configurable cost/intelligence trade-off. | Auto mode → Intelligence/Balance/Cost | N/A | Jul 2026 |
 | [Image Generation](https://cursor.com/docs/context/rules) | Creates images directly within agent chat sessions using supported image-generation models. | Natural language prompt in agent | `2.4` | Jan 2026 |
 | [Voice Mode](https://cursor.com/docs/tab/overview) | Speech-to-text control of the agent via microphone with batch STT for higher quality; voice input remains available during agent runs for async change queuing. | Microphone icon | `2.0` | Oct 2025 |
-| [PDF Parsing](https://cursor.com/docs/context/rules) | Parses PDF files attached via `@Link` or web search so agents can read document content. | `@Link` with PDF URL; drag-and-drop | `1.0` | Jun 2025 |
 | [Multi-model Selection per Agent](https://cursor.com/docs/context/rules) | Users pick different AI models per individual agent session, independent of the global default. | Model picker in agent chat | `1.4` | Aug 2025 |
+| [PDF Parsing](https://cursor.com/docs/context/rules) | Parses PDF files attached via `@Link` or web search so agents can read document content. | `@Link` with PDF URL; drag-and-drop | `1.0` | Jun 2025 |
 | [Max Mode (token-based pricing)](https://cursor.com/docs/context/rules) | Unlocks top-tier models (GPT-4, Claude, Gemini) at token-based pricing for tasks requiring maximum intelligence, separate from request-based pricing. | Model picker → Max toggle | `0.50` | May 2025 |
 | [Image (Vision) Support in Chat](https://cursor.com/docs/context/rules) | Drag-and-drop images into the chat or Command-K bar for visual context in agent and edit requests. | Drag image into chat / Cmd+K bar | `0.17` | Nov 2023 |
 
@@ -103,8 +103,8 @@ Significant user-facing features added to Cursor since its public availability.
 Notable changes that fell below the threshold for the main tables:
 
 - Unified Remote Machines menu (combines local, team-pool, and remote workspace pickers with a multi-repo/multi-root toggle) (`Jul 2026`) — *UI polish* — consolidates existing environment-selection surfaces
-- Admin usage analytics filterable by user and product surface (clients, Cloud Agents, Automations, Bugbot, Security Review) (`Jul 2026`) — *config knob* — extends existing Enterprise spend/usage controls
-- Explore subagent model configuration (choose a specific model, inherit the parent's, disable Explore subagents, or set generic model aliases like `opus`) (`Jul 2026`) — *config knob* — tunes the existing Subagents primitive
+- Admin usage analytics filterable by user and product surface (clients, Cloud Agents, Automations, Bugbot, Security Review) (`May 2026`) — *config knob* — extends existing Enterprise spend/usage controls
+- Explore subagent model configuration (choose a specific model, inherit the parent's, disable Explore subagents, or set generic model aliases like `opus`) (`May 2026`) — *config knob* — tunes the existing Subagents primitive
 - Improvements to Cursor in Slack (multi-repo environments, plan sharing, cross-channel messaging) (`Jul 2026`) — *incremental improvement* — enhances the existing Slack integration surface
 - New agent-conversation hooks (`beforeSubmitPrompt`, `afterAgentResponse`, `afterAgentThought`, `stop`, `subagentStart`) (`3.11`) — *incremental improvement* — extends the existing Hooks primitive to conversation-level events
 - MCPs and Organization Groups in Team Marketplaces (`3.10`) — *config knob* — admin distribution/access-control layer over the existing Marketplace

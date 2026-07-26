@@ -169,7 +169,7 @@ Notable changes that fell below the threshold for the main tables:
 - Auto Mode Classifier Adjudicates dangerous-rm/background-&/Windows-Path Commands (`2.1.218`) - *incremental improvement*
 - Trust Dialogs Name the Repository Root (`2.1.218`) - *UI polish*
 - `/deep-research` Starts Only When Invoked Manually (`2.1.218`) - *incremental improvement*
-- Plan Mode with Auto Skips Prompting for Analyzable Read-Only Bash Commands (`2.1.218`) - *incremental improvement*
+- Plan Mode with Auto Delegates Non-Provably-Read-Only Bash Commands to the Auto Mode Classifier (`2.1.218`) - *incremental improvement*
 - Fast Mode Change Announcement on Model Switch (`2.1.218`) - *UI polish*
 - Server-Managed Settings: Benign Toggles Skip Approval Prompt (`2.1.218`) - *incremental improvement*
 - Agent Names Reject `:` Character, Reserved for Plugin Namespacing (`2.1.218`) - *config knob*

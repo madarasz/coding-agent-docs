@@ -113,6 +113,7 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Desktop app extends session review, timelines, and event streaming to the new "current-server" architecture, detecting and supporting both legacy and current servers (`v1.18.5`) - *incremental improvement*
 - Adaptive thinking controls extended to Kimi models on Anthropic-compatible providers (`v1.18.4`) - *incremental improvement*
 - Desktop v2 prompt input rewritten for more reliable command/context/shell/attachment interactions (`v1.18.4`) - *incremental improvement*
 - Desktop review panel tab alignment and resizing improvements (`v1.18.4`) - *incremental improvement*

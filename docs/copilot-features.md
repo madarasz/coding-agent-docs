@@ -1,7 +1,7 @@
 # GitHub Copilot Features (Aug 2024 – Jul 2026)
 
 Significant user-facing features added to GitHub Copilot since its public availability.
-**Last updated:** Jul 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
+**Last updated:** Jul 26, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
 
 ## Agentic & Multi-Agent
 
@@ -24,6 +24,7 @@ Significant user-facing features added to GitHub Copilot since its public availa
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
 | [Semantic issue search in Copilot Chat](https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat) | Copilot Chat searches GitHub issues using natural language and surfaces contextually relevant results | Copilot Chat on github.com | N/A | May 2026 |
+| [Cross-repository and cross-org code search for Copilot agents](https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases/) | Copilot agents can semantically search any workspace and run grep-style queries across other GitHub repositories and organizations using the built-in `githubTextSearch` tool | Automatic (agent tool call in VS Code) | N/A | May 2026 |
 | [Agentic memory](https://github.blog/changelog/2026-01-15-agentic-memory-for-github-copilot-is-in-public-preview) (public preview) | Coding agent retains context and information persistently across separate sessions | Automatic when memory is enabled | N/A | Jan 2026 |
 | [Copilot Memory](https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro) | Copilot learns and persists user preferences and working context across chat sessions; on by default for Pro+ (Mar 2026), extended to Business and Enterprise (Jun 2026), with deletion/scope controls and Copilot CLI support | Settings → Copilot → Memory | N/A | Dec 2025 |
 | [AGENTS.md support](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions) | Coding agent reads per-repo `AGENTS.md` to apply custom behavior directives and tool configurations | `AGENTS.md` file in repository root | N/A | Aug 2025 |
@@ -87,6 +88,7 @@ Significant user-facing features added to GitHub Copilot since its public availa
 |-------|-------------|------------|---------|------|
 | [Copilot CLI in JetBrains IDEs](https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides) | Copilot CLI integrated into JetBrains IDEs with an agent picker, `/remote`, `/chronicle`, and Cloud Coding Agent access from a unified sessions view | JetBrains Copilot plugin → CLI tab | N/A | Jun 2026 |
 | [VS Code Agents window](https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases) | Multi-project agent-first workflow hub in VS Code with remote session support and cross-repo task management | VS Code → Copilot → Agents | N/A | Jun 2026 |
+| [GitHub Copilot in JetBrains AI Assistant](https://github.blog/changelog/2026-06-30-copilot-agent-is-now-available-in-jetbrains-ai-assistant/) | GitHub Copilot becomes a selectable agent option inside JetBrains' own AI Assistant agent picker, alongside JetBrains' native agent | JetBrains AI Assistant → agent picker → Copilot | N/A | Jun 2026 |
 | [GitHub Copilot app](https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available) (GA Jun 2026) | Standalone Copilot desktop application for agent-driven development with parallel sessions, scheduled automations, MCP server support, and collaborative canvases; technical preview May 2026, GA Jun 2026 | Technical preview download → GA | N/A | May 2026 |
 | [GitHub Copilot for Eclipse open source](https://github.blog/changelog/2026-05-21-github-copilot-for-eclipse-is-open-source) | Eclipse IDE Copilot plugin released as open-source software enabling community contributions and forks | Eclipse Marketplace / GitHub repo | N/A | May 2026 |
 | [Start Copilot cloud agent via REST API](https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api) | Programmatic task initiation for cloud agent via the GitHub REST API | `POST /repos/{owner}/{repo}/copilot/tasks` | N/A | May 2026 |
@@ -178,3 +180,18 @@ Notable changes that fell below the threshold for the main tables:
 - GitHub Copilot Pro+ tier announcement (`N/A`) - *pricing tier change, not a new capability class*
 - Copilot code review path-scoped custom instructions (`N/A`) - *config knob for existing code review feature*
 - JetBrains Copilot support for Free plan GA (`N/A`) - *platform expansion; access tier expansion, not a capability class*
+- Copilot CLI no longer needs a personal access token in GitHub Actions (`N/A`) - *convenience wrapper*
+- BYOK for GitHub Copilot in VS Code extended to air-gapped environments (`N/A`) - *platform expansion*
+- BYOK for GitHub Copilot in JetBrains expanded (`N/A`) - *platform expansion*
+- Security review command (`/security-review`) extended to the GitHub Copilot app (`N/A`) - *platform expansion*
+- Usage-based billing rolled out to all Copilot plans, with user-level spending budgets (`N/A`) - *billing model change, not a new capability class*
+- Copilot code review: grouped suggestions and severity labels (`N/A`) - *incremental improvement*
+- Copilot code review comment types added to usage metrics API (`N/A`) - *incremental improvement*
+- MCP OAuth credential management in VS Code (preregistered client IDs, secret storage) (`N/A`) - *config knob*
+- Cost visibility for delegated subagent work in VS Code (`N/A`) - *incremental improvement*
+- Marketplace model discovery unified into a single picker in VS Code (`N/A`) - *convenience wrapper*
+- New Copilot usage metrics impact dashboard for admins (`N/A`) - *incremental improvement*
+- Copilot CLI: new sandbox flags and repository-level settings (`N/A`) - *config knob*
+- Built-in debugger skill for Copilot CLI sessions (`N/A`) - *incremental improvement*
+- Attach Git commits as context in Copilot Chat in Visual Studio (`N/A`) - *convenience wrapper*
+- Skills panel in Visual Studio Copilot chat for browsing workspace agent skills (`N/A`) - *platform expansion*

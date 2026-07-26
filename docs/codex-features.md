@@ -1,12 +1,13 @@
 # OpenAI Codex Features (Apr 2025 – Jul 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
-**Last updated:** Jul 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
+**Last updated:** Jul 26, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| Multi-Agent V2 (Configurable Sub-Agent Models & Reasoning) | Stabilizes the opt-in multi-agent v2 runtime with per-sub-agent model and reasoning-effort selection, concurrency limits, and restored agent roles | `multi_agent_v2` config / `spawn_agent` | `0.145.0` | Jul 2026 |
 | Multi-Agent Delegation Mode Controls | Lets app-server clients configure multi-agent delegation as disabled, explicit-request-only, or proactive at the thread and turn level | App-server API / `agents` config | `0.142.0` | Jun 2026 |
 | [Goals Workflow](https://developers.openai.com/codex/use-cases/follow-goals) | Tracks persistent goals with dedicated storage and progress across turns; supports create, pause, resume, and clear; enabled by default from v0.133.0 | `/goal` | `0.128.0` | Apr 2026 |
 | [/side Conversations](https://developers.openai.com/codex/cli/slash-commands) | Opens a quick-question side conversation without interrupting or losing context from the active session thread | `/side` | `0.122.0` | Apr 2026 |
@@ -18,6 +19,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| Persisted Thread Names & Paginated History (experimental) | Adds paginated thread history with efficient resume, full-text occurrence search, user-assigned persisted names, and cross-thread memories | Session resume picker (experimental) | `0.145.0` | Jul 2026 |
 | [Session Delete](https://developers.openai.com/codex/cli/slash-commands) | Permanently removes the current session transcript and all descendant sub-agent threads with confirmation safeguards | `codex delete` / `/delete` / `thread/delete` | `0.140.0` | Jun 2026 |
 | [Unified @ Mentions Menu](https://developers.openai.com/codex/cli/features) | Opens a single fuzzy-search picker for files, directories, plugins, and skills when `@` is typed in the composer | `@` in TUI composer | `0.140.0` | Jun 2026 |
 | [Session Archive](https://developers.openai.com/codex/cli/slash-commands) | Archives the current session to protect it from resume or fork until explicitly restored; reversible via unarchive | `/archive` / `codex archive` / `codex unarchive` | `0.136.0` | Jun 2026 |
@@ -50,7 +52,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
 | [/usage Token Activity Views](https://developers.openai.com/codex/cli/slash-commands) | Shows daily, weekly, and cumulative account token activity and allows redeeming earned usage-limit reset credits | `/usage` | `0.140.0` | Jun 2026 |
-| [/import External Agent Import](https://developers.openai.com/codex/cli/slash-commands) | Selectively imports setup, project configuration, and recent chats from Claude Code into the current Codex environment | `/import` | `0.140.0` | Jun 2026 |
+| [/import External Agent Import](https://developers.openai.com/codex/cli/slash-commands) | Selectively imports setup, project configuration, and recent chats from Claude Code into the current Codex environment; expanded to migrate MCP servers, plugins, sessions, and memories from Claude Code and Cursor in `0.145.0` | `/import` | `0.140.0` | Jun 2026 |
 | [/review Command](https://developers.openai.com/codex/cli/slash-commands) | Performs built-in code review against a specific commit, branch diff, or custom instructions without leaving the session | `/review` | `0.39.0` | Sep 2025 |
 
 ## Extensibility
@@ -81,7 +83,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 | [Python SDK (`openai-codex`)](https://developers.openai.com/codex/sdk) | Official Python package with first-class authentication (API key, ChatGPT, device-code), concurrent turn routing, and sandbox presets | `pip install openai-codex` | `0.131.0` | May 2026 |
 | [`codex remote-control`](https://developers.openai.com/codex/remote-connections) | Exposes a running Codex session to external interfaces and devices, adding a remote interaction surface via the local app-server | `codex remote-control` | `0.130.0` | May 2026 |
 | Amazon Bedrock Integration | Connects to Amazon Bedrock as a built-in model provider with AWS SigV4 authentication and AWS credential profile support | `provider = "amazon-bedrock"` in config | `0.123.0` | Apr 2026 |
-| Realtime Voice Sessions | Enables full WebRTC audio sessions with the model including voice selection and transcript output | Realtime config | `0.119.0` | Apr 2026 |
+| Realtime Voice Sessions | Enables full WebRTC audio sessions with the model including voice selection and transcript output; extended to local audio file input and audio tool-call outputs via streaming realtime V3 in `0.145.0` | Realtime config | `0.119.0` | Apr 2026 |
 | [App-Server Filesystem RPCs](https://developers.openai.com/codex/app-server) | Exposes file read, write, copy, directory operations, and path watching via the v2 app-server API for IDE-style integrations | App-server v2 API | `0.115.0` | Mar 2026 |
 | [App-Server WebSocket Transport](https://developers.openai.com/codex/app-server) | Provides bidirectional WebSocket connectivity for the app-server protocol enabling persistent IDE and tooling integrations | App-server WebSocket endpoint | `0.100.0` | Feb 2026 |
 | [Ctrl+G External Editor](https://developers.openai.com/codex/cli/features) | Opens the current TUI prompt in `$VISUAL`/`$EDITOR`, allows free-form editing, and syncs changes back on save | `Ctrl+G` | `0.78.0` | Jan 2026 |
@@ -123,6 +125,7 @@ Notable changes that fell below the threshold for the main tables:
 - App-server runtime authentication provisioning and login redirects (`0.144.0`) - *incremental improvement*
 - pnpm global install detection (`0.144.0`) - *convenience wrapper*
 - Ultra reasoning concurrency usage warning (`0.144.0`) - *UI polish*
+- ChatGPT-hosted MCP servers explicit session authentication (`0.143.0`) - *config knob*
 - Remote plugin catalog default-on with npm marketplace sources and version indicators (`0.143.0`) - *distribution channel*
 - `codex remote-control pair` manual pairing codes (`0.143.0`) - *convenience wrapper*
 - Amazon Bedrock GPT-5.6 Sol/Terra/Luna models with max reasoning effort (`0.143.0`) - *incremental improvement*

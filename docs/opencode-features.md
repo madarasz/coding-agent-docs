@@ -1,7 +1,7 @@
 # OpenCode Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Jul 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Jul 26, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -113,6 +113,10 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Adaptive thinking controls extended to Kimi models on Anthropic-compatible providers (`v1.18.4`) - *incremental improvement*
+- Desktop v2 prompt input rewritten for more reliable command/context/shell/attachment interactions (`v1.18.4`) - *incremental improvement*
+- Desktop review panel tab alignment and resizing improvements (`v1.18.4`) - *incremental improvement*
+- Desktop embedded terminal theme synced with app theme (`v1.18.4`) - *UI polish*
 - Home page command palette session search (`v1.18.3`) - *convenience wrapper*
 - Configurable subagent nesting depth via `subagent_depth` (`v1.18.2`) - *config knob*
 - Desktop v2 UI redesign completed, with legacy-layout toggle during transition (`v1.18.0`) - *preview→GA, nothing new*

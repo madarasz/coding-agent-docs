@@ -1,7 +1,7 @@
 # OpenAI Codex Features (Apr 2025 – Jul 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
-**Last updated:** Jul 26, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
+**Last updated:** Aug 2, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
 
 ## Agentic & Multi-Agent
 
@@ -119,6 +119,16 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 Notable changes that fell below the threshold for the main tables:
 
+- Session naming at creation (`/new`, `/clear`) and `/session rename` (`0.146.0`) - *incremental improvement*
+- Thread pinning (`0.146.0`) - *convenience wrapper*
+- Side conversation switching without closing (`0.146.0`) - *incremental improvement*
+- Thread forking with paginated history and temporary forks (`0.146.0`) - *incremental improvement*
+- Plugin workspace publishing and Amazon Bedrock / Claude Code marketplaces (`0.146.0`) - *distribution channel*
+- App-server remote Code Mode hosts over WebSocket (experimental) (`0.146.0`) - *incremental improvement*
+- Standalone web search for custom model providers (`0.146.0`) - *platform expansion*
+- OpenAI-hosted release infrastructure with GitHub fallback (`0.146.0`) - *distribution channel*
+- macOS helper executable signing and notarization (`0.146.0`) - *security infrastructure*
+- Enterprise-plan recognition and admin controls for in-app updates (`0.146.0`) - *config knob*
 - Improved dangerous-command detection and clearer rejection reasons (`0.144.5`) - *incremental improvement*
 - Usage-limit reset credit type/expiration selection (`0.144.0`) - *incremental improvement*
 - Interactive MCP tool authentication without experimental opt-in (`0.144.0`) - *preview→GA, nothing new*

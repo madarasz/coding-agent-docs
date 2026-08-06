@@ -1,7 +1,7 @@
 # GitHub Copilot Features (Aug 2024 – Jul 2026)
 
 Significant user-facing features added to GitHub Copilot since its public availability.
-**Last updated:** Jul 26, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
+**Last updated:** Aug 2, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
 
 ## Agentic & Multi-Agent
 
@@ -142,6 +142,11 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 Notable changes that fell below the threshold for the main tables:
 
+- [GitHub Copilot in Visual Studio Code, July 2026 releases](https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-code-july-2026-releases/) (`N/A`) - *incremental improvement* (Agents window redesign, BYOK for agent sessions, code review panel updates)
+- [GitHub Copilot in Visual Studio — July update](https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update/) (`N/A`) - *incremental improvement* (SDK-based agent preview, built-in .NET/Azure skills, org-level custom instructions in Visual Studio)
+- [Default model enablement for Copilot Business and Enterprise](https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/) (`N/A`) - *config knob*
+- [Copilot code review: Agent skills and MCP now generally available](https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/) (`N/A`) - *incremental improvement*
+- [Enterprise managed settings now apply to the GitHub Copilot app](https://github.blog/changelog/2026-07-27-enterprise-managed-settings-now-apply-to-the-github-copilot-app/) (`N/A`) - *platform expansion* of existing managed-settings.json feature
 - Model releases (GPT-5.x, GPT-5.6, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1, Raptor mini, MAI-Code-1-Flash, Kimi K2.7 Code) (`N/A`) - *individual model releases; tracked separately*
 - Repository-level Copilot usage metrics GA via REST API (`N/A`) - *metrics API addition*
 - C++ modernization agent GA in Visual Studio (`N/A`) - *platform expansion* of existing app modernization workflow

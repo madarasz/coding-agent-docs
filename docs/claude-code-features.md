@@ -1,7 +1,7 @@
 # Claude Code Features (Mar 2025 – Jul 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Jul 26, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Aug 2, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 

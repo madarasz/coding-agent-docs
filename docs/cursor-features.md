@@ -1,7 +1,7 @@
 # Cursor Features (Mar 2023 – Jul 2026)
 
 Significant user-facing features added to Cursor since its public availability.
-**Last updated:** Jul 26, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
+**Last updated:** Aug 2, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
 
 ## Agentic & Multi-Agent
 
@@ -102,6 +102,8 @@ Significant user-facing features added to Cursor since its public availability.
 
 Notable changes that fell below the threshold for the main tables:
 
+- Cursor on iPad (split-screen chats, richer diffs, inbox, full-PR review experience) (`Jul 2026`) - *platform expansion* - extends the existing Mobile App surface (previously iPhone-only) to iPad
+- Cursor Start (₹649/month India-only plan bundling Grok 4.5, Composer, cloud agents, and mobile access) (`Jul 2026`) - *distribution channel* - new regional pricing/billing tier with no new capability
 - Unified Remote Machines menu (combines local, team-pool, and remote workspace pickers with a multi-repo/multi-root toggle) (`Jul 2026`) — *UI polish* — consolidates existing environment-selection surfaces
 - Admin usage analytics filterable by user and product surface (clients, Cloud Agents, Automations, Bugbot, Security Review) (`May 2026`) — *config knob* — extends existing Enterprise spend/usage controls
 - Explore subagent model configuration (choose a specific model, inherit the parent's, disable Explore subagents, or set generic model aliases like `opus`) (`May 2026`) — *config knob* — tunes the existing Subagents primitive

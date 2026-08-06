@@ -1,7 +1,7 @@
 # OpenCode Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Jul 26, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Aug 2, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -113,6 +113,11 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Modal provider auto-discovery for available models (`v1.18.10`) - *platform expansion*
+- Improved toast notification stacking, dismissal, and mobile layout (`v1.18.10`) - *UI polish*
+- Opt-in V2 desktop sidecar backed by the bundled CLI service (`v1.18.9`) - *incremental improvement*
+- Collapsible model provider sections in V2 desktop settings (`v1.18.9`) - *UI polish*
+- Shortcut to open the project selector in new sessions (`v1.18.8`) - *convenience wrapper*
 - Desktop app extends session review, timelines, and event streaming to the new "current-server" architecture, detecting and supporting both legacy and current servers (`v1.18.5`) - *incremental improvement*
 - Adaptive thinking controls extended to Kimi models on Anthropic-compatible providers (`v1.18.4`) - *incremental improvement*
 - Desktop v2 prompt input rewritten for more reliable command/context/shell/attachment interactions (`v1.18.4`) - *incremental improvement*

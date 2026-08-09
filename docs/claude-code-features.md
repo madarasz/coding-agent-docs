@@ -1,12 +1,13 @@
-# Claude Code Features (Mar 2025 – Jul 2026)
+# Claude Code Features (Mar 2025 – Aug 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Aug 9, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Cross-Session Messaging](https://code.claude.com/docs/en/cross-session-messaging) | Claude Code sessions message each other by name on the same machine or across machines via Remote Control, sharing findings and status without manual copy-pasting. | `ListAgents`/`SendMessage` tools (automatic); `/list-agents` | `2.1.224` | Aug 2026 |
 | [`/fork` Background Session Copy](https://code.claude.com/docs/en/commands) | Copies the current conversation into a new independent background session that runs as its own row in agent view while you keep working; `/subtask` remains for delegating a side task to a subagent that reports back into the conversation. | `/fork [prompt]` | `2.1.212` | Jul 2026 |
 | Nested Sub-Agent Spawning | Sub-agents can now spawn their own sub-agents up to 5 levels deep, enabling hierarchical multi-agent workflows. | Automatic (sub-agent uses Agent tool) | `2.1.172` | Jun 2026 |
 | Parallel Tool Call Independence | A failed Bash command in a parallel tool call batch no longer cancels the other calls in the same batch; each tool returns its own result independently. | Automatic | `2.1.161` | Jun 2026 |
@@ -108,6 +109,7 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Self-Hosted Environments](https://code.claude.com/docs/en/self-hosted-environments) | Runs Claude Code cloud sessions on infrastructure your organization operates, with runners you deploy claiming and executing sessions inside your own network. | `claude self-hosted-runner`; environment picker in claude.ai admin settings | `2.1.224` | Aug 2026 |
 | [Screen Reader Mode](https://code.claude.com/docs/en/cli-reference) | Opt-in plain-text rendering for screen reader users, replacing decorative borders and animations with flat, accessible output. | `claude --ax-screen-reader`; `axScreenReader` setting | `2.1.208` | Jul 2026 |
 | [Claude Platform on AWS (Gateway)](https://code.claude.com/docs/en/claude-apps-gateway) | Route Claude Code through Claude Platform on AWS as a gateway upstream provider, alongside Bedrock, Vertex, and Foundry. | `provider: anthropicAws` in gateway config | `2.1.198` | Jul 2026 |
 | `fallbackModel` Setting | Configure up to three fallback models tried in order when the primary model is overloaded or unavailable, applying to both interactive and `-p` sessions. | `fallbackModel` in settings; `--fallback-model` flag | `2.1.166` | Jun 2026 |
@@ -152,6 +154,53 @@ Significant user-facing features added to Claude Code since its public availabil
 
 Notable changes that fell below the threshold for the main tables:
 
+- Gateway spend-limit cap and reset time shown in usage warning (`2.1.225`) - *incremental improvement*
+- Workspace trust prompt added to `claude agents` (`2.1.225`) - *platform expansion*
+- Remote Control shows photos directly instead of reading from disk (`2.1.225`) - *incremental improvement*
+- SendMessage can start conversations with Remote Control sessions by name (`2.1.225`) - *incremental improvement*
+- `archive` plugin source for zip-over-HTTPS installs with SHA-256 pinning (`2.1.224`) - *distribution channel*
+- Cancel-and-confirm step when a paste change alters command text (`2.1.224`) - *UI polish*
+- `ANTHROPIC_BEDROCK_REGION_PREFIX` env var (`2.1.224`) - *config knob*
+- `crossSessionInbound`/`dialogExpiry` settings (`2.1.224`) - *config knob*
+- Sandbox credential-masking options: extract, JWT-aware masking, AWS SigV4 re-signing (`2.1.224`) - *incremental improvement*
+- Removed 200-subagent-per-session spawn cap (`2.1.224`) - *config knob*
+- Managed settings approval prompt no longer re-appears after re-login or org switch (`2.1.224`) - *incremental improvement*
+- Feedback-survey transcript share can include model settings (`2.1.224`) - *incremental improvement*
+- Recalled paste placeholder numbers renumber on accept (`2.1.224`) - *UI polish*
+- Remote Control archives stale server sessions instead of listing dead ones (`2.1.224`) - *incremental improvement*
+- Fullscreen mode retains pre-compaction history across repeated compactions (`2.1.224`) - *incremental improvement*
+- Remote Control shows compaction progress and `/clear` resets to attached clients (`2.1.224`) - *incremental improvement*
+- Remote Control persistent connection-failure indicator with reconnect shortcut (`2.1.224`) - *incremental improvement*
+- Owner wildcard entries in marketplace managed settings (`2.1.223`) - *config knob*
+- Warning shown when a restricted subagent model override falls back to the parent model (`2.1.223`) - *incremental improvement*
+- `/teleport` hint shown in cloud sessions (`2.1.223`) - *convenience wrapper*
+- `CLAUDE_CODE_DISABLE_1M_CONTEXT` holds every 1M-context model to 200K (`2.1.223`) - *incremental improvement*
+- Auto-compact enforces context window for unrecognized model IDs (`2.1.223`) - *incremental improvement*
+- `/review` is now an alias of `/code-review` with PR support (`2.1.223`) - *format/scripting flag*
+- `/code-review` reuses the last-typed effort level (`2.1.223`) - *incremental improvement*
+- Auto mode classifier evaluates outbound `SendMessage` calls before dispatch (`2.1.222`) - *incremental improvement*
+- Clearer refusal message for skills marked `disable-model-invocation` (`2.1.222`) - *incremental improvement*
+- `/diff` and file-edit diffs use raw git blob content (`2.1.222`) - *incremental improvement*
+- Remote Control auto-start can no longer be turned on by repo-local settings (`2.1.222`) - *config knob*
+- Removed the Ultraplan feature (`2.1.222`) - *incremental improvement*
+- [VSCode] Focus view hides tool activity behind an expandable per-turn summary (`2.1.221`) - *UI polish*
+- `mode: "mask"` for sandbox credential files on Linux/WSL (`2.1.221`) - *incremental improvement*
+- Validation warnings in `claude plugin validate` for marketplace/plugin names (`2.1.221`) - *incremental improvement*
+- `prompt-audit` subcommand for the `claude-api` skill (`2.1.221`) - *convenience wrapper*
+- Auto mode parallel permission checks made cache-efficient (`2.1.221`) - *incremental improvement*
+- Stats panel counts cache tokens with a read/write breakdown (`2.1.221`) - *incremental improvement*
+- `/ultrareview` gives clearer errors for repos with no shared history (`2.1.221`) - *incremental improvement*
+- Background sessions push and open a draft PR only when the task calls for one (`2.1.221`) - *incremental improvement*
+- `/plugin install` refreshes a stale marketplace catalog before reporting not found (`2.1.221`) - *incremental improvement*
+- Plugins installed via `/plugin` activate immediately when safe (`2.1.221`) - *incremental improvement*
+- Plugins accept `"."` as a skills path (`2.1.221`) - *config knob*
+- `/status` shows session kind: interactive, attached, or unattended (`2.1.221`) - *format/scripting flag*
+- Emoji autocomplete accepts alternate shortcodes (`2.1.221`) - *incremental improvement*
+- `/fork` creates a new worktree instead of sharing the original checkout (`2.1.221`) - *incremental improvement*
+- Claude in Chrome closes browser tabs it no longer needs (`2.1.221`) - *incremental improvement*
+- Fast mode reports usage-credit exhaustion mid-session (`2.1.221`) - *incremental improvement*
+- Monitor reports when a watch produces no output (`2.1.221`) - *incremental improvement*
+- Removed repeated permission-mode-change notice from approval prompts (`2.1.221`) - *UI polish*
 - Claude Opus 5 model release (`2.1.219`) - *Model releases (Claude Opus 5) — tracked separately*
 - `sandbox.network.strictAllowlist` Setting (`2.1.219`) - *config knob*
 - `DirectoryAdded` Hook Event (`2.1.219`) - *incremental improvement*

@@ -1,7 +1,7 @@
-# Cursor Features (Mar 2023 – Jul 2026)
+# Cursor Features (Mar 2023 – Aug 2026)
 
 Significant user-facing features added to Cursor since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
+**Last updated:** Aug 9, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
 
 ## Agentic & Multi-Agent
 
@@ -102,6 +102,7 @@ Significant user-facing features added to Cursor since its public availability.
 
 Notable changes that fell below the threshold for the main tables:
 
+- [Google Workspace Plugins](https://cursor.com/changelog/google-workspace-plugins) (agent access to Gmail, Google Drive, Calendar, Docs, Sheets, and Chat) (`Aug 2026`) - *incremental improvement* - content addition to the existing Plugins/Marketplace infrastructure
 - Cursor on iPad (split-screen chats, richer diffs, inbox, full-PR review experience) (`Jul 2026`) - *platform expansion* - extends the existing Mobile App surface (previously iPhone-only) to iPad
 - Cursor Start (₹649/month India-only plan bundling Grok 4.5, Composer, cloud agents, and mobile access) (`Jul 2026`) - *distribution channel* - new regional pricing/billing tier with no new capability
 - Unified Remote Machines menu (combines local, team-pool, and remote workspace pickers with a multi-repo/multi-root toggle) (`Jul 2026`) — *UI polish* — consolidates existing environment-selection surfaces

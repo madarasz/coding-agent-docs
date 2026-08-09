@@ -1,7 +1,7 @@
 # GitHub Copilot Features (Aug 2024 – Jul 2026)
 
 Significant user-facing features added to GitHub Copilot since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
+**Last updated:** Aug 9, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
 
 ## Agentic & Multi-Agent
 
@@ -134,7 +134,7 @@ Significant user-facing features added to GitHub Copilot since its public availa
 | [Budget tracking for GitHub AI tools](https://github.blog/changelog/2025-11-03-control-ai-spending-with-budget-tracking-for-github-ai-tools) | Organizations set and monitor spending budgets across all Copilot AI features and premium requests | Org Settings → Billing → AI budget | N/A | Nov 2025 |
 | [Enterprise bring your own key (BYOK)](https://github.blog/changelog/2025-11-20-enterprise-bring-your-own-key-byok-for-github-copilot-is-now-in-public-preview) (public preview) | Organizations supply their own encryption keys to independently manage Copilot data security | Enterprise Settings → Encryption keys | N/A | Nov 2025 |
 | [Delegate AI controls management](https://github.blog/changelog/2025-11-03-delegate-ai-controls-management-to-members-of-your-enterprise) | Enterprise admins delegate Copilot policy management rights to designated organization members | Enterprise Settings → AI controls | N/A | Nov 2025 |
-| [MCP registry and allowlist controls](https://github.blog/changelog/2025-11-18-internal-mcp-registry-and-allowlist-controls-for-vs-code-stable-in-public-preview) (public preview) | Admins define allowed MCP server registries and block unauthorized servers for all IDE users | IDE settings → MCP allowlist | N/A | Nov 2025 |
+| [MCP allowlists in enterprise managed settings](https://github.blog/changelog/2026-08-06-mcp-allowlists-in-enterprise-managed-settings/) (GA Aug 2026) | Enterprise owners centrally approve or block MCP servers across the Copilot app, Copilot CLI, and VS Code using `allowedMcpServers`/`deniedMcpServers` keys in managed settings; began as VS Code-only registry allowlists in public preview | `copilot/managed-settings.json` → MCP allowlist keys | N/A | Nov 2025 |
 | [Copilot content exclusion](https://github.blog/changelog/2024-11-12-content-exclusion-ga) (GA in IDEs) | Admins exclude specific files, folders, or repositories from Copilot code suggestions organization-wide | Org/Enterprise admin → Content exclusion | N/A | Nov 2024 |
 | [Security campaigns with Copilot Autofix](https://github.blog/changelog/2024-10-29-security-campaigns-with-copilot-autofix-are-now-in-public-preview) | Enterprise campaigns batch and automatically fix code scanning alerts at scale across repositories | GitHub Advanced Security → Security campaigns | N/A | Oct 2024 |
 
@@ -142,12 +142,20 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 Notable changes that fell below the threshold for the main tables:
 
+- [Copilot code review effort levels are generally available](https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/) (`N/A`) - *config knob* (Lite/Balanced review depth)
+- [Copilot impact dashboard adds a return on investment section](https://github.blog/changelog/2026-08-07-copilot-impact-dashboard-adds-a-return-on-investment-section/) (`N/A`) - *incremental improvement* of existing usage-metrics impact dashboard
+- [Copilot usage metrics API adds agent app activity](https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity/) (`N/A`) - *incremental improvement*
+- [GitHub Copilot weekly releases — August 3](https://github.blog/changelog/2026-08-07-github-copilot-weekly-releases-august-3/) (`N/A`) - *incremental improvement* (CLI live tool-call duration timeline, experimental `/worktree` isolated conversations, `/side` parallel questions, Sessions sidebar shortcuts, multilingual on-device dictation, browser element-level feedback, Auto model/credit transparency)
+- [Enterprise team specialization for managed settings](https://github.blog/changelog/2026-08-03-enterprise-team-specialization-for-managed-settings/) (`N/A`) - *config knob* (per-team overridable keys in managed-settings.json)
+- [Trigger Copilot automations with comments](https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments/) (`N/A`) - *incremental improvement* of existing cloud agent automation feature
+- [Customize the reasoning level for Copilot cloud agent](https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent/) (`N/A`) - *platform expansion* of existing reasoning-level configuration
+- [Enterprise teams model policy targeting in public preview](https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview/) (`N/A`) - *incremental improvement* of existing model rules targeting
 - [GitHub Copilot in Visual Studio Code, July 2026 releases](https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-code-july-2026-releases/) (`N/A`) - *incremental improvement* (Agents window redesign, BYOK for agent sessions, code review panel updates)
 - [GitHub Copilot in Visual Studio — July update](https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update/) (`N/A`) - *incremental improvement* (SDK-based agent preview, built-in .NET/Azure skills, org-level custom instructions in Visual Studio)
 - [Default model enablement for Copilot Business and Enterprise](https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/) (`N/A`) - *config knob*
 - [Copilot code review: Agent skills and MCP now generally available](https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/) (`N/A`) - *incremental improvement*
 - [Enterprise managed settings now apply to the GitHub Copilot app](https://github.blog/changelog/2026-07-27-enterprise-managed-settings-now-apply-to-the-github-copilot-app/) (`N/A`) - *platform expansion* of existing managed-settings.json feature
-- Model releases (GPT-5.x, GPT-5.6, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1, Raptor mini, MAI-Code-1-Flash, Kimi K2.7 Code) (`N/A`) - *individual model releases; tracked separately*
+- Model releases (GPT-5.x, GPT-5.6, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1, Raptor mini, MAI-Code-1-Flash, Kimi K2.7 Code, Kimi K3) (`N/A`) - *individual model releases; tracked separately*
 - Repository-level Copilot usage metrics GA via REST API (`N/A`) - *metrics API addition*
 - C++ modernization agent GA in Visual Studio (`N/A`) - *platform expansion* of existing app modernization workflow
 - Real-time Copilot usage tracking and proactive limit alerts in Visual Studio (`N/A`) - *incremental improvement*

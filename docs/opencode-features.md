@@ -1,7 +1,7 @@
 # OpenCode Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Aug 9, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -113,6 +113,10 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Export full session transcripts as JSON from the desktop UI (`v1.18.15`) - *convenience wrapper*
+- Broader desktop locale/translation coverage (`v1.18.15`) - *UI polish*
+- Simplified xAI login to a single device-code flow for headless and remote environments (`v1.18.14`) - *incremental improvement*
+- Expanded desktop localization with RTL layout support, locale-aware plural rules, and more languages (`v1.18.13`) - *UI polish*
 - Modal provider auto-discovery for available models (`v1.18.10`) - *platform expansion*
 - Improved toast notification stacking, dismissal, and mobile layout (`v1.18.10`) - *UI polish*
 - Opt-in V2 desktop sidecar backed by the bundled CLI service (`v1.18.9`) - *incremental improvement*

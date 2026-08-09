@@ -1,12 +1,13 @@
-# Claude Code Features (Mar 2025 – Jul 2026)
+# Claude Code Features (Mar 2025 – Aug 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Aug 9, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Cross-Session Messaging](https://code.claude.com/docs/en/cross-session-messaging) | Claude Code sessions message each other by name on the same machine or across machines via Remote Control, sharing findings and status without manual copy-pasting. | `ListAgents`/`SendMessage` tools (automatic); `/list-agents` | `2.1.224` | Aug 2026 |
 | [`/fork` Background Session Copy](https://code.claude.com/docs/en/commands) | Copies the current conversation into a new independent background session that runs as its own row in agent view while you keep working; `/subtask` remains for delegating a side task to a subagent that reports back into the conversation. | `/fork [prompt]` | `2.1.212` | Jul 2026 |
 | Nested Sub-Agent Spawning | Sub-agents can now spawn their own sub-agents up to 5 levels deep, enabling hierarchical multi-agent workflows. | Automatic (sub-agent uses Agent tool) | `2.1.172` | Jun 2026 |
 | Parallel Tool Call Independence | A failed Bash command in a parallel tool call batch no longer cancels the other calls in the same batch; each tool returns its own result independently. | Automatic | `2.1.161` | Jun 2026 |
@@ -108,6 +109,7 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Self-Hosted Environments](https://code.claude.com/docs/en/self-hosted-environments) | Runs Claude Code cloud sessions on infrastructure your organization operates, with runners you deploy claiming and executing sessions inside your own network. | `claude self-hosted-runner`; environment picker in claude.ai admin settings | `2.1.224` | Aug 2026 |
 | [Screen Reader Mode](https://code.claude.com/docs/en/cli-reference) | Opt-in plain-text rendering for screen reader users, replacing decorative borders and animations with flat, accessible output. | `claude --ax-screen-reader`; `axScreenReader` setting | `2.1.208` | Jul 2026 |
 | [Claude Platform on AWS (Gateway)](https://code.claude.com/docs/en/claude-apps-gateway) | Route Claude Code through Claude Platform on AWS as a gateway upstream provider, alongside Bedrock, Vertex, and Foundry. | `provider: anthropicAws` in gateway config | `2.1.198` | Jul 2026 |
 | `fallbackModel` Setting | Configure up to three fallback models tried in order when the primary model is overloaded or unavailable, applying to both interactive and `-p` sessions. | `fallbackModel` in settings; `--fallback-model` flag | `2.1.166` | Jun 2026 |

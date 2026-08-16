@@ -1,7 +1,7 @@
-# OpenAI Codex Features (Apr 2025 – Jul 2026)
+# OpenAI Codex Features (Apr 2025 – Aug 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
+**Last updated:** Aug 16, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
 
 ## Agentic & Multi-Agent
 
@@ -19,6 +19,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| Conversation Sections | Organizes conversations into persistent, manually ordered sections and supports incremental browsing of long transcripts | Session resume picker | `0.147.0` | Aug 2026 |
 | Persisted Thread Names & Paginated History (experimental) | Adds paginated thread history with efficient resume, full-text occurrence search, user-assigned persisted names, and cross-thread memories | Session resume picker (experimental) | `0.145.0` | Jul 2026 |
 | [Session Delete](https://developers.openai.com/codex/cli/slash-commands) | Permanently removes the current session transcript and all descendant sub-agent threads with confirmation safeguards | `codex delete` / `/delete` / `thread/delete` | `0.140.0` | Jun 2026 |
 | [Unified @ Mentions Menu](https://developers.openai.com/codex/cli/features) | Opens a single fuzzy-search picker for files, directories, plugins, and skills when `@` is typed in the composer | `@` in TUI composer | `0.140.0` | Jun 2026 |
@@ -98,6 +99,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Auto-Reviewed Approvals (`--approve-for-me`)](https://developers.openai.com/codex/concepts/sandboxing/auto-review) | Automatically reviews and approves commands within the active sandbox policy using an automated reviewer, cutting down manual approval prompts | `--approve-for-me` flag | `0.147.0` | Aug 2026 |
 | [`writes` App-Approval Mode](https://developers.openai.com/codex/permissions) | Adds an app-approval mode that lets declared read-only actions proceed automatically while still requiring explicit approval for write actions | App-approval config (`writes` mode) | `0.144.0` | Jul 2026 |
 | Rollout Token Budgets | Configures token budgets that track usage across agent threads, provide remaining-budget reminders, and abort turns when exhausted | `token_budget` in config | `0.142.0` | Jun 2026 |
 | Noise Relay Encrypted Remote Execution | Uses authenticated, end-to-end encrypted Noise relay channels for all remote executor connections | Automatic for remote executors | `0.141.0` | Jun 2026 |
@@ -119,6 +121,11 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 Notable changes that fell below the threshold for the main tables:
 
+- Portable Agent Plugin installs and cross-catalog search (local/personal/workspace/remote) (`0.147.0`) - *incremental improvement*
+- Cursor-managed skill import and no-duplicate conversation sync for Claude/Cursor imports (`0.147.0`) - *incremental improvement*
+- Opt-in MCP 2026-07-28 protocol support with paginated discovery and multi-round requests (`0.147.0`) - *incremental improvement*
+- Cached web search and remote conversation compaction for Amazon Bedrock (`0.147.0`) - *platform expansion*
+- macOS release notarization via Azure Key Vault (`0.147.0`) - *security infrastructure*
 - Session naming at creation (`/new`, `/clear`) and `/session rename` (`0.146.0`) - *incremental improvement*
 - Thread pinning (`0.146.0`) - *convenience wrapper*
 - Side conversation switching without closing (`0.146.0`) - *incremental improvement*

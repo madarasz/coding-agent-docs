@@ -1,7 +1,7 @@
-# GitHub Copilot Features (Aug 2024 – Jul 2026)
+# GitHub Copilot Features (Aug 2024 – Aug 2026)
 
 Significant user-facing features added to GitHub Copilot since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
+**Last updated:** Aug 16, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
 
 ## Agentic & Multi-Agent
 
@@ -72,6 +72,7 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Agent Plugins 1.0](https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/) | Open standard, co-developed with AWS, Anysphere, Microsoft, OpenAI, and Vercel, packages agent skills and MCP servers into a single portable plugin that installs and runs across ChatGPT, Codex, Cursor, Copilot, Kiro, and VS Code | Plugin install via Customize/Settings in VS Code, Copilot CLI, Copilot app, or SDK | N/A | Aug 2026 |
 | [Agent Apps](https://github.blog/changelog/2026-06-02-extend-github-with-agent-apps) | Third-party AI agents from partners can be installed as standard GitHub Apps and assigned to issues, mentioned in PRs, or invoked through the Agents UI | github.com Agents UI / issue assignment | N/A | Jun 2026 |
 | [Agent Skills](https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills) | Package and reuse custom agent capabilities as shareable skill modules attachable to any Copilot agent | Agent skill configuration / settings UI | N/A | Dec 2025 |
 | [Custom agents for GitHub Copilot](https://github.blog/changelog/2025-10-28-custom-agents-for-github-copilot) | Define specialized Copilot agent variants with custom tools, instructions, and behavior profiles | Agent configuration UI on github.com | N/A | Oct 2025 |
@@ -142,12 +143,19 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 Notable changes that fell below the threshold for the main tables:
 
+- [GitHub Copilot weekly releases — August 10](https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10/) (`N/A`) - *convenience wrapper* (per-plugin version display, individual and bulk plugin updates for Agent Plugins)
+- [Copilot memory and Ollama in GitHub Copilot for JetBrains](https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/) (`N/A`) - *platform expansion* of existing Memory and BYOK features to JetBrains
+- [Copilot on web expands conversation controls](https://github.blog/changelog/2026-08-10-copilot-on-web-expands-conversation-controls/) (`N/A`) - *incremental improvement* (recent-conversations access, minimizable chat window, token spend indicators)
+- [Copilot usage metrics API adds agent app activity](https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity/) (`N/A`) - *incremental improvement*
+- [Copilot impact dashboard adds a return on investment section](https://github.blog/changelog/2026-08-07-copilot-impact-dashboard-adds-a-return-on-investment-section/) (`N/A`) - *incremental improvement*
+- [GitHub Copilot weekly releases — August 3](https://github.blog/changelog/2026-08-07-github-copilot-weekly-releases-august-3/) (`N/A`) - *incremental improvement* (element-level browser feedback, multilingual on-device dictation, `/btw` side chat, Markdown hybrid diff viewer)
+- [Trigger Copilot automations with comments](https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments/) (`N/A`) - *incremental improvement* of existing scheduled cloud agent automations
 - [GitHub Copilot in Visual Studio Code, July 2026 releases](https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-code-july-2026-releases/) (`N/A`) - *incremental improvement* (Agents window redesign, BYOK for agent sessions, code review panel updates)
 - [GitHub Copilot in Visual Studio — July update](https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update/) (`N/A`) - *incremental improvement* (SDK-based agent preview, built-in .NET/Azure skills, org-level custom instructions in Visual Studio)
 - [Default model enablement for Copilot Business and Enterprise](https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/) (`N/A`) - *config knob*
 - [Copilot code review: Agent skills and MCP now generally available](https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/) (`N/A`) - *incremental improvement*
 - [Enterprise managed settings now apply to the GitHub Copilot app](https://github.blog/changelog/2026-07-27-enterprise-managed-settings-now-apply-to-the-github-copilot-app/) (`N/A`) - *platform expansion* of existing managed-settings.json feature
-- Model releases (GPT-5.x, GPT-5.6, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1, Raptor mini, MAI-Code-1-Flash, Kimi K2.7 Code) (`N/A`) - *individual model releases; tracked separately*
+- Model releases (GPT-5.x, GPT-5.6, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1/4.6, Raptor mini, MAI-Code-1-Flash/1.1-Flash, Kimi K2.7 Code/K3) (`N/A`) - *individual model releases; tracked separately*
 - Repository-level Copilot usage metrics GA via REST API (`N/A`) - *metrics API addition*
 - C++ modernization agent GA in Visual Studio (`N/A`) - *platform expansion* of existing app modernization workflow
 - Real-time Copilot usage tracking and proactive limit alerts in Visual Studio (`N/A`) - *incremental improvement*

@@ -1,12 +1,13 @@
-# Claude Code Features (Mar 2025 – Jul 2026)
+# Claude Code Features (Mar 2025 – Aug 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Aug 16, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Cross-Session Messaging](https://code.claude.com/docs/en/cross-session-messaging) | Claude Code sessions can message each other directly — on the same machine, across your machines, or on the web — discovering reachable sessions and delivering text between them without you copy-pasting. | `SendMessage`/`ListAgents` tools; `/list-agents`; `@<session-name>` in prompt | `2.1.224` | Aug 2026 |
 | [`/fork` Background Session Copy](https://code.claude.com/docs/en/commands) | Copies the current conversation into a new independent background session that runs as its own row in agent view while you keep working; `/subtask` remains for delegating a side task to a subagent that reports back into the conversation. | `/fork [prompt]` | `2.1.212` | Jul 2026 |
 | Nested Sub-Agent Spawning | Sub-agents can now spawn their own sub-agents up to 5 levels deep, enabling hierarchical multi-agent workflows. | Automatic (sub-agent uses Agent tool) | `2.1.172` | Jun 2026 |
 | Parallel Tool Call Independence | A failed Bash command in a parallel tool call batch no longer cancels the other calls in the same batch; each tool returns its own result independently. | Automatic | `2.1.161` | Jun 2026 |
@@ -108,6 +109,7 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Self-Hosted Environments](https://code.claude.com/docs/en/self-hosted-environments) | Run Claude Code cloud sessions on infrastructure your organization operates: deploy runners that execute sessions inside your own network, on Team and Enterprise plans. | `claude self-hosted-runner` | `2.1.224` | Aug 2026 |
 | [Screen Reader Mode](https://code.claude.com/docs/en/cli-reference) | Opt-in plain-text rendering for screen reader users, replacing decorative borders and animations with flat, accessible output. | `claude --ax-screen-reader`; `axScreenReader` setting | `2.1.208` | Jul 2026 |
 | [Claude Platform on AWS (Gateway)](https://code.claude.com/docs/en/claude-apps-gateway) | Route Claude Code through Claude Platform on AWS as a gateway upstream provider, alongside Bedrock, Vertex, and Foundry. | `provider: anthropicAws` in gateway config | `2.1.198` | Jul 2026 |
 | `fallbackModel` Setting | Configure up to three fallback models tried in order when the primary model is overloaded or unavailable, applying to both interactive and `-p` sessions. | `fallbackModel` in settings; `--fallback-model` flag | `2.1.166` | Jun 2026 |
@@ -152,6 +154,56 @@ Significant user-facing features added to Claude Code since its public availabil
 
 Notable changes that fell below the threshold for the main tables:
 
+- GitLab merge request URL support in `--worktree`/`claude agents` (`2.1.233`) - *platform expansion*
+- `forward_user_identity` apps gateway setting for per-user spend attribution (`2.1.233`) - *config knob*
+- Bash tool memory limit via `CLAUDE_CODE_TOOL_MEMORY_LIMIT` (`2.1.233`) - *config knob*
+- `CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS` Setting (`2.1.233`) - *config knob*
+- Task-tracking tools disabled by default on newest models (`2.1.233`) - *incremental improvement*
+- Screen reader mode: numbered-list `/effort` selector and unclipped hint text (`2.1.233`) - *incremental improvement to existing Screen Reader Mode*
+- `[claude-code:unrecognized_model]` stderr diagnostic in print mode (`2.1.233`) - *format/scripting flag*
+- Subagent forking on by default with prompt-cache inheritance; non-teammate spawns background by default (`2.1.232`) - *incremental improvement*
+- `@` mention to message another session by name (`2.1.232`) - *incremental improvement to existing Cross-Session Messaging*
+- `/config` rows for dialog expiry and inbound cross-session messages (`2.1.232`) - *config knob*
+- GitLab secret redaction and `glab` CLI credential protection (`2.1.232`) - *incremental improvement*
+- GitLab repos supported as plugin marketplace sources (`2.1.232`) - *platform expansion*
+- `additionalMarketplaces`/`allowedMarketplaces` setting aliases (`2.1.232`) - *config knob*
+- `/code-review` at high/xhigh/max effort runs as a background agent (`2.1.232`) - *incremental improvement to existing /code-review*
+- `sandbox.ripgrep` override restricted to user/managed/`--settings` tiers (`2.1.232`) - *config knob*
+- Self-hosted runner sessions gain server-supplied hook support (`2.1.229`) - *incremental improvement to existing Self-Hosted Environments*
+- Plugin marketplace `command` sources (`2.1.229`) - *incremental improvement to existing Plugin System*
+- `ListAgents` labels disconnected Remote Control sessions "offline" and cloud sessions "cloud" (`2.1.229`) - *incremental improvement to existing Cross-Session Messaging*
+- Sandbox IPv6 literal bracket enforcement, flagged by `/doctor` (`2.1.229`) - *incremental improvement to existing sandboxing*
+- `/commit-push-pr` no longer auto-approves dangerous git/gh flags (`2.1.229`) - *incremental improvement*
+- Self-hosted runner Windows startup requires explicit `--base-dir` (`2.1.229`) - *config knob*
+- VS Code: session groups in the sidebar (`2.1.229`) - *incremental improvement to existing VS Code Extension*
+- Skills synced from claude.ai sandboxed: no shadowing, sanitized descriptions, no `!`/`@` execution (`2.1.228`) - *incremental improvement*
+- Cross-session messages show sender and full body inline (`2.1.228`) - *incremental improvement to existing Cross-Session Messaging*
+- Write tool lets newer models overwrite unread files, matching Edit tool (`2.1.228`) - *incremental improvement*
+- Slash-command menu: only selected row highlighted, matches bolded (`2.1.227`) - *UI polish*
+- Gateway spend-limit usage warning names the cap, reset time, and operator message (`2.1.225`) - *incremental improvement*
+- Workspace trust prompt added to `claude agents` for untrusted directories (`2.1.225`) - *incremental improvement*
+- SendMessage can start a conversation with sessions on other machines by name (`2.1.225`) - *incremental improvement to existing Cross-Session Messaging*
+- `archive` plugin source: install from a zip over HTTPS with SHA-256 pinning (`2.1.224`) - *distribution channel*
+- `crossSessionInbound`/`dialogExpiry` Settings (`2.1.224`) - *config knob*
+- Sandbox credential masking: `extract`, JWT-aware `decode`, and AWS SigV4 re-signing (`2.1.224`) - *incremental improvement to existing Sandbox Credential Protection*
+- `ANTHROPIC_BEDROCK_REGION_PREFIX` Env Var (`2.1.224`) - *config knob*
+- Removed the 200-subagent-per-session spawn cap (`2.1.224`) - *incremental improvement*
+- `/teleport` hint shown in cloud sessions (`2.1.223`) - *convenience wrapper*
+- Owner wildcard entries (`"owner/*"`) for marketplace allow/block settings (`2.1.223`) - *config knob*
+- Warning when a restricted subagent's requested model falls back to the parent model (`2.1.223`) - *incremental improvement*
+- `CLAUDE_CODE_DISABLE_1M_CONTEXT` now covers every native-1M model via auto-compaction (`2.1.223`) - *incremental improvement*
+- `/review` as an alias of `/code-review` (`2.1.223`) - *convenience wrapper*
+- `/code-review` with no effort level reuses the last-typed level (`2.1.223`) - *incremental improvement to existing /code-review*
+- Auto mode classifier now evaluates `SendMessage` calls before dispatch (`2.1.222`) - *incremental improvement*
+- `/diff` and Remote Control workspace diff use raw git blob content (`2.1.222`) - *incremental improvement*
+- Remote Control auto-start can no longer be enabled by repo-local settings (`2.1.222`) - *incremental improvement*
+- [VSCode] Focus view: collapsible per-turn tool-activity summary (`2.1.221`) - *UI polish*
+- `mode: "mask"` sandbox credential files on Linux/WSL (`2.1.221`) - *incremental improvement to existing Sandbox Credential Protection*
+- `prompt-audit` subcommand for the claude-api skill (`2.1.221`) - *convenience wrapper*
+- Background sessions follow CLAUDE.md git instructions and open a draft PR only when warranted (`2.1.221`) - *incremental improvement to existing Auto-Commit, Push, and Draft PR for Background Agents*
+- Installed plugins activate immediately instead of requiring `/reload-plugins` (`2.1.221`) - *incremental improvement*
+- `/status` shows session kind: interactive, attached, or unattended (`2.1.221`) - *incremental improvement*
+- `/fork` sessions get their own new worktree (`2.1.221`) - *incremental improvement to existing /fork*
 - Claude Opus 5 model release (`2.1.219`) - *Model releases (Claude Opus 5) — tracked separately*
 - `sandbox.network.strictAllowlist` Setting (`2.1.219`) - *config knob*
 - `DirectoryAdded` Hook Event (`2.1.219`) - *incremental improvement*

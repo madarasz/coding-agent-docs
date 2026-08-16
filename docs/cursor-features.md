@@ -1,7 +1,7 @@
-# Cursor Features (Mar 2023 – Jul 2026)
+# Cursor Features (Mar 2023 – Aug 2026)
 
 Significant user-facing features added to Cursor since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
+**Last updated:** Aug 16, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
 
 ## Agentic & Multi-Agent
 
@@ -74,6 +74,7 @@ Significant user-facing features added to Cursor since its public availability.
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Google Workspace Plugins](https://cursor.com/changelog/google-workspace-plugins) | First-party plugins give agents direct, OAuth-scoped access to Gmail, Google Drive, Calendar, Docs, Sheets, and Chat so they can pull context and take action across Google Workspace without leaving Cursor. | Cursor Marketplace or Customize page → install plugin | N/A | Aug 2026 |
 | [Cursor Mobile App for iOS](https://cursor.com/blog/ios-mobile-app) | Native iOS app (public beta) for launching, monitoring, and remotely directing desktop and cloud agents from a phone, with voice input, model selection, and PR review/merge on the go. | Cursor app on the App Store | `3.9` | Jun 2026 |
 | [Cursor in Jira](https://cursor.com/docs/background-agent) | Assigns Jira work items to Cursor or accepts `@Cursor` mentions in comments to trigger cloud agents that fix bugs, add features, and post PR links back in the issue. | Jira comment `@Cursor`; assign to Cursor | N/A | May 2026 |
 | [Cursor in Microsoft Teams](https://cursor.com/docs/background-agent) | Allows users to mention `@Cursor` in Teams channels to delegate coding tasks to cloud agents, which select repos, read thread context, and create PRs. | Teams channel `@Cursor` | N/A | May 2026 |
@@ -102,6 +103,7 @@ Significant user-facing features added to Cursor since its public availability.
 
 Notable changes that fell below the threshold for the main tables:
 
+- Cloud Agent Builds (pre-built, cached environment snapshots so cloud agents boot from a warm image instead of setting up from scratch, with a Builds dashboard tab and automatic fallback to the last successful build if a new one breaks) (`Aug 2026`) - *incremental improvement* - performance/reliability refinement to the existing Development Environments for Cloud Agents feature
 - Cursor on iPad (split-screen chats, richer diffs, inbox, full-PR review experience) (`Jul 2026`) - *platform expansion* - extends the existing Mobile App surface (previously iPhone-only) to iPad
 - Cursor Start (₹649/month India-only plan bundling Grok 4.5, Composer, cloud agents, and mobile access) (`Jul 2026`) - *distribution channel* - new regional pricing/billing tier with no new capability
 - Unified Remote Machines menu (combines local, team-pool, and remote workspace pickers with a multi-repo/multi-root toggle) (`Jul 2026`) — *UI polish* — consolidates existing environment-selection surfaces

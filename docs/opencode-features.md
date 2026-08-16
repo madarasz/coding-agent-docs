@@ -1,7 +1,7 @@
 # OpenCode Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Aug 16, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -113,6 +113,16 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- MERGE Gateway reasoning variants added (`v1.18.17`) - *platform expansion*
+- PDF attachments enabled for GitHub Copilot models with PDF vision support (`v1.18.17`) - *platform expansion*
+- Right-click to open the project menu from Home (`v1.18.16`) - *convenience wrapper*
+- macOS app stays running after last window closes and reopens on activation (`v1.18.16`) - *platform expansion*
+- Broader desktop locale coverage (`v1.18.15`) - *platform expansion*
+- Export full session transcripts as JSON from desktop UI (`v1.18.15`) - *convenience wrapper*
+- Simplified xAI login to a single device-code flow for headless/remote environments (`v1.18.14`) - *incremental improvement*
+- GitHub pull request reviews include the PR number and URL in context (`v1.18.13`) - *incremental improvement*
+- Localized more desktop UI copy and expanded translation coverage across languages (`v1.18.13`) - *platform expansion*
+- Early right-to-left layout and locale-aware plural rule support (`v1.18.13`) - *incremental improvement*
 - Modal provider auto-discovery for available models (`v1.18.10`) - *platform expansion*
 - Improved toast notification stacking, dismissal, and mobile layout (`v1.18.10`) - *UI polish*
 - Opt-in V2 desktop sidecar backed by the bundled CLI service (`v1.18.9`) - *incremental improvement*

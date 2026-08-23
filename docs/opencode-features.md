@@ -1,7 +1,7 @@
-# OpenCode Features (Jun 2025 – Jul 2026)
+# OpenCode Features (Jun 2025 – Aug 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Aug 23, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -113,6 +113,7 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Compaction summarization prompt restructured for clearer parsing by smaller models (`v1.18.17`) - *incremental improvement*
 - Modal provider auto-discovery for available models (`v1.18.10`) - *platform expansion*
 - Improved toast notification stacking, dismissal, and mobile layout (`v1.18.10`) - *UI polish*
 - Opt-in V2 desktop sidecar backed by the bundled CLI service (`v1.18.9`) - *incremental improvement*

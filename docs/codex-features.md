@@ -1,12 +1,14 @@
-# OpenAI Codex Features (Apr 2025 – Jul 2026)
+# OpenAI Codex Features (Apr 2025 – Aug 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
+**Last updated:** Aug 23, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| `codex agents` Dashboard | Provides an interactive dashboard for searching, starting, opening, renaming, and stopping agent tasks with configurable keyboard shortcuts | `codex agents` | `0.149.0` | Aug 2026 |
+| `codex queue` Cross-Session Messaging | Sends messages to existing local or remote Codex sessions without opening or attaching to them directly | `codex queue` | `0.149.0` | Aug 2026 |
 | Multi-Agent V2 (Configurable Sub-Agent Models & Reasoning) | Stabilizes the opt-in multi-agent v2 runtime with per-sub-agent model and reasoning-effort selection, concurrency limits, and restored agent roles | `multi_agent_v2` config / `spawn_agent` | `0.145.0` | Jul 2026 |
 | Multi-Agent Delegation Mode Controls | Lets app-server clients configure multi-agent delegation as disabled, explicit-request-only, or proactive at the thread and turn level | App-server API / `agents` config | `0.142.0` | Jun 2026 |
 | [Goals Workflow](https://developers.openai.com/codex/use-cases/follow-goals) | Tracks persistent goals with dedicated storage and progress across turns; supports create, pause, resume, and clear; enabled by default from v0.133.0 | `/goal` | `0.128.0` | Apr 2026 |
@@ -19,6 +21,8 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [/export Conversation Export](https://developers.openai.com/codex/cli/slash-commands) | Exports the complete TUI conversation to Markdown, copying it to the clipboard or saving it to a new file | `/export` | `0.148.0` | Aug 2026 |
+| Thread Sections | Organizes conversations into persistent, manually ordered sections and lets long transcripts be browsed incrementally | Session resume picker | `0.147.0` | Aug 2026 |
 | Persisted Thread Names & Paginated History (experimental) | Adds paginated thread history with efficient resume, full-text occurrence search, user-assigned persisted names, and cross-thread memories | Session resume picker (experimental) | `0.145.0` | Jul 2026 |
 | [Session Delete](https://developers.openai.com/codex/cli/slash-commands) | Permanently removes the current session transcript and all descendant sub-agent threads with confirmation safeguards | `codex delete` / `/delete` / `thread/delete` | `0.140.0` | Jun 2026 |
 | [Unified @ Mentions Menu](https://developers.openai.com/codex/cli/features) | Opens a single fuzzy-search picker for files, directories, plugins, and skills when `@` is typed in the composer | `@` in TUI composer | `0.140.0` | Jun 2026 |
@@ -59,6 +63,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Async & MCP-Invoking Hooks](https://developers.openai.com/codex/hooks) | Lets lifecycle hooks run shell commands asynchronously and invoke MCP tools directly instead of only synchronous shell commands | `hooks` in `config.toml` | `0.148.0` | Aug 2026 |
 | [MCP Tool Search](https://developers.openai.com/codex/mcp) | Lets the model search across available MCP tools instead of loading the full tool list into context, improving compatibility with large toolsets and older models/providers; enabled by default from `0.143.0` | Automatic (MCP config) | `0.142.2` | Jun 2026 |
 | Plugin Catalog Sections & Turn Recommendations | Organizes remote plugins into OpenAI Curated, Workspace, and Shared sections; eligible turns can recommend and install relevant plugins automatically | `/plugins` | `0.142.0` | Jun 2026 |
 | Executor Plugin MCP Activation | Activates stdio MCP servers from selected executor plugins on a per-thread basis; plugin discovery adds a created-by-me marketplace and auth-specific curated catalogs | Plugin config / `/plugins` | `0.141.0` | Jun 2026 |
@@ -98,6 +103,8 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Automatic-Review Approval Mode](https://developers.openai.com/codex/concepts/sandboxing/auto-review) | Automatically approves actions that pass automatic review via a new flag, skipping manual confirmation for cleared commands | `--approve-for-me` | `0.147.0` | Aug 2026 |
+| Local Project Trust Prompt | Requires explicit user trust confirmation before running Codex in unfamiliar local project directories, and enforces managed authentication restrictions before credentials are used | Automatic (first run in new directory) | `0.147.0` | Aug 2026 |
 | [`writes` App-Approval Mode](https://developers.openai.com/codex/permissions) | Adds an app-approval mode that lets declared read-only actions proceed automatically while still requiring explicit approval for write actions | App-approval config (`writes` mode) | `0.144.0` | Jul 2026 |
 | Rollout Token Budgets | Configures token budgets that track usage across agent threads, provide remaining-budget reminders, and abort turns when exhausted | `token_budget` in config | `0.142.0` | Jun 2026 |
 | Noise Relay Encrypted Remote Execution | Uses authenticated, end-to-end encrypted Noise relay channels for all remote executor connections | Automatic for remote executors | `0.141.0` | Jun 2026 |
@@ -119,6 +126,21 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 Notable changes that fell below the threshold for the main tables:
 
+- TypeScript SDK raw config overrides and `max`/`ultra` reasoning effort selection (`0.149.0`) - *config knob*
+- `codex doctor` diagnostics for endpoint protection, network/proxy failures, desktop app state, and update connectivity (`0.149.0`) - *incremental improvement*
+- Expanded Vim editing with character replacement and `cw`/`c$`/`cc` change motions (`0.149.0`) - *power-user UX*
+- `/cd`, `/pwd`, `/cwd` working-directory commands in the TUI (`0.149.0`) - *convenience wrapper*
+- Sandbox fail-closed behavior for denied or unreadable paths on Linux and Windows (`0.148.0`) - *security infrastructure*
+- Amazon Bedrock Runtime provider with AWS profile/region and GPT-5.6 routing (`0.148.0`) - *platform expansion*
+- Estimated thread credits/cost shown in `/status`, status lines, and terminal titles (`0.148.0`) - *incremental improvement*
+- TUI composer draftable during startup with resume/fork progress display (`0.148.0`) - *UI polish*
+- `codex exec fork` session forking and resume-picker archive/restore (`0.148.0`) - *convenience wrapper*
+- Portable Agent Plugins with expanded local/personal/workspace/remote catalog search (`0.147.0`) - *platform expansion*
+- Plugin isolation hardening and network-access denial on failed policy updates (`0.147.0`) - *security infrastructure*
+- Cached web search and remote conversation compaction for Amazon Bedrock (`0.147.0`) - *platform expansion*
+- Opt-in MCP 2026-07-28 protocol support (paginated discovery, multi-round requests, non-blocking startup) (`0.147.0`) - *incremental improvement*
+- Cursor-managed skill import and change sync for imported Claude/Cursor conversations (`0.147.0`) - *platform expansion*
+- Safer automatic-review defaults for cyber-capable models with in-terminal permission-change explanations (`0.146.1`) - *incremental improvement*
 - Session naming at creation (`/new`, `/clear`) and `/session rename` (`0.146.0`) - *incremental improvement*
 - Thread pinning (`0.146.0`) - *convenience wrapper*
 - Side conversation switching without closing (`0.146.0`) - *incremental improvement*

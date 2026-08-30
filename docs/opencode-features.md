@@ -1,7 +1,7 @@
 # OpenCode Features (Jun 2025 – Aug 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Aug 30, 2026 · Source: [GitHub Releases](https://github.com/sst/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -113,6 +113,9 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Azure Entra ID sign-in via Azure CLI, no API key required (`v1.18.24`) - *platform expansion*
+- Native OpenAI/Anthropic passthroughs for Cloudflare AI Gateway models (`v1.18.19`) - *platform expansion*
+- Web search enabled for the OpenCode Go provider (`v1.18.19`) - *platform expansion*
 - Compaction summarization prompt restructured for clearer parsing by smaller models (`v1.18.17`) - *incremental improvement*
 - Modal provider auto-discovery for available models (`v1.18.10`) - *platform expansion*
 - Improved toast notification stacking, dismissal, and mobile layout (`v1.18.10`) - *UI polish*

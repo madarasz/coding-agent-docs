@@ -1,7 +1,7 @@
 # Cursor Features (Mar 2023 – Aug 2026)
 
 Significant user-facing features added to Cursor since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
+**Last updated:** Aug 30, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
 
 ## Agentic & Multi-Agent
 
@@ -75,6 +75,7 @@ Significant user-facing features added to Cursor since its public availability.
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Start From Scratch, Without a Repo](https://cursor.com/changelog/start-from-scratch) | Cloud Agents can start from a blank prompt with no connected GitHub or other SCM repo, auto-creating a Cursor Origin repo when the build is saved; agents also port-forward their live environment straight to the browser for preview (including design mode) and can publish directly to a connected Vercel account for a live URL. | "Start from scratch" in repo picker; Publish → Vercel | N/A | Aug 2026 |
 | [Cursor Origin](https://cursor.com/docs/origin) | Cursor's own git hosting platform — repos, pull requests with timeline/checks/diffs, code browsing and search, and two-way GitHub sync — that cloud agents and Automations can clone, branch, commit, push, and open PRs against directly. | Codebase tab → Origin; mirror an existing GitHub repo | N/A | Aug 2026 |
 | [Google Workspace Plugins](https://cursor.com/changelog/google-workspace-plugins) | First-party plugins give agents direct access to Gmail, Google Drive, Calendar, Docs, and Sheets so they can search, draft, send, and manage Workspace content from inside Cursor. | Install from Marketplace or Customize page | N/A | Aug 2026 |
 | [Cursor Mobile App for iOS](https://cursor.com/blog/ios-mobile-app) | Native iOS app (public beta) for launching, monitoring, and remotely directing desktop and cloud agents from a phone, with voice input, model selection, and PR review/merge on the go. | Cursor app on the App Store | `3.9` | Jun 2026 |

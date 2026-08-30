@@ -1,7 +1,7 @@
 # Gemini CLI Features (Jun 2025 – Jul 2026)
 
 Significant user-facing features added to Gemini CLI since its public availability.
-**Last updated:** Aug 2, 2026 · Source: [geminicli.com/docs/changelogs](https://www.geminicli.com/docs/changelogs)
+**Last updated:** Aug 30, 2026 · Source: [geminicli.com/docs/changelogs](https://www.geminicli.com/docs/changelogs)
 
 ## Agentic & Multi-Agent
 

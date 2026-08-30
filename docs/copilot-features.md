@@ -1,7 +1,7 @@
 # GitHub Copilot Features (Aug 2024 – Aug 2026)
 
 Significant user-facing features added to GitHub Copilot since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
+**Last updated:** Aug 30, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
 
 ## Agentic & Multi-Agent
 
@@ -143,6 +143,12 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 Notable changes that fell below the threshold for the main tables:
 
+- [Upcoming changes to GitHub Copilot policies and billing](https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing/) (`N/A`) - *incremental improvement* (Copilot Business/Enterprise upfront seat billing and a unified Copilot Chat/cloud-agent experience, effective Sep–Oct 2026)
+- [GitHub Copilot weekly releases — August 24](https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24/) (`N/A`) - *incremental improvement* (Customize tab GA, experimental WSL support for Copilot CLI, VS Code 1.135 Agents window redesign with cross-app session handoff and an experimental Rubber Duck second opinion)
+- [GitHub Copilot in Visual Studio — August update](https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/) (`N/A`) - *platform expansion* (org-level custom agents, Low/Medium/High thinking-effort controls, and usage tracking rolled out to Visual Studio)
+- [Copilot code review: Resolution reasons and expanded capabilities](https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/) (`N/A`) - *incremental improvement* (now reviews bot-authored and very large pull requests; comment resolutions can carry a stated reason)
+- [Global model policy generally available](https://github.blog/changelog/2026-08-26-global-model-policy-generally-available/) (`N/A`) - *preview→GA, nothing new* (enforcement rollout of the existing default model enablement policy for Business/Enterprise)
+- [Copilot harness generally available in Copilot for JetBrains](https://github.blog/changelog/2026-08-24-copilot-harness-generally-available-in-copilot-for-jetbrains/) (`N/A`) - *platform expansion* (JetBrains agent execution moves to the shared Copilot harness; built-in JetBrains MCP server support in public preview)
 - [The new GitHub Copilot experience in Slack](https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/) (`N/A`) - *incremental improvement* (collaborative, mention-triggered agent sessions in a dedicated Slack code channel, building on existing Slack coding-agent integration)
 - [Shared agentic work with GitHub Copilot in Microsoft Teams](https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/) (`N/A`) - *incremental improvement* (collaborative, mention-triggered agent sessions in Teams, building on existing Teams coding-agent integration)
 - [Enterprise managed settings in GitHub Copilot for JetBrains](https://github.blog/changelog/2026-08-18-enterprise-managed-settings-in-github-copilot-for-jetbrains/) (`N/A`) - *platform expansion* of existing managed-settings.json feature (plugin governance, MCP allowlists, OpenTelemetry, permission modes)

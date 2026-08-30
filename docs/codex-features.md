@@ -1,12 +1,13 @@
 # OpenAI Codex Features (Apr 2025 – Aug 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
+**Last updated:** Aug 30, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
 
 ## Agentic & Multi-Agent
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| Task Mentions & Terminal Task Management | Lets you reference other Codex tasks with `@` mentions in the composer and ask the current agent to read, create, or message tasks directly from the terminal | `@` mention in TUI composer | `0.150.0` | Aug 2026 |
 | `codex agents` Dashboard | Provides an interactive dashboard for searching, starting, opening, renaming, and stopping agent tasks with configurable keyboard shortcuts | `codex agents` | `0.149.0` | Aug 2026 |
 | `codex queue` Cross-Session Messaging | Sends messages to existing local or remote Codex sessions without opening or attaching to them directly | `codex queue` | `0.149.0` | Aug 2026 |
 | Multi-Agent V2 (Configurable Sub-Agent Models & Reasoning) | Stabilizes the opt-in multi-agent v2 runtime with per-sub-agent model and reasoning-effort selection, concurrency limits, and restored agent roles | `multi_agent_v2` config / `spawn_agent` | `0.145.0` | Jul 2026 |
@@ -63,6 +64,8 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| MCP Tool Result Extensions | Lets extensions inspect or replace MCP tool call results before they reach the model | Extension API | `0.151.0` | Aug 2026 |
+| Interrupt Hooks | Adds an `Interrupt` hook lifecycle event that runs shell commands or MCP handlers when an active turn is interrupted | `hooks` in `config.toml` (`Interrupt` event) | `0.150.0` | Aug 2026 |
 | [Async & MCP-Invoking Hooks](https://developers.openai.com/codex/hooks) | Lets lifecycle hooks run shell commands asynchronously and invoke MCP tools directly instead of only synchronous shell commands | `hooks` in `config.toml` | `0.148.0` | Aug 2026 |
 | [MCP Tool Search](https://developers.openai.com/codex/mcp) | Lets the model search across available MCP tools instead of loading the full tool list into context, improving compatibility with large toolsets and older models/providers; enabled by default from `0.143.0` | Automatic (MCP config) | `0.142.2` | Jun 2026 |
 | Plugin Catalog Sections & Turn Recommendations | Organizes remote plugins into OpenAI Curated, Workspace, and Shared sections; eligible turns can recommend and install relevant plugins automatically | `/plugins` | `0.142.0` | Jun 2026 |
@@ -126,6 +129,12 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 Notable changes that fell below the threshold for the main tables:
 
+- Configurable grace period for discovering tools from optional MCP servers (`0.151.0`) - *config knob*
+- Plugin catalogs merge per-repository configuration and report invalid project marketplaces without hiding valid plugins (`0.151.0`) - *incremental improvement*
+- `/copy` picker for full responses, individual code blocks, and blockquotes (`0.150.0`) - *convenience wrapper*
+- Automatic descriptive thread titles and conversation-based `/rename` suggestions (`0.150.0`) - *incremental improvement*
+- Markdown links rendered as clickable labels in supported terminals (`0.150.0`) - *UI polish*
+- Shortcuts to cycle TUI permission modes and Vim `.` dot-repeat for the last edit (`0.150.0`) - *power-user UX*
 - TypeScript SDK raw config overrides and `max`/`ultra` reasoning effort selection (`0.149.0`) - *config knob*
 - `codex doctor` diagnostics for endpoint protection, network/proxy failures, desktop app state, and update connectivity (`0.149.0`) - *incremental improvement*
 - Expanded Vim editing with character replacement and `cw`/`c$`/`cc` change motions (`0.149.0`) - *power-user UX*

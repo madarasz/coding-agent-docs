@@ -11,7 +11,7 @@ Tracks the evolving capabilities of the **most popular** coding agents. Only sig
 | [GitHub Copilot](docs/copilot-features.md) | 2026.08.23 |
 | [Cursor](docs/cursor-features.md) | 2026.08.23 |
 | [Gemini CLI](docs/gemini-cli-features.md) | 2026.08.02 |
-| [OpenCode](docs/opencode-features.md) | 2026.08.23 |
+| [OpenCode](docs/opencode-features.md) | 2026.08.30 |
 
 ## Categories
 

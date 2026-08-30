@@ -1,7 +1,7 @@
 # Claude Code Features (Mar 2025 – Aug 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Aug 30, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 
@@ -136,6 +136,7 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [`--restricted` Flag](https://code.claude.com/docs/en/cli-reference) | Start Claude Code in a locked-down mode for shared or evaluation-harness machines: removes the built-in tools that run commands or code and `WebFetch` unless named individually, confines file tools to the working directory, refuses `bypassPermissions`, and ignores user/project/local settings files. | `claude --restricted`; `CLAUDE_CODE_RESTRICTED=1` | `2.1.248` | Aug 2026 |
 | [EndConversation Tool](https://www.anthropic.com/research/end-subset-conversations) | Claude can end a session as a last resort with a highly abusive or jailbreak-attempting user, mirroring the safeguard already used on claude.ai. | Automatic (`EndConversation` tool) | `2.1.214` | Jul 2026 |
 | [Org Default Models](https://code.claude.com/docs/en/model-config) | Admins set an organization- or role-wide default model from the console; it resolves for members who haven't picked one themselves and shows as "Org default" in the model picker. | Set in claude.ai admin console; shown in `/model` | `2.1.196` | Jun 2026 |
 | [Sandbox Credential Protection](https://code.claude.com/docs/en/sandboxing) | The `sandbox.credentials` setting blocks sandboxed commands from reading specified credential files and unsets secret environment variables before each sandboxed command runs. | `sandbox.credentials.files`/`envVars` in settings | `2.1.187` | Jun 2026 |
@@ -155,6 +156,35 @@ Significant user-facing features added to Claude Code since its public availabil
 
 Notable changes that fell below the threshold for the main tables:
 
+- `PreModelSwitch`/`PostModelSwitch` Hook Events (`2.1.251`) - *incremental improvement*
+- `SessionStart` Resume Hooks Receive Session Staleness and Re-Cache Cost (`2.1.251`) - *incremental improvement*
+- Live Streaming of Foreground Subagent Tool Calls to Remote Control (`2.1.251`) - *incremental improvement*
+- Spend Limit Bar in `/usage` and `rate_limits.spend_limit` Status Line Field (`2.1.251`) - *config knob*
+- Per-Session Prompt-Cache Line in `/cost` (`2.1.251`) - *incremental improvement*
+- `experimental.cacheTtl` Agent Frontmatter Setting (`2.1.248`) - *config knob*
+- `claude self-hosted-runner --client-label` Flag (`2.1.248`) - *config knob*
+- Server-Managed Settings Load Diagnostics in `/doctor`/`/status` (`2.1.248`) - *incremental improvement*
+- `/web-setup` Warning for Missing GitHub CLI `workflow` Scope (`2.1.248`) - *incremental improvement*
+- `/usage-credits` for AWS-Marketplace-Billed and Self-Serve Enterprise (`2.1.248`) - *incremental improvement*
+- Cross-Session Messaging on Bedrock/Vertex/Foundry and With Telemetry Disabled (`2.1.248`) - *platform expansion*
+- `SendFeedback` Tool for Claude-Drafted Feedback Reports (`2.1.247`) - *convenience wrapper*
+- `spinnerTipsOverride` Gains Cooldown/Priority Fields and `tipsFile` (`2.1.247`) - *config knob*
+- Auto Mode Tip on Bash Permission Prompts (`2.1.247`) - *UI polish*
+- `/claude-api cost-optimize` Subcommand (`2.1.247`) - *convenience wrapper*
+- `/claude-api` Skill Admin API Coverage (`2.1.247`) - *incremental improvement*
+- Startup Warning for Wildcard-Before-Subcommand Bash Allow Rules (`2.1.246`) - *incremental improvement*
+- Auto Mode Tab in `/permissions` (`2.1.246`) - *incremental improvement*
+- Turn Completion Time in Duration Line (`2.1.246`) - *UI polish*
+- Loops Breakdown in `/usage` (`2.1.243`) - *incremental improvement*
+- `modelPicker` Setting for Curated Model List (`2.1.243`) - *config knob*
+- `promptCacheTtl`/`subagentPromptCacheTtl` Settings (`2.1.243`) - *config knob*
+- `modelPricing` Managed Setting for Contracted Rates (`2.1.243`) - *config knob*
+- Keyless Console Sign-In Option in `/login` (`2.1.243`) - *convenience wrapper*
+- `/status` "Skipped Sources" Line for Managed Settings (`2.1.243`) - *incremental improvement*
+- `managed` Marker for Org-Managed Connectors in `/mcp`/`/plugins` (`2.1.243`) - *incremental improvement*
+- `/web-setup` Tip for Unconnected GitHub on claude.ai (`2.1.243`) - *UI polish*
+- `/status` Line for Claude Code on the Web GitHub Connection (`2.1.243`) - *incremental improvement*
+- Subagent Model and Effort Level Shown in `/tasks` (`2.1.243`) - *incremental improvement*
 - `/goal` Check-In Backoff Schedule (`2.1.241`) - *incremental improvement*
 - `/goal` Restores Active Goal on Session Resume (`2.1.241`) - *incremental improvement*
 - `ListAgents` Surfaces Own Session Name and Live Teammates (`2.1.241`) - *incremental improvement*

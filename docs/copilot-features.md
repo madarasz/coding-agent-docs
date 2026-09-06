@@ -1,7 +1,7 @@
-# GitHub Copilot Features (Aug 2024 – Aug 2026)
+# GitHub Copilot Features (Aug 2024 – Sep 2026)
 
 Significant user-facing features added to GitHub Copilot since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
+**Last updated:** Sep 6, 2026 · Source: [GitHub Copilot Changelog](https://github.blog/changelog/label/copilot/)
 
 ## Agentic & Multi-Agent
 
@@ -55,6 +55,8 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Agent Merge](https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/) (public preview) | Copilot agent resolves review feedback, failed CI checks, and merge conflicts on a pull request to get it ready to merge | VS Code → Copilot → Agent Merge | N/A | Sep 2026 |
+| [Copilot code review can approve pull requests](https://docs.github.com/en/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review) (public preview) | Copilot surfaces an approval assessment on every review and, when an admin enables it, can leave an "Approve" review that counts toward merge requirements | Repo/Org/Enterprise settings → Copilot code review → Auto-approval | N/A | Sep 2026 |
 | [Copilot merge conflict resolution in GitHub Desktop](https://github.blog/changelog/2026-06-26-github-desktop-3-6-worktrees-and-deeper-copilot-integration/) | GitHub Desktop uses Copilot, running on the Copilot SDK, to detect and automatically resolve Git merge conflicts | GitHub Desktop → Resolve with Copilot | N/A | Jun 2026 |
 | [Dedicated security review command in Copilot CLI](https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli) | Analyzes local code changes for high-confidence security vulnerabilities across 11 categories before committing, without requiring separate code scanning tools | `/security-review` in Copilot CLI | N/A | Jun 2026 |
 | [Plan agent in Visual Studio](https://github.blog/changelog/2026-06-04-github-copilot-in-visual-studio-may-update) | Copilot collaborates on an implementation plan in Visual Studio before writing any code, allowing users to review and refine the approach upfront | Visual Studio → Copilot → Plan agent | N/A | Jun 2026 |
@@ -143,6 +145,14 @@ Significant user-facing features added to GitHub Copilot since its public availa
 
 Notable changes that fell below the threshold for the main tables:
 
+- [GitHub Copilot weekly releases — August 31](https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/) (`N/A`) - *incremental improvement* (GitHub Copilot harness generally available in JetBrains for faster feature delivery and code quality)
+- [Content exclusions generally available in Copilot app and CLI](https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli/) (`N/A`) - *platform expansion* of the existing content exclusion feature to the Copilot app and CLI
+- [Enterprise-managed settings support any default model](https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model/) (`N/A`) - *config knob* extending the existing default model enablement setting, including per-enterprise-team overrides
+- [GitHub Copilot in VS Code, August 2026 releases](https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases/) (`N/A`) - *incremental improvement* (Agents window session grouping, prompt timeline navigation, cross-app session continuity, Agent Host multi-window support, Anthropic/Copilot model choice)
+- [GitHub Copilot in Visual Studio — August update](https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/) (`N/A`) - *incremental improvement* (organization-level custom agents, Low/Medium/High reasoning effort controls, usage visibility in the prompt box, Git agent review of changes before opening a pull request)
+- [GitHub Copilot weekly releases — August 24](https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24/) (`N/A`) - *incremental improvement* (Customize tab reaches general availability, Azure DevOps items turned into Copilot sessions from it, experimental WSL support, defaultMode/defaultPermissionMode CLI config)
+- [Copilot code review: Resolution reasons and expanded capabilities](https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/) (`N/A`) - *incremental improvement* (resolution reasons for review comments; coverage extended to bot-authored and very large pull requests)
+- [Global model policy generally available](https://github.blog/changelog/2026-08-26-global-model-policy-generally-available/) (`N/A`) - *preview→GA, nothing new* (default enablement policy for GA models across Business/Enterprise, building on existing model rules governance)
 - [The new GitHub Copilot experience in Slack](https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/) (`N/A`) - *incremental improvement* (collaborative, mention-triggered agent sessions in a dedicated Slack code channel, building on existing Slack coding-agent integration)
 - [Shared agentic work with GitHub Copilot in Microsoft Teams](https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/) (`N/A`) - *incremental improvement* (collaborative, mention-triggered agent sessions in Teams, building on existing Teams coding-agent integration)
 - [Enterprise managed settings in GitHub Copilot for JetBrains](https://github.blog/changelog/2026-08-18-enterprise-managed-settings-in-github-copilot-for-jetbrains/) (`N/A`) - *platform expansion* of existing managed-settings.json feature (plugin governance, MCP allowlists, OpenTelemetry, permission modes)
@@ -158,7 +168,7 @@ Notable changes that fell below the threshold for the main tables:
 - [Default model enablement for Copilot Business and Enterprise](https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/) (`N/A`) - *config knob*
 - [Copilot code review: Agent skills and MCP now generally available](https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/) (`N/A`) - *incremental improvement*
 - [Enterprise managed settings now apply to the GitHub Copilot app](https://github.blog/changelog/2026-07-27-enterprise-managed-settings-now-apply-to-the-github-copilot-app/) (`N/A`) - *platform expansion* of existing managed-settings.json feature
-- Model releases (GPT-5.x, GPT-5.6, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 2.5 Pro, Grok Code Fast 1, Grok 4.6, Raptor mini, MAI-Code-1-Flash, MAI-Code-1.1-Flash, Kimi K2.7 Code, Kimi K3) (`N/A`) - *individual model releases; tracked separately*
+- Model releases (GPT-6 Astra, GPT-5.x, GPT-5.6, GPT-4.1, Claude Opus/Sonnet/Fable 4.x–5.x, Gemini 3 Pro/Flash, Gemini 3.8 Flash, Gemini 2.5 Pro, Grok Code Fast 1, Grok 4.6, Raptor mini, MAI-Code-1-Flash, MAI-Code-1.1-Flash, Kimi K2.7 Code, Kimi K3) (`N/A`) - *individual model releases; tracked separately*
 - Repository-level Copilot usage metrics GA via REST API (`N/A`) - *metrics API addition*
 - C++ modernization agent GA in Visual Studio (`N/A`) - *platform expansion* of existing app modernization workflow
 - Real-time Copilot usage tracking and proactive limit alerts in Visual Studio (`N/A`) - *incremental improvement*

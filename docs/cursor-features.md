@@ -1,7 +1,7 @@
-# Cursor Features (Mar 2023 – Aug 2026)
+# Cursor Features (Mar 2023 – Sep 2026)
 
 Significant user-facing features added to Cursor since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
+**Last updated:** Sep 6, 2026 · Source: [Cursor Changelog](https://cursor.com/changelog)
 
 ## Agentic & Multi-Agent
 
@@ -105,8 +105,10 @@ Significant user-facing features added to Cursor since its public availability.
 
 Notable changes that fell below the threshold for the main tables:
 
+- Self-hosted machine pools with autoscaling, hibernation, broader infrastructure support (AWS Lambda, Coder, Cloudflare, Daytona, Modal, Namespace, Vercel, E2B), and Computer Use (click/type/screenshot/drive-browser) extended to self-hosted Linux/macOS workers with desktop sharing (`Sep 2026`) - *platform expansion* - extends the existing Self-hosted Cloud Agents and Computer Use capabilities to more infrastructure and environments, not a new capability class
 - Cursor Builds (pre-warmed, hourly-refreshed cloud agent environments with automatic fallback to the last successful build) (`Aug 2026`) - *incremental improvement* - speeds up the existing Cloud Agent environment setup; no new user-facing capability
 - Use any Skill as a pinned Custom Mode (`Aug 2026`) - *convenience wrapper* - links the existing Skills and Custom Agent Modes primitives
+- Start Cloud Agents from scratch without a connected repo, auto-creating a Cursor Origin repo to save work into later (`Aug 2026`) - *convenience wrapper* - removes the repo-connection precondition from the existing Cloud Agents and Origin features
 - Cursor on iPad (split-screen chats, richer diffs, inbox, full-PR review experience) (`Jul 2026`) - *platform expansion* - extends the existing Mobile App surface (previously iPhone-only) to iPad
 - Cursor Start (₹649/month India-only plan bundling Grok 4.5, Composer, cloud agents, and mobile access) (`Jul 2026`) - *distribution channel* - new regional pricing/billing tier with no new capability
 - Unified Remote Machines menu (combines local, team-pool, and remote workspace pickers with a multi-repo/multi-root toggle) (`Jul 2026`) — *UI polish* — consolidates existing environment-selection surfaces

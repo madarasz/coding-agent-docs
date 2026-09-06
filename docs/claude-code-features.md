@@ -1,7 +1,7 @@
-# Claude Code Features (Mar 2025 – Aug 2026)
+# Claude Code Features (Mar 2025 – Sep 2026)
 
 Significant user-facing features added to Claude Code since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
+**Last updated:** Sep 6, 2026 · Source: [CHANGELOG.md](https://raw.githubusercontent.com/anthropics/claude-code/refs/heads/main/CHANGELOG.md)
 
 ## Agentic & Multi-Agent
 
@@ -66,6 +66,7 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [PreModelSwitch / PostModelSwitch Hooks](https://code.claude.com/docs/en/hooks) | Hooks can block, confirm, or annotate a model switch before it applies, and observe the change afterward, including switches Claude Code makes on its own such as restoring the model on resume. | `PreModelSwitch`/`PostModelSwitch` hook events in settings | `2.1.251` | Aug 2026 |
 | Post-Session Lifecycle Hook | Self-hosted runners expose a `post-session` hook that runs after the session ends and before the workspace is deleted, enabling log export and artifact snapshots. | `post-session` in runner config | `2.1.169` | Jun 2026 |
 | Stop/SubagentStop `additionalContext` Output | Stop and SubagentStop hooks can return `hookSpecificOutput.additionalContext` to feed feedback back to Claude and continue the turn without triggering a hook error. | `hookSpecificOutput.additionalContext` in Stop/SubagentStop hook | `2.1.163` | Jun 2026 |
 | [Plugin Auto-Load](https://code.claude.com/docs/en/plugins) | Plugins placed in `.claude/skills/` directories load automatically without marketplace registration. | `.claude/skills/`; `claude plugin init` | `2.1.157` | May 2026 |
@@ -136,6 +137,8 @@ Significant user-facing features added to Claude Code since its public availabil
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| [Block Reads Outside Working Directories](https://code.claude.com/docs/en/settings-reference#permissions-blockreadsoutsideworkingdirectories) | The `permissions.blockReadsOutsideWorkingDirectories` setting denies sandboxed and auto-mode commands read access to files outside the working directory, prompting once before the first such read. | `permissions.blockReadsOutsideWorkingDirectories` in settings | `2.1.257` | Sep 2026 |
+| [`--restricted` Mode](https://code.claude.com/docs/en/cli-reference) | Locks a session down for shared machines or evaluation harnesses: removes the tools that run commands or code and `WebFetch`, confines file tools to the working directories, refuses `bypassPermissions`, and loads only managed settings. | `claude --restricted` | `2.1.248` | Aug 2026 |
 | [EndConversation Tool](https://www.anthropic.com/research/end-subset-conversations) | Claude can end a session as a last resort with a highly abusive or jailbreak-attempting user, mirroring the safeguard already used on claude.ai. | Automatic (`EndConversation` tool) | `2.1.214` | Jul 2026 |
 | [Org Default Models](https://code.claude.com/docs/en/model-config) | Admins set an organization- or role-wide default model from the console; it resolves for members who haven't picked one themselves and shows as "Org default" in the model picker. | Set in claude.ai admin console; shown in `/model` | `2.1.196` | Jun 2026 |
 | [Sandbox Credential Protection](https://code.claude.com/docs/en/sandboxing) | The `sandbox.credentials` setting blocks sandboxed commands from reading specified credential files and unsets secret environment variables before each sandboxed command runs. | `sandbox.credentials.files`/`envVars` in settings | `2.1.187` | Jun 2026 |
@@ -155,6 +158,63 @@ Significant user-facing features added to Claude Code since its public availabil
 
 Notable changes that fell below the threshold for the main tables:
 
+- Organization Policy Diagnostics in `/status`/`claude doctor` (`2.1.261`) - *incremental improvement*
+- `bashOutputMaxChars`/`taskOutputMaxChars` Settings (`2.1.261`) - *config knob*
+- `--append-subagent-system-prompt-file` Flag (`2.1.261`) - *format/scripting flag*
+- `/skill-doctor` Command (`2.1.261`) - *convenience wrapper*
+- Auto Mode Classifier Recognizes Diagram-Renderer Link Uploads (`2.1.261`) - *incremental improvement*
+- `forceLoginMethod: "gateway"` Ignores Leftover API Key/Login (`2.1.261`) - *security infrastructure*
+- Bash-Style Word-Editing Keybindings Replace `keybindingFlavor` (`2.1.261`) - *power-user UX*
+- [VSCode] Flat Model Picker List (`2.1.261`) - *UI polish*
+- Diff Panel in Fullscreen Mode (`/diff`) (`2.1.260`) - *UI polish*
+- Prompt-Cache-Miss Cause Shown in `/cost` and Status Line (`2.1.260`) - *incremental improvement*
+- `/reload-plugins` Available in Headless Sessions (`2.1.260`) - *platform expansion*
+- Text Form of `/advisor` for Desktop App/Remote Control/Headless (`2.1.260`) - *platform expansion*
+- `oidc.scope_on_refresh` Gateway Setting (`2.1.260`) - *config knob*
+- Claude Apps Gateway Desktop Policy Keys (`userPluginMarketplacesEnabled`, etc.) (`2.1.260`) - *config knob*
+- Managed CLAUDE.md No Longer Triggers Settings-Approval Dialog (`2.1.260`) - *security infrastructure*
+- Background Commands Started by Subagents No Longer Time-Limited to One Hour (`2.1.260`) - *incremental improvement*
+- `managedMcpServers` Managed Setting (`2.1.259`) - *config knob*
+- `--permission-prompts none` Flag (`2.1.259`) - *config knob*
+- GitLab MR Recognition (`glab mr`) in Tool Summary/Footer Badge (`2.1.259`) - *platform expansion*
+- `--json` for `claude plugin validate` (`2.1.259`) - *format/scripting flag*
+- `allowedMcpServers` Scope Narrowed to User-Added Servers (`2.1.259`) - *config knob*
+- Claude Fable 5.1 model release (`2.1.257`) - *Model releases (Claude Fable 5.1) — tracked separately*
+- `timeFormat`/`timeZone` Settings (`2.1.257`) - *config knob*
+- Auto Mode Containment Escape Rule (Cloud Metadata/Egress Evasion) (`2.1.257`) - *incremental improvement to existing Auto Mode*
+- `CLAUDE_CODE_SUBAGENT_MODEL_FORCE` Setting (`2.1.257`) - *config knob*
+- `/effort s` Session-Only Scope (`2.1.257`) - *config knob*
+- `/doctor` Warning for Stale Sandbox Mask Files (`2.1.257`) - *incremental improvement to existing /doctor*
+- Gateway-Supplied `description` on `/model` Picker Entries (`2.1.257`) - *config knob*
+- Live Subagent Tool-Call Streaming to Remote Control (`2.1.251`) - *incremental improvement to existing Remote Control*
+- Spend Limit Bar in `/usage` (`2.1.251`) - *config knob*
+- Per-Session Prompt-Cache Line in `/cost` (`2.1.251`) - *config knob*
+- `attach`/`logs`/`stop`/`respawn`/`rm` in `claude --help` (`2.1.251`) - *format/scripting flag*
+- `experimental.cacheTtl` Agent Frontmatter (`2.1.248`) - *config knob*
+- `claude self-hosted-runner --client-label` Flag (`2.1.248`) - *config knob*
+- Server-Managed Settings Load-Failure Diagnostics (`2.1.248`) - *incremental improvement*
+- `/web-setup` Warning for Missing GitHub Token `workflow` Scope (`2.1.248`) - *incremental improvement*
+- `/usage-credits` for AWS-Marketplace/Self-Serve Enterprise (`2.1.248`) - *platform expansion*
+- Cross-Session Messaging on Bedrock/Vertex/Foundry (`2.1.248`) - *platform expansion*
+- `SendFeedback` Tool (Claude-Drafted Feedback Reports) (`2.1.247`) - *convenience wrapper*
+- `spinnerTipsOverride` Extended (Priority, Cooldown, `tipsFile`) (`2.1.247`) - *config knob*
+- `/claude-api cost-optimize` (`2.1.247`) - *convenience wrapper*
+- `claude-api` Skill Admin API Coverage (`2.1.247`) - *incremental improvement*
+- Sonnet 5 Auto-Compact Window Raised to Full 1M Context (`2.1.247`) - *incremental improvement*
+- Cross-Session Peer Messages Collapse to One-Line Preview (`2.1.247`) - *UI polish*
+- Auto Mode Tab in `/permissions` (`2.1.246`) - *config knob*
+- Startup Warning for Ambiguous Bash Wildcard Allow Rules (`2.1.246`) - *incremental improvement*
+- Turn Completion Time in Duration Line (`2.1.246`) - *UI polish*
+- `/code-review` Self-Starts on Bedrock/Vertex/Foundry (`2.1.246`) - *platform expansion*
+- `/goal` Idle Check-In Cap (Three per Goal) (`2.1.246`) - *incremental improvement*
+- Loops Breakdown in `/usage` (`2.1.243`) - *incremental improvement*
+- `modelPicker` Setting (Curated Model List) (`2.1.243`) - *config knob*
+- `promptCacheTtl`/`subagentPromptCacheTtl` Settings (`2.1.243`) - *config knob*
+- `modelPricing` Managed Setting (Contracted Rates) (`2.1.243`) - *config knob*
+- Keyless "Sign in with your Console Account" (`2.1.243`) - *convenience wrapper*
+- `Skipped sources` Line in `/status` (`2.1.243`) - *incremental improvement*
+- `managed` Marker for Org-Managed claude.ai Connectors (`2.1.243`) - *incremental improvement*
+- Per-Subagent Model/Effort Shown in `/tasks` (`2.1.243`) - *incremental improvement*
 - `/goal` Check-In Backoff Schedule (`2.1.241`) - *incremental improvement*
 - `/goal` Restores Active Goal on Session Resume (`2.1.241`) - *incremental improvement*
 - `ListAgents` Surfaces Own Session Name and Live Teammates (`2.1.241`) - *incremental improvement*

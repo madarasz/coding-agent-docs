@@ -1,7 +1,7 @@
-# OpenAI Codex Features (Apr 2025 – Aug 2026)
+# OpenAI Codex Features (Apr 2025 – Sep 2026)
 
 Significant user-facing features added to OpenAI Codex since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
+**Last updated:** Sep 6, 2026 · Source: [GitHub Releases](https://github.com/openai/codex/releases)
 
 ## Agentic & Multi-Agent
 
@@ -63,6 +63,7 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 | Title | Description | Invocation | Version | Date |
 |-------|-------------|------------|---------|------|
+| MCP Tool Result Interception | Lets extension code inspect or replace successful and error results from MCP tool calls, including through Code Mode, before they reach the model | Extension `on_mcp_tool_result` hook | `0.151.0` | Aug 2026 |
 | [Async & MCP-Invoking Hooks](https://developers.openai.com/codex/hooks) | Lets lifecycle hooks run shell commands asynchronously and invoke MCP tools directly instead of only synchronous shell commands | `hooks` in `config.toml` | `0.148.0` | Aug 2026 |
 | [MCP Tool Search](https://developers.openai.com/codex/mcp) | Lets the model search across available MCP tools instead of loading the full tool list into context, improving compatibility with large toolsets and older models/providers; enabled by default from `0.143.0` | Automatic (MCP config) | `0.142.2` | Jun 2026 |
 | Plugin Catalog Sections & Turn Recommendations | Organizes remote plugins into OpenAI Curated, Workspace, and Shared sections; eligible turns can recommend and install relevant plugins automatically | `/plugins` | `0.142.0` | Jun 2026 |
@@ -126,6 +127,31 @@ Significant user-facing features added to OpenAI Codex since its public availabi
 
 Notable changes that fell below the threshold for the main tables:
 
+- Model releases (GPT-6-Astra) (`0.153.4`) - *tracked separately*
+- Vim mode undo (`u`) and redo (`Ctrl+R`), preserving drafts including pasted content and attachments (`0.153.0`) - *power-user UX*
+- Plugin CLI can list, install, and remove plugins from remote marketplaces (`0.153.0`) - *convenience wrapper*
+- `tui.auto_recap = false` to disable automatic recaps while keeping manual `/recap` (`0.153.0`) - *config knob*
+- TUI history shows complete patches, input sent to background terminals, and individual completed commands (`0.153.0`) - *incremental improvement*
+- Earlier low-usage-window warning for Plus/Team users (`0.153.0`) - *incremental improvement*
+- App-server nullable thread metadata fields and structured async user-input questions (`0.153.0`) - *incremental improvement*
+- `tui.disable_paste_burst` replaces the top-level setting (fallback retained) (`0.153.0`) - *config knob*
+- `features.context_management.experimental_mode` opt-in config for token-budget context, history notes, and a `new_context` tool (`0.153.0`) - *config knob*
+- Vim mode `/` and `?` search within drafts with highlighted matches and repeat navigation (`0.152.0`) - *power-user UX*
+- Rate-limit banners with usage/credit/plan-management actions (`0.152.0`) - *incremental improvement*
+- Credential-refresh progress shown in the TUI and `codex exec`, including Amazon Bedrock reauthentication (`0.152.0`) - *incremental improvement*
+- MCP server names support `:`, `@`, `/`, and `.` characters (`0.152.0`) - *incremental improvement*
+- Per-MCP-tool `output_token_limit` setting with consistent truncation across resumes (`0.152.0`) - *config knob*
+- App-server `thread/shellCommand` timeout configuration beyond one hour (`0.152.0`) - *config knob*
+- Planning tool disabled by default; re-enable via `tools.update_plan.enabled` (`0.152.0`) - *config knob*
+- Plugin recommendations begin loading during startup (`0.152.0`) - *incremental improvement*
+- Configurable grace period for discovering tools from optional MCP servers (`0.151.0`) - *config knob*
+- Plugin catalogs combine per-repository configuration and surface invalid project marketplaces without hiding valid plugins (`0.151.0`) - *incremental improvement*
+- Reference and message Codex tasks with `@` mentions from the terminal (`0.150.0`) - *incremental improvement*
+- `/copy` picker for full responses, individual code blocks, and blockquotes (`0.150.0`) - *convenience wrapper*
+- Automatic descriptive thread titles and `/rename` title suggestions (`0.150.0`) - *incremental improvement*
+- Clickable Markdown links in supported terminals (`0.150.0`) - *UI polish*
+- Shortcuts to cycle permission modes; Vim mode `.` repeats the last edit (`0.150.0`) - *power-user UX*
+- `Interrupt` hooks run commands or MCP handlers when an active turn is interrupted (`0.150.0`) - *incremental improvement*
 - TypeScript SDK raw config overrides and `max`/`ultra` reasoning effort selection (`0.149.0`) - *config knob*
 - `codex doctor` diagnostics for endpoint protection, network/proxy failures, desktop app state, and update connectivity (`0.149.0`) - *incremental improvement*
 - Expanded Vim editing with character replacement and `cw`/`c$`/`cc` change motions (`0.149.0`) - *power-user UX*

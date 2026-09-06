@@ -1,7 +1,7 @@
 # OpenCode Features (Jun 2025 – Aug 2026)
 
 Significant user-facing features added to OpenCode since its public availability.
-**Last updated:** Aug 23, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
+**Last updated:** Sep 6, 2026 · Source: [GitHub Releases](https://github.com/anomalyco/opencode/releases)
 
 ## Agentic & Multi-Agent
 
@@ -113,6 +113,8 @@ Significant user-facing features added to OpenCode since its public availability
 
 Notable changes that fell below the threshold for the main tables:
 
+- Anthropic `thinking.blockBinding` config opt-out for Claude 5.1+ (`v1.18.27`) - *config knob*
+- Azure provider sign-in via Microsoft Entra ID through the Azure CLI, no API key required (`v1.18.24`) - *platform expansion*
 - Compaction summarization prompt restructured for clearer parsing by smaller models (`v1.18.17`) - *incremental improvement*
 - Modal provider auto-discovery for available models (`v1.18.10`) - *platform expansion*
 - Improved toast notification stacking, dismissal, and mobile layout (`v1.18.10`) - *UI polish*
